@@ -8,8 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="assets/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
   <title>PHPJabbers.com | Free Travel Agency Website Template</title>
 
@@ -39,38 +38,36 @@
   <header class="">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
           <h2>Travel Agency <em>Website</em></h2>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home
+              <a class="nav-link" href="index.php">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
 
-            <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
+            <li class="nav-item"><a class="nav-link" href="packages.php">Packages</a></li>
 
-            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                aria-expanded="false">More</a>
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
 
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="about-us.html">About Us</a>
-                <a class="dropdown-item" href="testimonials.html">Testimonials</a>
-                <a class="dropdown-item" href="terms.html">Terms</a>
+                <a class="dropdown-item" href="about-us.php">About Us</a>
+                <a class="dropdown-item" href="testimonials.php">Testimonials</a>
+                <a class="dropdown-item" href="terms.php">Terms</a>
               </div>
             </li>
 
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="login.html">Sign In</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.php">Sign In</a></li>
           </ul>
         </div>
       </div>
@@ -109,14 +106,14 @@
         <div class="col-md-12">
           <div class="section-heading">
             <h2>Featured Vacations</h2>
-            <a href="packages.html">view more <i class="fa fa-angle-right"></i></a>
+            <a href="packages.php">view more <i class="fa fa-angle-right"></i></a>
           </div>
         </div>
         <div class="col-md-4">
           <div class="product-item">
-            <a href="tempat_wisata_detail.html"><img src="assets/images/kbs/jerapah-kbs.jpg" alt=""></a>
+            <a href="tempat_wisata_detail.php"><img src="assets/images/kbs/jerapah-kbs.jpg" alt=""></a>
             <div class="down-content">
-              <a href="tempat_wisata_detail.html">
+              <a href="tempat_wisata_detail.php">
                 <h4>Kebun Binatang Surabaya</h4>
               </a>
 
@@ -137,9 +134,9 @@
 
         <div class="col-md-4">
           <div class="product-item">
-            <a href="tempat_wisata_detail.html"><img src="assets/images/product-2-370x270.jpg" alt=""></a>
+            <a href="tempat_wisata_detail.php"><img src="assets/images/product-2-370x270.jpg" alt=""></a>
             <div class="down-content">
-              <a href="tempat_wisata_detail.html">
+              <a href="tempat_wisata_detail.php">
                 <h4>Limelight Lodge</h4>
               </a>
 
@@ -159,9 +156,9 @@
 
         <div class="col-md-4">
           <div class="product-item">
-            <a href="tempat_wisata_detail.html"><img src="assets/images/product-3-370x270.jpg" alt=""></a>
+            <a href="tempat_wisata_detail.php"><img src="assets/images/product-3-370x270.jpg" alt=""></a>
             <div class="down-content">
-              <a href="tempat_wisata_detail.html">
+              <a href="tempat_wisata_detail.php">
                 <h4>Limelight Lodge</h4>
               </a>
 
@@ -202,7 +199,7 @@
               <li><a href="#">It aquecorporis nulla aspernatur</a></li>
               <li><a href="#">Corporis, omnis doloremque</a></li>
             </ul>
-            <a href="about-us.html" class="filled-button">Read More</a>
+            <a href="about-us.php" class="filled-button">Read More</a>
           </div>
         </div>
         <div class="col-md-6">
@@ -221,14 +218,13 @@
           <div class="section-heading">
             <h2>Latest blog posts</h2>
 
-            <a href="blog.html">read more <i class="fa fa-angle-right"></i></a>
+            <a href="blog.php">read more <i class="fa fa-angle-right"></i></a>
           </div>
         </div>
 
         <div class="col-lg-4 col-md-6">
           <div class="service-item">
-            <a href="#" class="services-item-image"><img src="assets/images/blog-1-370x270.jpg" class="img-fluid"
-                alt=""></a>
+            <a href="#" class="services-item-image"><img src="assets/images/blog-1-370x270.jpg" class="img-fluid" alt=""></a>
 
             <div class="down-content">
               <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</a></h4>
@@ -240,8 +236,7 @@
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="service-item">
-            <a href="#" class="services-item-image"><img src="assets/images/blog-2-370x270.jpg" class="img-fluid"
-                alt=""></a>
+            <a href="#" class="services-item-image"><img src="assets/images/blog-2-370x270.jpg" class="img-fluid" alt=""></a>
 
             <div class="down-content">
               <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h4>
@@ -253,8 +248,7 @@
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="service-item">
-            <a href="#" class="services-item-image"><img src="assets/images/blog-3-370x270.jpg" class="img-fluid"
-                alt=""></a>
+            <a href="#" class="services-item-image"><img src="assets/images/blog-3-370x270.jpg" class="img-fluid" alt=""></a>
 
             <div class="down-content">
               <h4><a href="#">Aperiam modi voluptatum fuga officiis cumque</a></h4>
@@ -275,7 +269,7 @@
           <div class="section-heading">
             <h2>Happy Clients</h2>
 
-            <a href="testimonials.html">read more <i class="fa fa-angle-right"></i></a>
+            <a href="testimonials.php">read more <i class="fa fa-angle-right"></i></a>
           </div>
         </div>
         <div class="col-md-12">
@@ -364,7 +358,7 @@
                 </p>
               </div>
               <div class="col-lg-4 col-md-6 text-right">
-                <a href="contact.html" class="filled-button">Contact Us</a>
+                <a href="contact.php" class="filled-button">Contact Us</a>
               </div>
             </div>
           </div>
