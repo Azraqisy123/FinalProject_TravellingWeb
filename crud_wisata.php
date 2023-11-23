@@ -39,7 +39,7 @@
     <header class="">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                     <h2>Travel Agency <em>Website</em></h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,35 +48,35 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home
+                            <a class="nav-link" href="index.php">Home
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
 
-                        <li class="nav-item active"><a class="nav-link" href="packages.html">Packages</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="packages.php">Packages</a></li>
 
-                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
 
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
 
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="about-us.html">About Us</a>
-                                <a class="dropdown-item" href="testimonials.html">Testimonials</a>
-                                <a class="dropdown-item" href="terms.html">Terms</a>
+                                <a class="dropdown-item" href="about-us.php">About Us</a>
+                                <a class="dropdown-item" href="testimonials.php">Testimonials</a>
+                                <a class="dropdown-item" href="terms.php">Terms</a>
                             </div>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CRUD</a>
 
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="crud_wisata.php">CRUD WISATA</a>
-                                <a class="dropdown-item" href="testimonials.html">CRUD USER</a>
-                                <a class="dropdown-item" href="terms.html">CRUD CATEGORIES</a>
+                                <a class="dropdown-item" href="testimonials.php">CRUD USER</a>
+                                <a class="dropdown-item" href="terms.php">CRUD CATEGORIES</a>
                             </div>
                         </li>
                     </ul>
@@ -104,9 +104,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="product-item">
-                        <a href="tempat_wisata_detail.html"><img src="assets/images/product-1-370x270.jpg" alt=""></a>
+                        <a href="tempat_wisata_detail.php"><img src="assets/images/product-1-370x270.jpg" alt=""></a>
                         <div class="down-content">
-                            <a href="tempat_wisata_detail.html">
+                            <a href="tempat_wisata_detail.php">
                                 <h4>Limelight Lodge</h4>
                             </a>
 
@@ -129,9 +129,9 @@
 
                 <div class="col-md-4">
                     <div class="product-item">
-                        <a href="tempat_wisata_detail.html"><img src="assets/images/product-2-370x270.jpg" alt=""></a>
+                        <a href="tempat_wisata_detail.php"><img src="assets/images/product-2-370x270.jpg" alt=""></a>
                         <div class="down-content">
-                            <a href="tempat_wisata_detail.html">
+                            <a href="tempat_wisata_detail.php">
                                 <h4>Limelight Lodge</h4>
                             </a>
 
@@ -154,9 +154,9 @@
 
                 <div class="col-md-4">
                     <div class="product-item">
-                        <a href="tempat_wisata_detail.html"><img src="assets/images/product-3-370x270.jpg" alt=""></a>
+                        <a href="tempat_wisata_detail.php"><img src="assets/images/product-3-370x270.jpg" alt=""></a>
                         <div class="down-content">
-                            <a href="tempat_wisata_detail.html">
+                            <a href="tempat_wisata_detail.php">
                                 <h4>Limelight Lodge</h4>
                             </a>
 
@@ -179,9 +179,9 @@
 
                 <div class="col-md-4">
                     <div class="product-item">
-                        <a href="tempat_wisata_detail.html"><img src="assets/images/product-4-370x270.jpg" alt=""></a>
+                        <a href="tempat_wisata_detail.php"><img src="assets/images/product-4-370x270.jpg" alt=""></a>
                         <div class="down-content">
-                            <a href="tempat_wisata_detail.html">
+                            <a href="tempat_wisata_detail.php">
                                 <h4>Limelight Lodge</h4>
                             </a>
 
@@ -204,9 +204,9 @@
 
                 <div class="col-md-4">
                     <div class="product-item">
-                        <a href="tempat_wisata_detail.html"><img src="assets/images/product-5-370x270.jpg" alt=""></a>
+                        <a href="tempat_wisata_detail.php"><img src="assets/images/product-5-370x270.jpg" alt=""></a>
                         <div class="down-content">
-                            <a href="tempat_wisata_detail.html">
+                            <a href="tempat_wisata_detail.php">
                                 <h4>Limelight Lodge</h4>
                             </a>
 
@@ -229,9 +229,9 @@
 
                 <div class="col-md-4">
                     <div class="product-item">
-                        <a href="tempat_wisata_detail.html"><img src="assets/images/product-6-370x270.jpg" alt=""></a>
+                        <a href="tempat_wisata_detail.php"><img src="assets/images/product-6-370x270.jpg" alt=""></a>
                         <div class="down-content">
-                            <a href="tempat_wisata_detail.html">
+                            <a href="tempat_wisata_detail.php">
                                 <h4>Limelight Lodge</h4>
                             </a>
 
