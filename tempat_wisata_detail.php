@@ -11,7 +11,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-  <title>Detail Tempat Wisata | Web Travelling 2</title>
+  <title>Detail Tempat Wisata | Web Travelling</title>
 
   <!-- CDN Bootstrap 5.2 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -312,6 +312,67 @@
     </div>
   </div>
   <!-- end :: ketentuan & fasilitas -->
+
+  <!-- begin :: komentar -->
+  <div class="section">
+    <div class="container">
+      <div class="section-heading" style="border: 0">
+        <h2>Ulasan</h2>
+      </div>
+
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_ulasan">Tambah Ulasan</button>
+      <br>
+      <br>
+      <!-- begin :: modal add ulasan -->
+      <div class="modal fade" id="modal_add_ulasan" tabindex="-1" aria-labelledby="modal_add_ulasan" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modal_add_ulasan">Tambah Ulasan</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="form_add_ulasan" action="" method="POST">
+                <div class="mb-3" hidden>
+                  <label for="id_komentar" class="col-form-label">id_komentar</label>
+                  <input type="text" class="form-control" name="id_komentar" id="id_komentar" placeholder="Auto Increment" readonly>
+                </div>
+                <div class="mb-3" hidden>
+                  <label for="id_user" class="col-form-label">id_user</label>
+                  <input type="text" class="form-control" name="id_user" id="id_user" placeholder="Auto Increment" readonly>
+                </div>
+                <div class="mb-3" hidden>
+                  <label for="id_wisata" class="col-form-label">id_wisata</label>
+                  <input type="text" class="form-control" name="id_wisata" id="id_wisata" placeholder="Auto Increment" readonly>
+                </div>
+                <div class="mb-3">
+                  <label for="komentar" class="col-form-label">Silahkan masukkan ulasan</label>
+                  <textarea class="form-control" id="komentar" name="komentar" style="height: 150px"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end :: modal add ulasan -->
+
+      <div class="down-content">
+        <h6>John Doe</h6>
+        <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+        <p>--- 3 mins ago</p>
+      </div>
+      <div class="down-content">
+        <h6>Jane Smith</h6>
+        <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+        <p>--- 7 mins ago</p>
+      </div>
+    </div>
+  </div>
+  <!-- end :: komentar -->
 
   <!-- begin :: map & contact -->
   <div class="section">
