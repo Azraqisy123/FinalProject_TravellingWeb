@@ -9,17 +9,13 @@
   <meta name="author" content="">
   <link rel="icon" href="assets/images/favicon.ico">
 
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-  <title>Detail Tempat Wisata | Web Travelling 2</title>
+  <title>Detail Tempat Wisata | Web Travelling</title>
 
   <!-- CDN Bootstrap 5.2 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 
   <!-- Bootstrap core CSS -->
@@ -51,35 +47,33 @@
         <a class="navbar-brand" href="#">
           <h2>Lorem <em>Ipsum</em></h2>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home
+              <a class="nav-link" href="index.php">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
 
-            <li class="nav-item active"><a class="nav-link" href="packages.html">Tempat Wisata</a></li>
+            <li class="nav-item active"><a class="nav-link" href="packages.php">Tempat Wisata</a></li>
 
-            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                aria-expanded="false">More</a>
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
 
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="about-us.html">About Us</a>
-                <a class="dropdown-item" href="testimonials.html">Testimonials</a>
-                <a class="dropdown-item" href="terms.html">Terms</a>
+                <a class="dropdown-item" href="about-us.php">About Us</a>
+                <a class="dropdown-item" href="testimonials.php">Testimonials</a>
+                <a class="dropdown-item" href="terms.php">Terms</a>
               </div>
             </li>
 
 
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
           </ul>
         </div>
       </div>
@@ -319,6 +313,67 @@
   </div>
   <!-- end :: ketentuan & fasilitas -->
 
+  <!-- begin :: komentar -->
+  <div class="section">
+    <div class="container">
+      <div class="section-heading" style="border: 0">
+        <h2>Ulasan</h2>
+      </div>
+
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_ulasan">Tambah Ulasan</button>
+      <br>
+      <br>
+      <!-- begin :: modal add ulasan -->
+      <div class="modal fade" id="modal_add_ulasan" tabindex="-1" aria-labelledby="modal_add_ulasan" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modal_add_ulasan">Tambah Ulasan</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="form_add_ulasan" action="" method="POST">
+                <div class="mb-3" hidden>
+                  <label for="id_komentar" class="col-form-label">id_komentar</label>
+                  <input type="text" class="form-control" name="id_komentar" id="id_komentar" placeholder="Auto Increment" readonly>
+                </div>
+                <div class="mb-3" hidden>
+                  <label for="id_user" class="col-form-label">id_user</label>
+                  <input type="text" class="form-control" name="id_user" id="id_user" placeholder="Auto Increment" readonly>
+                </div>
+                <div class="mb-3" hidden>
+                  <label for="id_wisata" class="col-form-label">id_wisata</label>
+                  <input type="text" class="form-control" name="id_wisata" id="id_wisata" placeholder="Auto Increment" readonly>
+                </div>
+                <div class="mb-3">
+                  <label for="komentar" class="col-form-label">Silahkan masukkan ulasan</label>
+                  <textarea class="form-control" id="komentar" name="komentar" style="height: 150px"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end :: modal add ulasan -->
+
+      <div class="down-content">
+        <h6>John Doe</h6>
+        <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+        <p>--- 3 mins ago</p>
+      </div>
+      <div class="down-content">
+        <h6>Jane Smith</h6>
+        <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+        <p>--- 7 mins ago</p>
+      </div>
+    </div>
+  </div>
+  <!-- end :: komentar -->
+
   <!-- begin :: map & contact -->
   <div class="section">
     <div class="container">
@@ -328,10 +383,7 @@
             <h2>Map</h2>
           </div>
 
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.514450669144!2d112.7340344741299!3d-7.295949271716189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb97917c2fad%3A0x21b1122d5fe174cc!2sSurabaya%20Zoo!5e0!3m2!1sen!2sid!4v1700706040546!5m2!1sen!2sid"
-            width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.514450669144!2d112.7340344741299!3d-7.295949271716189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb97917c2fad%3A0x21b1122d5fe174cc!2sSurabaya%20Zoo!5e0!3m2!1sen!2sid!4v1700706040546!5m2!1sen!2sid" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
         <div class="col-md-3">
@@ -351,8 +403,7 @@
               <span>Whatsapp</span>
               <br>
               <strong>
-                <a
-                  href="https://api.whatsapp.com/send?phone=62895379933535&text=Mohon%20Infomasi%20lebih%20lengkap%20mengenai%20paket-paket%20tersebut">
+                <a href="https://api.whatsapp.com/send?phone=62895379933535&text=Mohon%20Infomasi%20lebih%20lengkap%20mengenai%20paket-paket%20tersebut">
                   +62 8953-7993-3535</a>
               </strong>
             </p>
@@ -360,8 +411,7 @@
               <span>Instagram</span>
               <br>
               <strong>
-                <a
-                  href="https://www.instagram.com/kebunbinatangsurabaya/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==">kebunbinatangsurabaya</a>
+                <a href="https://www.instagram.com/kebunbinatangsurabaya/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==">kebunbinatangsurabaya</a>
               </strong>
             </p>
           </div>
@@ -401,8 +451,7 @@
 
             <div class="col-lg-12">
               <fieldset>
-                <textarea name="message" rows="6" class="form-control" id="message" placeholder="Notes"
-                  required=""></textarea>
+                <textarea name="message" rows="6" class="form-control" id="message" placeholder="Notes" required=""></textarea>
               </fieldset>
             </div>
             <div class="col-lg-12">
