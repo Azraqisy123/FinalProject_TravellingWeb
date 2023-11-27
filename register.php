@@ -99,7 +99,7 @@
                 </div>
 
                 <!-- Submit button -->
-                <button type="button" class="btn btn-primary btn-block">Register</button>
+                <button type="button" class="btn btn-primary btn-block mb-3">Register</button>
 
                 <!-- Register buttons -->
                 <div class="text-center mb-5">
