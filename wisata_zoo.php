@@ -82,8 +82,9 @@
       <div class="row">
         <div class="col-md-12">
           <div class="text-content">
+            <h4>Lorem ipsum dolor sit amet</h4>
             <h2>Packages</h2>
-            <div class="btn-group my-3">
+            <div class="btn-group">
               <a href="packages.php" class="btn btn-secondary">Semua</a>
               <a href="wisata_alam.php" class="btn btn-secondary">Wisata Alam</a>
               <a href="wisata_pantai.php" class="btn btn-secondary">Wisata Pantai</a>

@@ -283,6 +283,7 @@ header .navbar {
 	transition: all 0.5s;
 	margin-top: 5px;
 }
+
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .active>.nav-link,
 .navbar .navbar-nav .nav-link.active,
@@ -307,6 +308,7 @@ header .navbar {
 	right: 30px;
 	top: 20px;
 }
+
 .navbar .navbar-toggler-icon:after {
 	content: '\f0c9';
 	color: #f33f3f;
@@ -322,6 +324,7 @@ header .navbar {
 	position: relative;
 	text-align: center;
 	padding-top: 80px;
+
 }
 
 .banner-item-01 {
@@ -1029,6 +1032,7 @@ footer .inner-content p a {
 		width: 90%;
 		margin-left: 5%;
 	}
+
 	.banner .text-content h4 {
 		font-size: 22px;
 	}
@@ -1037,11 +1041,13 @@ footer .inner-content p a {
 		font-size: 36px;
 		letter-spacing: 0.5px;
 	}
+
 	.banner-item-01,
 	.banner-item-02,
 	.banner-item-03 {
 		padding: 180px 0px;
 	}
+
 	.page-heading .text-content h4 {
 		font-size: 22px;
 	}
@@ -1050,6 +1056,7 @@ footer .inner-content p a {
 		font-size: 36px;
 		letter-spacing: 0.5px;
 	}
+
 	.section-heading a {
 		float: none;
 		margin-top: 0px;
@@ -1171,4 +1178,42 @@ footer .inner-content p a {
 	.h-custom {
 		height: 100%;
 	}
+}
+
+.team4 h1,
+.team4 h2,
+.team4 h3,
+.team4 h4,
+.team4 h5,
+.team4 h6 {
+	color: #3e4555;
+}
+
+.team4 .font-weight-medium {
+	font-weight: 500;
+}
+
+.team4 h5 {
+	line-height: 22px;
+	font-size: 18px;
+}
+
+.team4 .subtitle {
+	color: #8d97ad;
+	line-height: 24px;
+	font-size: 13px;
+}
+
+.team4 ul li a {
+	color: #8d97ad;
+	padding-right: 15px;
+	-webkit-transition: 0.1s ease-in;
+	-o-transition: 0.1s ease-in;
+	transition: 0.1s ease-in;
+}
+
+.team4 ul li a:hover {
+	-webkit-transform: translate3d(0px, -5px, 0px);
+	transform: translate3d(0px, -5px, 0px);
+	color: #316ce8;
 }

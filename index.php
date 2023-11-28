@@ -10,7 +10,7 @@
   <link rel="icon" href="assets/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-  <title>PHPJabbers.com | Free Travel Agency Website Template</title>
+  <title>Travelling Dulu </title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="index.php">
-          <h2>Travel Agency <em>Website</em></h2>
+          <h2>Travelling <em>Dulu</em></h2>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -67,7 +67,8 @@
             </li>
 
             <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="login.html">Sign In</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.php">Sign In</a></li>
+            <li class="nav-item"><a class="nav-link" href="register.php">Sign Up</a></li>
           </ul>
         </div>
       </div>
@@ -80,20 +81,20 @@
     <div class="owl-banner owl-carousel">
       <div class="banner-item-01">
         <div class="text-content">
-          <h4>Find your car today!</h4>
-          <h2>Lorem ipsum dolor sit amet</h2>
+          <h2>Lets Make Your Best Trip Ever!</h2>
+          <h4 class="text-light" style="font-size: large;">Plan and book your perfect trip with travel tips, destination information and inspiration form us </h4>
         </div>
       </div>
       <div class="banner-item-02">
         <div class="text-content">
-          <h4>Fugiat Aspernatur</h4>
-          <h2>Laboriosam reprehenderit ducimus</h2>
+          <h2>Discover New Worlds</h2>
+          <h4 class="text-light" style="font-size: large;">Travel to any corner of the world, without going around in circles</h4>
         </div>
       </div>
       <div class="banner-item-03">
         <div class="text-content">
-          <h4>Saepe Omnis</h4>
-          <h2>Quaerat suscipit unde minus dicta</h2>
+          <h2>Enjoy The Ocean With Your Family</h2>
+          <h4 class="text-light" style="font-size: large;">Lets start your journey with us, your dream will come true</h4>
         </div>
       </div>
     </div>
@@ -134,20 +135,19 @@
 
         <div class="col-md-4">
           <div class="product-item">
-            <a href="tempat_wisata_detail.php"><img src="assets/images/product-2-370x270.jpg" alt=""></a>
+            <a href="tempat_wisata_detail.php"><img src="assets/images/bn/view 1.jpg" alt=""></a>
             <div class="down-content">
               <a href="tempat_wisata_detail.php">
-                <h4>Limelight Lodge</h4>
+                <h4>Banda Neira</h4>
               </a>
 
-              <h6>$300 - $400</h6>
+              <h6>Rp3.500.000 - Rp4.900-000</h6>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas
-                vel labore numqua.</p>
+              <p>Banda Neira merupakan gugusan Kepulauan Banda yang termasuk dalam provinsi Maluku. Pulau ini tepatnya terletak di sebelah tenggara Ambon dan berjarak sekitar 36 km dari bandara Pattimura.</p>
 
               <small>
                 <strong title="Available"><i class="fa fa-calendar"></i> Spring</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                <strong title="Nights"><i class="fa fa-cube"></i> 20 nights</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                <strong title="Nights"><i class="fa fa-cube"></i> 5 Days</strong> &nbsp;&nbsp;&nbsp;&nbsp;
                 <strong title="Flight included"><i class="fa fa-plane"></i> Flight included</strong>
               </small>
             </div>
@@ -156,16 +156,18 @@
 
         <div class="col-md-4">
           <div class="product-item">
-            <a href="tempat_wisata_detail.php"><img src="assets/images/product-3-370x270.jpg" alt=""></a>
+            <a href="tempat_wisata_detail.php"><img src="assets/images/kbs/jerapah-kbs.jpg" alt=""></a>
             <div class="down-content">
               <a href="tempat_wisata_detail.php">
-                <h4>Limelight Lodge</h4>
+                <h4>Kebun Binatang Surabaya</h4>
               </a>
 
-              <h6>$300 - $400</h6>
+              <h6>Rp50.000 - Rp100.000</h6>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas
-                vel labore numqua.</p>
+              <p>Kebun Binatang Surabaya (KBS) atau Surabaya Zoo merupakan kebun binatang yang pernah terlengkap se-Asia
+                Tenggara, di dalamnya terdapat lebih dari 230 spesies satwa yang berbeda yang terdiri lebih dari 2179
+                ekor satwa.</p>
+
 
               <small>
                 <strong title="Available"><i class="fa fa-calendar"></i> Spring</strong> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -187,24 +189,81 @@
             <h2>About Us</h2>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="left-content">
-            <p>Lorem ipsum dolor sit amet, <a href="#">consectetur</a> adipisicing elit. Explicabo, esse consequatur
-              alias repellat in excepturi inventore ad <a href="#">asperiores</a> tempora ipsa. Accusantium tenetur
-              voluptate labore aperiam molestiae rerum excepturi minus in pariatur praesentium, corporis, aliquid dicta.
-            </p>
-            <ul class="featured-list">
-              <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-              <li><a href="#">Consectetur an adipisicing elit</a></li>
-              <li><a href="#">It aquecorporis nulla aspernatur</a></li>
-              <li><a href="#">Corporis, omnis doloremque</a></li>
-            </ul>
-            <a href="about-us.php" class="filled-button">Read More</a>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="right-image">
-            <img src="assets/images/about-1-570x350.jpg" alt="">
+        <div class="py-5 team4">
+          <div class="container">
+            <div class="row">
+              <!-- column  -->
+              <div class="col-lg-3 mb-5">
+                <!-- Row -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t1.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+                  </div>
+                  <div class="col-md-12 text-center">
+                    <div class="pt-2">
+                      <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                      <h6 class="subtitle mb-3">Property Specialist</h6>
+                      <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Row -->
+              </div>
+              <!-- column  -->
+              <!-- column  -->
+              <div class="col-lg-3 mb-4">
+                <!-- Row -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+                  </div>
+                  <div class="col-md-12 text-center">
+                    <div class="pt-2">
+                      <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                      <h6 class="subtitle mb-3">Property Specialist</h6>
+                      <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Row -->
+              </div>
+              <!-- column  -->
+              <!-- column  -->
+              <div class="col-lg-3 mb-4">
+                <!-- Row -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+                  </div>
+                  <div class="col-md-12 text-center">
+                    <div class="pt-2">
+                      <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                      <h6 class="subtitle mb-3">Property Specialist</h6>
+                      <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Row -->
+              </div>
+              <!-- column  -->
+              <!-- column  -->
+              <div class="col-lg-3 mb-4">
+                <!-- Row -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t4.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+                  </div>
+                  <div class="col-md-12 text-center">
+                    <div class="pt-2">
+                      <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                      <h6 class="subtitle mb-3">Property Specialist</h6>
+                      <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Row -->
+              </div>
+            </div>
           </div>
         </div>
       </div>

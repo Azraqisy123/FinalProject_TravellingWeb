@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/images/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <title>Document</title>
 
     <!-- Bootstrap core CSS -->
@@ -53,11 +52,11 @@
                     </div>
 
                     <!-- Submit button -->
-                    <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+                    <a href="index.php" class="btn btn-primary btn-block mb-4" role="button">Sign in</a>
 
                     <!-- Register buttons -->
                     <div class="text-center mb-5">
-                        <p>Not a member? <a href="#!">Register</a></p>
+                        <p>Not a member? <a href="register.php">Register</a></p>
                         <p class="mb-3">or sign up with:</p>
                         <button type="button" class="btn btn-link btn-floating mx-1">
                             <i class="fab fa-facebook-f"></i>

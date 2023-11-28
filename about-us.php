@@ -9,12 +9,15 @@
   <meta name="author" content="">
   <link rel="icon" href="assets/images/favicon.ico">
 
+
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-  <title>PHPJabbers.com | Free Real Estate Website Template</title>
+
+  <title>Travelling Dulu </title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 
   <!-- Additional CSS Files -->
   <link rel="stylesheet" href="assets/css/fontawesome.css">
@@ -24,7 +27,6 @@
 </head>
 
 <body>
-
   <!-- ***** Preloader Start ***** -->
   <div id="preloader">
     <div class="jumper">
@@ -40,7 +42,7 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="index.php">
-          <h2>Real Estate <em>Website</em></h2>
+          <h2>Travelling <em>Dulu</em></h2>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -81,57 +83,92 @@
         <div class="col-md-12">
           <div class="text-content">
             <h4>about us</h4>
-            <h2>our company</h2>
+            <h2>Our Team</h2>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-
-  <div class="best-features about-features">
+  <div class="py-5 team4">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing</h2>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="right-image">
-            <img src="assets/images/about-1-570x350.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="left-content">
-            <h4>Lorem ipsum dolor sit amet.</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat. Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis.</p>
-            <ul class="social-icons">
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-            </ul>
-          </div>
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-7 text-center">
+          <h3 class="mb-3">Experienced & Professional Team</h3>
+          <h6 class="subtitle">You can relay on our amazing features list and also our customer services will be great experience for you without doubt and in no-time</h6>
         </div>
       </div>
-    </div>
-  </div>
-
-
-  <div class="team-members">
-    <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <h2>Lorem ipsum dolor sit amet.</h2>
+        <!-- column  -->
+        <div class="col-lg-3 mb-5">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12">
+              <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t1.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+            </div>
+            <div class="col-md-12 text-center">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                <h6 class="subtitle mb-3">Property Specialist</h6>
+                <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+              </div>
+            </div>
           </div>
-
-          <h5>Lorem ipsum dolor sit amet.</h5>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat. Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis.</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quae eveniet tempora reprehenderit quo, necessitatibus vel sit laboriosam, sunt obcaecati quisquam explicabo voluptatibus earum facilis quidem fuga maiores. Quasi, obcaecati? <br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, est officiis. Ipsam quas consequuntur adipisci quis, fuga pariatur eius eveniet qui similique nulla inventore accusantium, suscipit asperiores quibusdam culpa iure!</p>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-3 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12">
+              <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+            </div>
+            <div class="col-md-12 text-center">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                <h6 class="subtitle mb-3">Property Specialist</h6>
+                <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-3 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12">
+              <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+            </div>
+            <div class="col-md-12 text-center">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                <h6 class="subtitle mb-3">Property Specialist</h6>
+                <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
+        </div>
+        <!-- column  -->
+        <!-- column  -->
+        <div class="col-lg-3 mb-4">
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-12">
+              <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t4.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
+            </div>
+            <div class="col-md-12 text-center">
+              <div class="pt-2">
+                <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
+                <h6 class="subtitle mb-3">Property Specialist</h6>
+                <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Row -->
         </div>
       </div>
     </div>
