@@ -10,7 +10,7 @@
   <link rel="icon" href="assets/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-  <title>PHPJabbers.com | Free Travel Agency Website Template</title>
+  <title>Travelling Dulu </title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="index.php">
-          <h2>Travel Agency <em>Website</em></h2>
+          <h2>Travelling <em>Dulu</em></h2>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -81,20 +81,20 @@
     <div class="owl-banner owl-carousel">
       <div class="banner-item-01">
         <div class="text-content">
-          <h4>Find your car today!</h4>
-          <h2>Lorem ipsum dolor sit amet</h2>
+          <h2>Lets Make Your Best Trip Ever!</h2>
+          <h4 class="text-light" style="font-size: large;">Plan and book your perfect trip with travel tips, destination information and inspiration form us </h4>
         </div>
       </div>
       <div class="banner-item-02">
         <div class="text-content">
-          <h4>Fugiat Aspernatur</h4>
-          <h2>Laboriosam reprehenderit ducimus</h2>
+          <h2>Discover New Worlds</h2>
+          <h4 class="text-light" style="font-size: large;">Travel to any corner of the world, without going around in circles</h4>
         </div>
       </div>
       <div class="banner-item-03">
         <div class="text-content">
-          <h4>Saepe Omnis</h4>
-          <h2>Quaerat suscipit unde minus dicta</h2>
+          <h2>Enjoy The Ocean With Your Family</h2>
+          <h4 class="text-light" style="font-size: large;">Lets start your journey with us, your dream will come true</h4>
         </div>
       </div>
     </div>
@@ -135,20 +135,19 @@
 
         <div class="col-md-4">
           <div class="product-item">
-            <a href="tempat_wisata_detail.php"><img src="assets/images/product-2-370x270.jpg" alt=""></a>
+            <a href="tempat_wisata_detail.php"><img src="assets/images/bn/view 1.jpg" alt=""></a>
             <div class="down-content">
               <a href="tempat_wisata_detail.php">
-                <h4>Limelight Lodge</h4>
+                <h4>Banda Neira</h4>
               </a>
 
-              <h6>$300 - $400</h6>
+              <h6>Rp3.500.000 - Rp4.900-000</h6>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas
-                vel labore numqua.</p>
+              <p>Banda Neira merupakan gugusan Kepulauan Banda yang termasuk dalam provinsi Maluku. Pulau ini tepatnya terletak di sebelah tenggara Ambon dan berjarak sekitar 36 km dari bandara Pattimura.</p>
 
               <small>
                 <strong title="Available"><i class="fa fa-calendar"></i> Spring</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                <strong title="Nights"><i class="fa fa-cube"></i> 20 nights</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                <strong title="Nights"><i class="fa fa-cube"></i> 5 Days</strong> &nbsp;&nbsp;&nbsp;&nbsp;
                 <strong title="Flight included"><i class="fa fa-plane"></i> Flight included</strong>
               </small>
             </div>
@@ -157,16 +156,18 @@
 
         <div class="col-md-4">
           <div class="product-item">
-            <a href="tempat_wisata_detail.php"><img src="assets/images/product-3-370x270.jpg" alt=""></a>
+            <a href="tempat_wisata_detail.php"><img src="assets/images/kbs/jerapah-kbs.jpg" alt=""></a>
             <div class="down-content">
               <a href="tempat_wisata_detail.php">
-                <h4>Limelight Lodge</h4>
+                <h4>Kebun Binatang Surabaya</h4>
               </a>
 
-              <h6>$300 - $400</h6>
+              <h6>Rp50.000 - Rp100.000</h6>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas
-                vel labore numqua.</p>
+              <p>Kebun Binatang Surabaya (KBS) atau Surabaya Zoo merupakan kebun binatang yang pernah terlengkap se-Asia
+                Tenggara, di dalamnya terdapat lebih dari 230 spesies satwa yang berbeda yang terdiri lebih dari 2179
+                ekor satwa.</p>
+
 
               <small>
                 <strong title="Available"><i class="fa fa-calendar"></i> Spring</strong> &nbsp;&nbsp;&nbsp;&nbsp;

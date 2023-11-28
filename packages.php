@@ -11,7 +11,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-  <title>PHPJabbers.com | Free Travel Agency Website Template</title>
+  <title>Travelling Dulu </title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="index.php">
-          <h2>Travel Agency <em>Website</em></h2>
+          <h2>Travelling <em>Dulu</em></h2>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -82,9 +82,8 @@
       <div class="row">
         <div class="col-md-12">
           <div class="text-content">
-            <h4>Lorem ipsum dolor sit amet</h4>
             <h2>Packages</h2>
-            <div class="btn-group">
+            <div class="btn-group my-3">
               <a href="packages.php" class="btn btn-secondary">Semua</a>
               <a href="wisata_alam.php" class="btn btn-secondary">Wisata Alam</a>
               <a href="wisata_pantai.php" class="btn btn-secondary">Wisata Pantai</a>
