@@ -13,6 +13,11 @@
 
     <title>PHPJabbers.com | Free Travel Agency Website Template</title>
 
+    <!-- CDN Bootstrap 5.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -74,9 +79,9 @@
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CRUD</a>
 
                             <div class="dropdown-menu">
-                                <a class="dropdown-item active" href="crud_wisata.php">CRUD WISATA</a>
+                                <a class="dropdown-item" href="crud_wisata.php">CRUD WISATA</a>
                                 <a class="dropdown-item" href="crud_user.php">CRUD USER</a>
-                                <a class="dropdown-item" href="crud_categories.php">CRUD CATEGORIES</a>
+                                <a class="dropdown-item active" href="crud_categories.php">CRUD CATEGORIES</a>
                             </div>
                         </li>
                     </ul>
@@ -86,12 +91,12 @@
     </header>
 
     <!-- Page Content -->
-    <div class="page-heading about-heading header-text" style="background-image: url(assets/images/slider-image-1-1920x600.jpg);">
+    <div class="page-heading about-heading header-text" style="background-image: url(assets/images/slider-image-2-1920x600.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-content">
-                        <h2>CRUD WISATA</h2>
+                        <h2>CRUD CATEGORIES</h2>
                     </div>
                 </div>
             </div>
@@ -100,26 +105,15 @@
 
     <div class="products">
         <div class="container">
-            <a class="btn btn-primary mb-4" href="add_wisata.php">New Data</a>
+            <a class="btn btn-primary mb-4" href="add_categories.php">New Data</a>
             <div class="row">
                 <div class="col-md-4">
                     <div class="product-item">
-                        <a href="tempat_wisata_detail.php"><img src="assets/images/product-1-370x270.jpg" alt=""></a>
+                        <img src="assets/images/categories-bawah-laut.jpg" alt="">
                         <div class="down-content">
-                            <a href="tempat_wisata_detail.php">
-                                <h4>Limelight Lodge</h4>
-                            </a>
-
-                            <h6>$300 - $400</h6>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.</p>
-
-                            <small class="d-flex justify-content-between mb-4">
-                                <strong title="Nights"><i class="fa fa-cube"></i> Wisata Bawah Laut</strong>
-                                <strong title="Available"><i class="fa fa-calendar"></i> Everyday</strong>
-                            </small>
+                            <h4 class="text-center text-black">Bawah laut</h4>
                             <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="edit_wisata.php">EDIT</a>
+                                <a class="btn btn-warning" href="edit_categories.php">EDIT</a>
                                 <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
                             </div>
                         </div>
@@ -128,22 +122,11 @@
 
                 <div class="col-md-4">
                     <div class="product-item">
-                        <a href="tempat_wisata_detail.php"><img src="assets/images/product-2-370x270.jpg" alt=""></a>
+                        <img src="assets/images/categories-budaya.jpg" alt="">
                         <div class="down-content">
-                            <a href="tempat_wisata_detail.php">
-                                <h4>Limelight Lodge</h4>
-                            </a>
-
-                            <h6>$300 - $400</h6>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.</p>
-
-                            <small class="d-flex justify-content-between mb-4">
-                                <strong title="Nights"><i class="fa fa-cube"></i> Wisata Alam</strong>
-                                <strong title="Available"><i class="fa fa-calendar"></i> Everyday</strong>
-                            </small>
+                            <h4 class="text-center text-black">Budaya</h4>
                             <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="">EDIT</a>
+                                <a class="btn btn-warning" href="edit_categories.php">EDIT</a>
                                 <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
                             </div>
                         </div>
@@ -152,94 +135,11 @@
 
                 <div class="col-md-4">
                     <div class="product-item">
-                        <a href="tempat_wisata_detail.php"><img src="assets/images/product-3-370x270.jpg" alt=""></a>
+                        <img src="assets/images/categories-alam.jpg" alt="">
                         <div class="down-content">
-                            <a href="tempat_wisata_detail.php">
-                                <h4>Limelight Lodge</h4>
-                            </a>
-
-                            <h6>$300 - $400</h6>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.</p>
-
-                            <small class="d-flex justify-content-between mb-4">
-                                <strong title="Nights"><i class="fa fa-cube"></i> Wisata Alam</strong>
-                                <strong title="Available"><i class="fa fa-calendar"></i> Everyday</strong>
-                            </small>
+                            <h4 class="text-center text-black">Alam</h4>
                             <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="">EDIT</a>
-                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <a href="tempat_wisata_detail.php"><img src="assets/images/product-4-370x270.jpg" alt=""></a>
-                        <div class="down-content">
-                            <a href="tempat_wisata_detail.php">
-                                <h4>Limelight Lodge</h4>
-                            </a>
-
-                            <h6>$300 - $400</h6>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.</p>
-
-                            <small class="d-flex justify-content-between mb-4">
-                                <strong title="Nights"><i class="fa fa-cube"></i> Wisata Alam</strong>
-                                <strong title="Available"><i class="fa fa-calendar"></i> Everyday</strong>
-                            </small>
-                            <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="">EDIT</a>
-                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <a href="tempat_wisata_detail.php"><img src="assets/images/product-5-370x270.jpg" alt=""></a>
-                        <div class="down-content">
-                            <a href="tempat_wisata_detail.php">
-                                <h4>Limelight Lodge</h4>
-                            </a>
-
-                            <h6>$300 - $400</h6>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.</p>
-
-                            <small class="d-flex justify-content-between mb-4">
-                                <strong title="Nights"><i class="fa fa-cube"></i> Wisata Alam</strong>
-                                <strong title="Available"><i class="fa fa-calendar"></i> Everyday</strong>
-                            </small>
-                            <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="">EDIT</a>
-                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <a href="tempat_wisata_detail.php"><img src="assets/images/product-6-370x270.jpg" alt=""></a>
-                        <div class="down-content">
-                            <a href="tempat_wisata_detail.php">
-                                <h4>Limelight Lodge</h4>
-                            </a>
-
-                            <h6>$300 - $400</h6>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.</p>
-
-                            <small class="d-flex justify-content-between mb-4">
-                                <strong title="Nights"><i class="fa fa-cube"></i> Wisata Alam</strong>
-                                <strong title="Available"><i class="fa fa-calendar"></i> Everyday</strong>
-                            </small>
-                            <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="">EDIT</a>
+                                <a class="btn btn-warning" href="edit_categories.php">EDIT</a>
                                 <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
                             </div>
                         </div>

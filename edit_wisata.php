@@ -96,7 +96,7 @@
                 <!-- general form elements -->
                 <div class="card card-primary border-primary">
                     <div class="card-header bg-primary">
-                        <h3 class="card-title mb-0">ADD NEW WISATA</h3>
+                        <h3 class="card-title mb-0">EDIT DATA WISATA</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -112,6 +112,7 @@
                                     <option value="">Bawah Laut</option>
                                     <option value="">Alam</option>
                                     <option value="">Budaya</option>
+                                    <option value="">Cagar Alam</option>
                                 </select>
                             </div>
                             <div class="form-group">

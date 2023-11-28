@@ -77,8 +77,8 @@
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CRUD</a>
 
                             <div class="dropdown-menu">
-                                <a class="dropdown-item active" href="crud_wisata.php">CRUD WISATA</a>
-                                <a class="dropdown-item" href="testimonials.php">CRUD USER</a>
+                                <a class="dropdown-item" href="crud_wisata.php">CRUD WISATA</a>
+                                <a class="dropdown-item active" href="crud_user.php">CRUD USER</a>
                                 <a class="dropdown-item" href="terms.php">CRUD CATEGORIES</a>
                             </div>
                         </li>
@@ -96,42 +96,58 @@
                 <!-- general form elements -->
                 <div class="card card-primary border-primary">
                     <div class="card-header bg-primary">
-                        <h3 class="card-title mb-0">ADD NEW WISATA</h3>
+                        <h3 class="card-title mb-0">EDIT DATA USER</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="backend/proses_add_product.php" method="post" enctype="multipart/form-data">
+                    <form action="" method="post" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="form-group">
-                                <label>Nama Tempat</label>
-                                <input type="text" class="form-control" name="nama_produk">
+                                <label>Nama User</label>
+                                <input type="text" class="form-control" name="">
                             </div>
                             <div class="form-group">
-                                <label>Kategori</label>
+                                <label>username</label>
+                                <input type="text" class="form-control" name="">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="text" class="form-control" name="">
+                            </div>
+                            <div class="form-group">
+                                <label>Jenis Kelamin</label>
+                                <div class="d-flex">
+                                    <div class="form-check ms-3">
+                                        <input class="form-check-input" type="radio" name="sex" value="Pria" checked>
+                                        <label class="form-check-label">
+                                            Pria
+                                        </label>
+                                    </div>
+                                    <div class="form-check ms-5">
+                                        <input class="form-check-input" type="radio" name="sex" value="Wanita">
+                                        <label class="form-check-label">
+                                            Wanita
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>No Telp</label>
+                                <input type="number" class="form-control" name="">
+                            </div>
+                            <div class="form-group">
+                                <label>Alamat</label>
+                                <input type="text" class="form-control" name="">
+                            </div>
+                            <div class="form-group">
+                                <label>Role</label>
                                 <select class="form-control" name="storage">
-                                    <option value="">Bawah Laut</option>
-                                    <option value="">Alam</option>
-                                    <option value="">Budaya</option>
+                                    <option value="">ADMIN</option>
+                                    <option value="">USER</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Lokasi</label>
-                                <input type="text" class="form-control" name="price">
-                            </div>
-                            <div class="form-group">
-                                <label>Fasilitas</label>
-                                <textarea class="form-control" rows="5" name="description"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Harga Tiket Masuk</label>
-                                <input type="text" class="form-control" name="price">
-                            </div>
-                            <div class="form-group">
-                                <label>Deskripsi</label>
-                                <textarea class="form-control" rows="5" name="description"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Foto Tempat</label>
+                                <label>Foto User</label>
                                 <input class="form-control" type="file" name="picture">
                             </div>
                         </div>
