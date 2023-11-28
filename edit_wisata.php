@@ -11,7 +11,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Travelling Dulu </title>
+    <title>Travelling Dulu</title>
 
     <!-- CDN Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -91,7 +91,7 @@
                 <!-- general form elements -->
                 <div class="card card-primary border-primary">
                     <div class="card-header bg-primary">
-                        <h3 class="card-title mb-0">ADD NEW WISATA</h3>
+                        <h3 class="card-title mb-0">EDIT DATA WISATA</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -107,6 +107,7 @@
                                     <option value="">Bawah Laut</option>
                                     <option value="">Alam</option>
                                     <option value="">Budaya</option>
+                                    <option value="">Cagar Alam</option>
                                 </select>
                             </div>
                             <div class="form-group">

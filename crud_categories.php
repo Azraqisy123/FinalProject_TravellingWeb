@@ -11,10 +11,12 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Travelling Dulu </title>
+    <title>Travelling Dulu</title>
 
-    <!-- CDN Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- CDN Bootstrap 5.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -72,9 +74,9 @@
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CRUD</a>
 
                             <div class="dropdown-menu">
-                                <a class="dropdown-item active" href="crud_wisata.php">CRUD WISATA</a>
-                                <a class="dropdown-item" href="testimonials.php">CRUD USER</a>
-                                <a class="dropdown-item" href="terms.php">CRUD CATEGORIES</a>
+                                <a class="dropdown-item" href="crud_wisata.php">CRUD WISATA</a>
+                                <a class="dropdown-item" href="crud_user.php">CRUD USER</a>
+                                <a class="dropdown-item active" href="crud_categories.php">CRUD CATEGORIES</a>
                             </div>
                         </li>
                     </ul>
@@ -83,63 +85,74 @@
         </nav>
     </header>
 
-    <!-- Form Start -->
-    <div class="container-fluid">
-        <div class="row px-xl-5">
-            <!-- left column -->
-            <div style="margin-top: 9rem;" class="col-md-6">
-                <!-- general form elements -->
-                <div class="card card-primary border-primary">
-                    <div class="card-header bg-primary">
-                        <h3 class="card-title mb-0">ADD NEW WISATA</h3>
+    <!-- Page Content -->
+    <div class="page-heading about-heading header-text" style="background-image: url(assets/images/slider-image-2-1920x600.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-content">
+                        <h2>CRUD CATEGORIES</h2>
                     </div>
-                    <!-- /.card-header -->
-                    <!-- form start -->
-                    <form action="backend/proses_add_product.php" method="post" enctype="multipart/form-data">
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label>Nama Tempat</label>
-                                <input type="text" class="form-control" name="nama_produk">
-                            </div>
-                            <div class="form-group">
-                                <label>Kategori</label>
-                                <select class="form-control" name="storage">
-                                    <option value="">Bawah Laut</option>
-                                    <option value="">Alam</option>
-                                    <option value="">Budaya</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Lokasi</label>
-                                <input type="text" class="form-control" name="price">
-                            </div>
-                            <div class="form-group">
-                                <label>Fasilitas</label>
-                                <textarea class="form-control" rows="5" name="description"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Harga Tiket Masuk</label>
-                                <input type="text" class="form-control" name="price">
-                            </div>
-                            <div class="form-group">
-                                <label>Deskripsi</label>
-                                <textarea class="form-control" rows="5" name="description"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Foto Tempat</label>
-                                <input class="form-control" type="file" name="picture">
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary rounded">Submit</button>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- /.card -->
+
+    <div class="products">
+        <div class="container">
+            <a class="btn btn-primary mb-4" href="add_categories.php">New Data</a>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="product-item">
+                        <img src="assets/images/categories-bawah-laut.jpg" alt="">
+                        <div class="down-content">
+                            <h4 class="text-center text-black">Bawah laut</h4>
+                            <div class="product-action d-flex justify-content-around">
+                                <a class="btn btn-warning" href="edit_categories.php">EDIT</a>
+                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="product-item">
+                        <img src="assets/images/categories-budaya.jpg" alt="">
+                        <div class="down-content">
+                            <h4 class="text-center text-black">Budaya</h4>
+                            <div class="product-action d-flex justify-content-around">
+                                <a class="btn btn-warning" href="edit_categories.php">EDIT</a>
+                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="product-item">
+                        <img src="assets/images/categories-alam.jpg" alt="">
+                        <div class="down-content">
+                            <h4 class="text-center text-black">Alam</h4>
+                            <div class="product-action d-flex justify-content-around">
+                                <a class="btn btn-warning" href="edit_categories.php">EDIT</a>
+                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-md-12">
+                    <ul class="pages">
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
