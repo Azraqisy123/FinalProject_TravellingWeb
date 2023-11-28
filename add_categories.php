@@ -11,7 +11,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>PHPJabbers.com | Free Travel Agency Website Template</title>
+    <title>Travelling Dulu</title>
 
     <!-- CDN Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -43,7 +43,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
-                    <h2>Travel Agency <em>Website</em></h2>
+                    <h2>Travelling <em>Dulu</em></h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -58,9 +58,6 @@
 
                         <li class="nav-item"><a class="nav-link" href="packages.php">Packages</a></li>
 
-                        <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
-
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
 
@@ -70,8 +67,6 @@
                                 <a class="dropdown-item" href="terms.php">Terms</a>
                             </div>
                         </li>
-
-                        <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
 
                         <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CRUD</a>
