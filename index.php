@@ -189,83 +189,68 @@
             <h2>About Us</h2>
           </div>
         </div>
-        <div class="py-5 team4">
-          <div class="container">
-            <div class="row">
-              <!-- column  -->
-              <div class="col-lg-3 mb-5">
-                <!-- Row -->
-                <div class="row">
-                  <div class="col-md-12">
-                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t1.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
-                  </div>
-                  <div class="col-md-12 text-center">
-                    <div class="pt-2">
-                      <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
-                      <h6 class="subtitle mb-3">Property Specialist</h6>
-                      <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Row -->
-              </div>
-              <!-- column  -->
-              <!-- column  -->
-              <div class="col-lg-3 mb-4">
-                <!-- Row -->
-                <div class="row">
-                  <div class="col-md-12">
-                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
-                  </div>
-                  <div class="col-md-12 text-center">
-                    <div class="pt-2">
-                      <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
-                      <h6 class="subtitle mb-3">Property Specialist</h6>
-                      <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Row -->
-              </div>
-              <!-- column  -->
-              <!-- column  -->
-              <div class="col-lg-3 mb-4">
-                <!-- Row -->
-                <div class="row">
-                  <div class="col-md-12">
-                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
-                  </div>
-                  <div class="col-md-12 text-center">
-                    <div class="pt-2">
-                      <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
-                      <h6 class="subtitle mb-3">Property Specialist</h6>
-                      <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Row -->
-              </div>
-              <!-- column  -->
-              <!-- column  -->
-              <div class="col-lg-3 mb-4">
-                <!-- Row -->
-                <div class="row">
-                  <div class="col-md-12">
-                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t4.jpg" alt="wrapkit" class="img-fluid rounded-circle" />
-                  </div>
-                  <div class="col-md-12 text-center">
-                    <div class="pt-2">
-                      <h5 class="mt-4 font-weight-medium mb-0">Michael Doe</h5>
-                      <h6 class="subtitle mb-3">Property Specialist</h6>
-                      <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Row -->
-              </div>
+
+        <div class="container my-5">
+          <div class="row">
+
+            <!-- Start Column 1 -->
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
+              <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t1.jpg" class="img-fluid mb-5">
+              <h3 clas><a href="#"><span class="">Lawson</span> Arnold</a></h3>
+              <span class="d-block position mb-4">CEO, Founder, Atty.</span>
+              <p>Separated they live in.
+                Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+                ocean.</p>
+              <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
             </div>
+            <!-- End Column 1 -->
+
+            <!-- Start Column 2 -->
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
+              <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg" class="img-fluid mb-5">
+
+              <h3 clas><a href="#"><span class="">Jeremy</span> Walker</a></h3>
+              <span class="d-block position mb-4">CEO, Founder, Atty.</span>
+              <p>Separated they live in.
+                Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+                ocean.</p>
+              <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
+
+            </div>
+            <!-- End Column 2 -->
+
+            <!-- Start Column 3 -->
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
+              <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg" class="img-fluid mb-5">
+              <h3 clas><a href="#"><span class="">Patrik</span> White</a></h3>
+              <span class="d-block position mb-4">CEO, Founder, Atty.</span>
+              <p>Separated they live in.
+                Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+                ocean.</p>
+              <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
+            </div>
+            <!-- End Column 3 -->
+
+            <!-- Start Column 4 -->
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
+              <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t4.jpg" class="img-fluid mb-5">
+
+              <h3 clas><a href="#"><span class="">Kathryn</span> Ryan</a></h3>
+              <span class="d-block position mb-4">CEO, Founder, Atty.</span>
+              <p>Separated they live in.
+                Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+                ocean.</p>
+              <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
+
+
+            </div>
+            <!-- End Column 4 -->
+
+
+
           </div>
         </div>
+
       </div>
     </div>
   </div>
