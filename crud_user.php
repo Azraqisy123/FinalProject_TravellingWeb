@@ -129,7 +129,7 @@
                                     <td>Bandung</td>
                                 </tr>
                             </table>
-                            <div class="product-action d-flex justify-content-around mb-4">
+                            <div class="product-action d-flex justify-content-around">
                                 <a class="btn btn-warning" href="edit_user.php">EDIT</a>
                                 <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
                             </div>
@@ -164,7 +164,7 @@
                                     <td>Bandung</td>
                                 </tr>
                             </table>
-                            <div class="product-action d-flex justify-content-around mb-4">
+                            <div class="product-action d-flex justify-content-around">
                                 <a class="btn btn-warning" href="edit_user.php">EDIT</a>
                                 <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
                             </div>
@@ -199,7 +199,7 @@
                                     <td>Bandung</td>
                                 </tr>
                             </table>
-                            <div class="product-action d-flex justify-content-around mb-4">
+                            <div class="product-action d-flex justify-content-around">
                                 <a class="btn btn-warning" href="edit_user.php">EDIT</a>
                                 <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
                             </div>
@@ -234,7 +234,7 @@
                                     <td>Bandung</td>
                                 </tr>
                             </table>
-                            <div class="product-action d-flex justify-content-around mb-4">
+                            <div class="product-action d-flex justify-content-around">
                                 <a class="btn btn-warning" href="edit_user.php">EDIT</a>
                                 <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
                             </div>
@@ -269,7 +269,7 @@
                                     <td>Bandung</td>
                                 </tr>
                             </table>
-                            <div class="product-action d-flex justify-content-around mb-4">
+                            <div class="product-action d-flex justify-content-around">
                                 <a class="btn btn-warning" href="edit_user.php">EDIT</a>
                                 <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
                             </div>
@@ -304,7 +304,7 @@
                                     <td>Bandung</td>
                                 </tr>
                             </table>
-                            <div class="product-action d-flex justify-content-around mb-4">
+                            <div class="product-action d-flex justify-content-around">
                                 <a class="btn btn-warning" href="edit_user.php">EDIT</a>
                                 <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
                             </div>
