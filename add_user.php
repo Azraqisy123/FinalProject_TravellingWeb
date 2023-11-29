@@ -95,7 +95,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="/backend/proses_add_user.php" method="post" enctype="multipart/form-data">
+                    <form action="backend/proses_add_user.php" method="post" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Nama User</label>
@@ -138,7 +138,7 @@
                                 <label>Role</label>
                                 <select class="form-control" name="role">
                                     <option value="ADMIN">ADMIN</option>
-                                    <option value="USER">USER</option>
+                                    <option value="USER" selected>USER</option>
                                 </select>
                             </div>
                             <div class="form-group">
