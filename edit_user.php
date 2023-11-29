@@ -26,6 +26,26 @@
 
 </head>
 
+<!-- Load DAta From Database Start -->
+<?php
+include "connection.php";
+$id = $_GET["id"];
+
+$users = mysqli_query($connection, "SELECT * FROM user WHERE id_user = '$id' ");
+
+foreach ($users as $user) {
+    $nama_user = $user['nama_user'];
+    $username_user = $user['username'];
+    $password_user = $user['password'];
+    $jenis_kelamin = $user['jenis_kelamin'];
+    $no_telp = $user['no_telp'];
+    $alamat = $user['alamat'];
+    $role = $user['role'];
+    $foto_user = $user['foto_user'];
+}
+?>
+<!-- Load DAta From Database End -->
+
 <body>
 
     <!-- ***** Preloader Start ***** -->
@@ -95,31 +115,45 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="backend/proses_edit_user.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Nama User</label>
-                                <input type="text" class="form-control" name="">
+                                <input type="text" class="form-control" name="nama_user" value="<?php echo $nama_user; ?>">
                             </div>
                             <div class="form-group">
                                 <label>username</label>
-                                <input type="text" class="form-control" name="">
+                                <input type="text" class="form-control" name="username" value="<?php echo $username_user; ?>">
                             </div>
-                            <div class="form-group">
+                            <div class=" form-group">
                                 <label>Password</label>
-                                <input type="text" class="form-control" name="">
+                                <input type="text" class="form-control" name="password" value="<?php echo $password_user; ?>">
                             </div>
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>
                                 <div class="d-flex">
                                     <div class="form-check ms-3">
-                                        <input class="form-check-input" type="radio" name="sex" value="Pria" checked>
+                                        <?php
+                                        if ($jenis_kelamin == 'Pria') {
+                                            echo '<input class="form-check-input" type="radio" 
+                                            name="jenis_kelamin" value="Pria" checked>';
+                                        }else{
+                                            echo '<input class="form-check-input" type="radio" 
+                                            name="jenis_kelamin" value="Pria">';
+                                        } ?>
                                         <label class="form-check-label">
                                             Pria
                                         </label>
                                     </div>
                                     <div class="form-check ms-5">
-                                        <input class="form-check-input" type="radio" name="sex" value="Wanita">
+                                        <?php
+                                        if ($jenis_kelamin == 'Wanita') {
+                                            echo '<input class="form-check-input" type="radio" 
+                                            name="jenis_kelamin" value="Wanita" checked>';
+                                        }else{
+                                            echo '<input class="form-check-input" type="radio" 
+                                            name="jenis_kelamin" value="Wanita" ';
+                                        } ?>
                                         <label class="form-check-label">
                                             Wanita
                                         </label>
@@ -128,22 +162,22 @@
                             </div>
                             <div class="form-group">
                                 <label>No Telp</label>
-                                <input type="number" class="form-control" name="">
+                                <input type="number" class="form-control" name="no_telp" value="<?php echo $no_telp; ?>">
                             </div>
                             <div class="form-group">
                                 <label>Alamat</label>
-                                <input type="text" class="form-control" name="">
+                                <input type="text" class="form-control" name="alamat" value="<?php echo $alamat; ?>">
                             </div>
-                            <div class="form-group">
+                            <div class=" form-group">
                                 <label>Role</label>
-                                <select class="form-control" name="storage">
-                                    <option value="">ADMIN</option>
-                                    <option value="">USER</option>
+                                <select class="form-control" name="role">
+                                    <option value="ADMIN" <?php if ($role == "ADMIN") {echo "selected";} ?>>ADMIN</option>
+                                    <option value="USER" <?php if ($role == "USER") {echo "selected";} ?>>USER</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Foto User</label>
-                                <input class="form-control" type="file" name="picture">
+                                <input class="form-control" type="file" name="foto_user" value="<?php echo $foto_user; ?>">
                             </div>
                         </div>
                         <!-- /.card-body -->

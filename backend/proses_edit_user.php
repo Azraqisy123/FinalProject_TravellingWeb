@@ -1,8 +1,9 @@
 <?php
     include "../connection.php";
 
+    $id = $_GET['id'];
     $nama_user = $_POST['nama_user'];
-    $username_user = $_POST['username'];    
+    $username_user = $_POST['username'];
     $password_user = $_POST['password'];
     $jenis_kelamin = $_POST['jenis_kelamin'];
     $no_telp = $_POST['no_telp'];
@@ -13,10 +14,7 @@
     
     move_uploaded_file($file_tmp, '../assets/images/' . $foto_user);
     
-    mysqli_query(
-        $connection,
-        "INSERT INTO `user` (`nama_user`, `username`, `password`, `jenis_kelamin`, `no_telp`, `alamat`, `role`, `foto_user`)
-        VALUES ('$nama_user', '$username_user', '$password_user', '$jenis_kelamin', '$no_telp', '$alamat', '$role', '$foto_user' ) ");
+    mysqli_query($connection, "UPDATE user SET nama_user = '$nama_user', username = '$username_user', password = '$password_user', jenis_kelamin = '$jenis_kelamin', 
+    no_telp = '$no_telp', alamat = '$alamat', role = '$role', foto_user = '$foto_user' WHERE id_user = '$id' ");
     
     header("location:../crud_user.php");
-    ?>

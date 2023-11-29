@@ -113,7 +113,7 @@ $users = mysqli_query($connection, "SELECT * FROM user");
                 ?>
                     <div class="col-md-4">
                         <div class="product-item">
-                            <img src="assets/images/team_01.jpg" alt="">
+                            <img src="assets/images/<?php echo $user['foto_user'] ?> " alt="">
                             <div class="down-content">
                                 <h4 class="text-center mb-4 text-black"> <?php echo $user['nama_user'] ?> - <?php echo $user['role'] ?> </h4>
                                 <table align="center" style="font-size: 0.9rem;" class="table">
@@ -139,8 +139,8 @@ $users = mysqli_query($connection, "SELECT * FROM user");
                                     </tr>
                                 </table>
                                 <div class="product-action d-flex justify-content-around">
-                                    <a class="btn btn-warning" href="edit_user.php">EDIT</a>
-                                    <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
+                                    <a class="btn btn-warning" href="edit_user.php?id=<?php echo $user["id_user"] ?>">EDIT</a>
+                                    <a class="btn btn-danger" href="backend/proses_delete_user.php?id=<?php echo $user["id_user"] ?>" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
                                 </div>
                             </div>
                         </div>
