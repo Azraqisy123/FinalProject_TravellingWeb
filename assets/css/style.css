@@ -1223,3 +1223,23 @@ footer .inner-content p a {
 	transform: translate3d(0px, -5px, 0px);
 	color: #316ce8;
 }
+
+#scroll-btn {
+	display: none;
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	z-index: 99;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: #f33f3f;
+	color: white;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 20px;
+}
+
+#scroll-btn:hover {
+	background-color: #555;
+}
