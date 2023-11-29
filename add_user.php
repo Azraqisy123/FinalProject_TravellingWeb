@@ -95,31 +95,31 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="/backend/proses_add_user.php" method="post" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Nama User</label>
-                                <input type="text" class="form-control" name="">
+                                <input type="text" class="form-control" name="nama_user">
                             </div>
                             <div class="form-group">
                                 <label>username</label>
-                                <input type="text" class="form-control" name="">
+                                <input type="text" class="form-control" name="username">
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="text" class="form-control" name="">
+                                <input type="text" class="form-control" name="password">
                             </div>
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>
                                 <div class="d-flex">
                                     <div class="form-check ms-3">
-                                        <input class="form-check-input" type="radio" name="sex" value="Pria" checked>
+                                        <input class="form-check-input" type="radio" name="jenis_kelamin" value="PRIA" checked>
                                         <label class="form-check-label">
                                             Pria
                                         </label>
                                     </div>
                                     <div class="form-check ms-5">
-                                        <input class="form-check-input" type="radio" name="sex" value="Wanita">
+                                        <input class="form-check-input" type="radio" name="jenis_kelamin" value="WANITA">
                                         <label class="form-check-label">
                                             Wanita
                                         </label>
@@ -128,22 +128,22 @@
                             </div>
                             <div class="form-group">
                                 <label>No Telp</label>
-                                <input type="number" class="form-control" name="">
+                                <input type="number" class="form-control" name="no_telp">
                             </div>
                             <div class="form-group">
                                 <label>Alamat</label>
-                                <input type="text" class="form-control" name="">
+                                <input type="text" class="form-control" name="alamat">
                             </div>
                             <div class="form-group">
                                 <label>Role</label>
-                                <select class="form-control" name="storage">
-                                    <option value="">ADMIN</option>
-                                    <option value="">USER</option>
+                                <select class="form-control" name="role">
+                                    <option value="ADMIN">ADMIN</option>
+                                    <option value="USER">USER</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Foto User</label>
-                                <input class="form-control" type="file" name="picture">
+                                <input class="form-control" type="file" name="foto_user">
                             </div>
                         </div>
                         <!-- /.card-body -->

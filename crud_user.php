@@ -1,3 +1,8 @@
+<?php
+include "connection.php";
+$users = mysqli_query($connection, "SELECT * FROM user");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -102,215 +107,46 @@
         <div class="container">
             <a class="btn btn-primary mb-4" href="add_user.php">New Data</a>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <img src="assets/images/team_01.jpg" alt="">
-                        <div class="down-content">
-                            <h4 class="text-center mb-4 text-black">Limelight Lodge - ADMIN</h4>
-                            <table align="center" style="font-size: 0.9rem;" class="table">
-                                <tr>
-                                    <td>Username</td>
-                                    <td>admin</td>
-                                </tr>
-                                <tr>
-                                    <td>Password</td>
-                                    <td>admin</td>
-                                </tr>
-                                <tr>
-                                    <td>Jenis Kelamin</td>
-                                    <td>Pria</td>
-                                </tr>
-                                <tr>
-                                    <td>No telp</td>
-                                    <td>081213161669 </td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td>Bandung</td>
-                                </tr>
-                            </table>
-                            <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="edit_user.php">EDIT</a>
-                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
+                <!-- Looping Data from Database Start -->
+                <?php
+                foreach ($users as $user) {
+                ?>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="assets/images/team_01.jpg" alt="">
+                            <div class="down-content">
+                                <h4 class="text-center mb-4 text-black"> <?php echo $user['nama_user'] ?> - <?php echo $user['role'] ?> </h4>
+                                <table align="center" style="font-size: 0.9rem;" class="table">
+                                    <tr>
+                                        <td>Username</td>
+                                        <td> <?php echo $user['username'] ?> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Password</td>
+                                        <td> <?php echo $user['password'] ?> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jenis Kelamin</td>
+                                        <td> <?php echo $user['jenis_kelamin'] ?> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>No telp</td>
+                                        <td> <?php echo $user['no_telp'] ?> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alamat</td>
+                                        <td> <?php echo $user['alamat'] ?> </td>
+                                    </tr>
+                                </table>
+                                <div class="product-action d-flex justify-content-around">
+                                    <a class="btn btn-warning" href="edit_user.php">EDIT</a>
+                                    <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <img src="assets/images/team_01.jpg" alt="">
-                        <div class="down-content">
-                            <h4 class="text-center mb-4 text-black">Limelight Lodge - USER</h4>
-                            <table align="center" style="font-size: 0.9rem;" class="table">
-                                <tr>
-                                    <td>Username</td>
-                                    <td>user</td>
-                                </tr>
-                                <tr>
-                                    <td>Password</td>
-                                    <td>user</td>
-                                </tr>
-                                <tr>
-                                    <td>Jenis Kelamin</td>
-                                    <td>Pria</td>
-                                </tr>
-                                <tr>
-                                    <td>No telp</td>
-                                    <td>081213161669 </td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td>Bandung</td>
-                                </tr>
-                            </table>
-                            <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="edit_user.php">EDIT</a>
-                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <img src="assets/images/team_01.jpg" alt="">
-                        <div class="down-content">
-                            <h4 class="text-center mb-4 text-black">Limelight Lodge - USER</h4>
-                            <table align="center" style="font-size: 0.9rem;" class="table">
-                                <tr>
-                                    <td>Username</td>
-                                    <td>user</td>
-                                </tr>
-                                <tr>
-                                    <td>Password</td>
-                                    <td>user</td>
-                                </tr>
-                                <tr>
-                                    <td>Jenis Kelamin</td>
-                                    <td>Pria</td>
-                                </tr>
-                                <tr>
-                                    <td>No telp</td>
-                                    <td>081213161669 </td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td>Bandung</td>
-                                </tr>
-                            </table>
-                            <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="edit_user.php">EDIT</a>
-                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <img src="assets/images/team_01.jpg" alt="">
-                        <div class="down-content">
-                            <h4 class="text-center mb-4 text-black">Limelight Lodge - USER</h4>
-                            <table align="center" style="font-size: 0.9rem;" class="table">
-                                <tr>
-                                    <td>Username</td>
-                                    <td>user</td>
-                                </tr>
-                                <tr>
-                                    <td>Password</td>
-                                    <td>user</td>
-                                </tr>
-                                <tr>
-                                    <td>Jenis Kelamin</td>
-                                    <td>Pria</td>
-                                </tr>
-                                <tr>
-                                    <td>No telp</td>
-                                    <td>081213161669 </td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td>Bandung</td>
-                                </tr>
-                            </table>
-                            <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="edit_user.php">EDIT</a>
-                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <img src="assets/images/team_01.jpg" alt="">
-                        <div class="down-content">
-                            <h4 class="text-center mb-4 text-black">Limelight Lodge - USER</h4>
-                            <table align="center" style="font-size: 0.9rem;" class="table">
-                                <tr>
-                                    <td>Username</td>
-                                    <td>user</td>
-                                </tr>
-                                <tr>
-                                    <td>Password</td>
-                                    <td>user</td>
-                                </tr>
-                                <tr>
-                                    <td>Jenis Kelamin</td>
-                                    <td>Pria</td>
-                                </tr>
-                                <tr>
-                                    <td>No telp</td>
-                                    <td>081213161669 </td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td>Bandung</td>
-                                </tr>
-                            </table>
-                            <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="edit_user.php">EDIT</a>
-                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <img src="assets/images/team_01.jpg" alt="">
-                        <div class="down-content">
-                            <h4 class="text-center mb-4 text-black">Limelight Lodge - USER</h4>
-                            <table align="center" style="font-size: 0.9rem;" class="table">
-                                <tr>
-                                    <td>Username</td>
-                                    <td>user</td>
-                                </tr>
-                                <tr>
-                                    <td>Password</td>
-                                    <td>user</td>
-                                </tr>
-                                <tr>
-                                    <td>Jenis Kelamin</td>
-                                    <td>Pria</td>
-                                </tr>
-                                <tr>
-                                    <td>No telp</td>
-                                    <td>081213161669 </td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td>Bandung</td>
-                                </tr>
-                            </table>
-                            <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="edit_user.php">EDIT</a>
-                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
+                <!-- Looping Data from Database End -->
 
                 <!-- <div class="col-md-12">
                     <ul class="pages">
