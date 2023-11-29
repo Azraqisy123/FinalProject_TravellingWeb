@@ -29,79 +29,79 @@
                     <!-- begin :: Name input -->
                     <div class="form-outline col-6">
                         <label class="form-label" for="name">Full Name</label>
-                        <input type="text" id="name" class="form-control" />
+                        <input type="text" id="name" name="name" class="form-control" />
                     </div>
                     <!-- end :: Name input -->
 
                     <!-- begin :: username input -->
                     <div class="form-outline col-6">
                         <label class="form-label" for="username">Username</label>
-                        <input type="text" id="username" class="form-control" />
+                        <input type="text" id="username" name="username" class="form-control" />
                     </div>
                     <!-- end :: username input -->
                 </div>
 
                 <!-- begin :: gender -->
-                <label for="gender" class="form-label">Gender</label>
-                <div class="row mb-4">
-
-                    <div class="col-6">
-                        <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" value="0" checked>
-                        <label class="btn btn-outline-primary" for="male">Male</label>
+                <div class="mb-4">
+                    <label for="gender" class="form-label">Gender</label> <br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="0" checked>
+                        <label class="form-check-label" for="male">Male</label>
                     </div>
-                    <div class="col-6">
-                        <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" value="1">
-                        <label class="btn btn-outline-primary" for="female">Female</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="1">
+                        <label class="form-check-label" for="female">Female</label>
                     </div>
                 </div>
                 <!-- end :: gender -->
 
+                <!-- begin :: Email no_telp input -->
                 <div class="row mb-4">
-                    <!-- begin :: Email input -->
                     <div class="form-outline col-6">
                         <label class="form-label" for="email">Email address</label>
                         <input type="email" id="email" class="form-control" />
                     </div>
-                    <!-- end :: Email input -->
 
-                    <!-- begin :: no_telp input -->
                     <div class="form-outline col-6">
                         <label class="form-label" for="no_telp">Phone Number</label>
                         <input type="text" id="no_telp" class="form-control" />
                     </div>
-                    <!-- end :: no_telp input -->
                 </div>
+                <!-- end :: Email no_telp input -->
 
-                <!-- alamat input -->
+                <!-- begin :: alamat input -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="alamat">Address</label>
                     <textarea id="alamat" class="form-control"></textarea>
                 </div>
+                <!-- end :: alamat input -->
 
-                <!-- username input -->
+                <!-- begin :: username input -->
                 <div class="form-outline mb-4">
                     <label class="form-label" for="username">Username</label>
                     <input type="text" id="username" class="form-control" />
                 </div>
+                <!-- end :: username input -->
 
+                <!-- begin :: Password & Password confirm input -->
                 <div class="row mb-4">
-                    <!-- Password input -->
                     <div class="form-outline col-6">
                         <label class="form-label" for="password">Password</label>
                         <input type="password" id="password" class="form-control" />
                     </div>
 
-                    <!-- Password confirm input -->
                     <div class="form-outline col-6">
                         <label class="form-label" for="confirm_pw">Confirm Password</label>
                         <input type="password" id="confirm_pw" class="form-control" />
                     </div>
                 </div>
+                <!-- end :: Password & Password confirm input -->
 
-                <!-- Submit button -->
+                <!-- begin :: Submit button -->
                 <button type="button" class="btn btn-primary btn-block mb-3">Register</button>
+                <!-- end :: Submit button -->
 
-                <!-- Register buttons -->
+                <!-- begin :: Register buttons -->
                 <div class="text-center mb-5">
                     <p>Have any account <a href="login.php">Login</a></p>
                     <p class="mb-3">or sign up with:</p>
@@ -121,6 +121,7 @@
                         <i class="fab fa-github"></i>
                     </button>
                 </div>
+                <!-- end :: Register buttons -->
             </form>
         </div>
     </div>
