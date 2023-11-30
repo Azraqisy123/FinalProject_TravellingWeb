@@ -111,7 +111,7 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata
       <div class="row row-cols-xl-3 row-cols-md-4 row-cols-sm-6 g-4 text-center justify-content-center mx-5 my-3">
         <a href="#all" style="text-decoration: none; color:black;" class="col-xl-3 col-md-4 col-sm-6">
           <div class="card shadow py-3">
-            <img src="assets/images/categories-all.jpg" class="card-img-top mx-auto" alt="..." style="width:100%">
+            <img src="assets/images/kategori/categories-all.jpg" class="card-img-top mx-auto" alt="..." style="width:100%">
             <div class="card-body">
               <h5 class="card-title">All</h5>
             </div>
@@ -120,7 +120,7 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata
         <?php foreach ($kategori as $key => $value) { ?>
           <a href="#<?php echo $value['id_kategori'] ?>" style="text-decoration: none; color:black;" class="col-xl-3 col-md-4 col-sm-6">
             <div class="card shadow py-3">
-              <img src="assets/images/<?php echo $value['foto_kategori'] ?>" class="card-img-top mx-auto" alt="..." style="width:100%">
+              <img src="assets/images/kategori/<?php echo $value['foto_kategori'] ?>" class="card-img-top mx-auto" alt="..." style="width:100%">
               <div class="card-body">
                 <h5 class="card-title">Wisata <?php echo $value['nama_kategori'] ?></h5>
               </div>

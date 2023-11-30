@@ -26,6 +26,17 @@
 
 </head>
 
+<?php
+include "connection.php";
+$id = $_GET["id"];
+
+$categorie = mysqli_query($connection, "SELECT * FROM kategori WHERE id_kategori = '$id' ");
+
+foreach ($categorie as $kategori) {
+    $nama_kategori = $kategori['nama_kategori'];
+}
+?>
+
 <body>
 
     <!-- ***** Preloader Start ***** -->
@@ -95,15 +106,15 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="backend/proses_edit_categories.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Nama Kategori</label>
-                                <input type="text" class="form-control" name="">
+                                <input type="text" class="form-control" name="nama_kategori" value="<?php echo $kategori['nama_kategori'] ?>">
                             </div>
                             <div class="form-group">
                                 <label>Foto</label>
-                                <input class="form-control" type="file" name="">
+                                <input class="form-control" type="file" name="foto_kategori">
                             </div>
                         </div>
                         <!-- /.card-body -->

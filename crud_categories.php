@@ -1,3 +1,9 @@
+<?php
+include "connection.php";
+$categorie = mysqli_query($connection, "SELECT * FROM kategori");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -102,44 +108,25 @@
         <div class="container">
             <a class="btn btn-primary mb-4" href="add_categories.php">New Data</a>
             <div class="row">
+                <!-- Looping Data from Database Start -->
+                <?php
+                foreach ($categorie as $kategori) {
+                ?>
                 <div class="col-md-4">
                     <div class="product-item">
-                        <img src="assets/images/categories-bawah-laut.jpg" alt="">
+                        <img src="assets/images/kategori/<?php echo $kategori['foto_kategori'] ?>" alt="">
                         <div class="down-content">
-                            <h4 class="text-center text-black">Bawah laut</h4>
+                            <h4 class="text-center text-black"><?php echo $kategori['nama_kategori'] ?></h4>
                             <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="edit_categories.php">EDIT</a>
-                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
+                                <a class="btn btn-warning" href="edit_categories.php?id=<?php echo $kategori["id_kategori"] ?>">EDIT</a>
+                                <a class="btn btn-danger" href="backend/proses_delete_categories.php?id=<?php echo $kategori["id_kategori"] ?>" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                <?php } ?>
+                <!-- Looping Data from Database End -->
 
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <img src="assets/images/categories-budaya.jpg" alt="">
-                        <div class="down-content">
-                            <h4 class="text-center text-black">Budaya</h4>
-                            <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="edit_categories.php">EDIT</a>
-                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <img src="assets/images/categories-alam.jpg" alt="">
-                        <div class="down-content">
-                            <h4 class="text-center text-black">Alam</h4>
-                            <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="edit_categories.php">EDIT</a>
-                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- <div class="col-md-12">
                     <ul class="pages">

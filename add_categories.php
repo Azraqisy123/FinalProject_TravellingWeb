@@ -95,15 +95,15 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="backend/proses_add_categories.php" method="post" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Nama Kategori</label>
-                                <input type="text" class="form-control" name="">
+                                <input type="text" class="form-control" name="nama_kategori">
                             </div>
                             <div class="form-group">
                                 <label>Foto</label>
-                                <input class="form-control" type="file" name="">
+                                <input class="form-control" type="file" name="foto_kategori">
                             </div>
                         </div>
                         <!-- /.card-body -->
