@@ -113,7 +113,7 @@ $users = mysqli_query($connection, "SELECT * FROM user");
                 ?>
                     <div class="col-md-4">
                         <div class="product-item">
-                            <img src="assets/images/<?php echo $user['foto_user'] ?> " alt="">
+                            <img src="assets/images/user/<?php echo $user['foto_user'] ?> " alt="">
                             <div class="down-content">
                                 <h4 class="text-center mb-4 text-black"> <?php echo $user['nama_user'] ?> - <?php echo $user['role'] ?> </h4>
                                 <table align="center" style="font-size: 0.9rem;" class="table">
