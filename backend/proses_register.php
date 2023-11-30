@@ -11,7 +11,7 @@ $jenis_kelamin = $_POST['jenis_kelamin'];
 $no_telp = $_POST['no_telp'];
 $alamat = $_POST['alamat'];
 $role = 'USER';
-$foto_user = '-';
+$foto_user = 'default.jpg';
 
 //validasi jika password & password_confirmation sama
 if ($password_user != $confirm_pw) {
