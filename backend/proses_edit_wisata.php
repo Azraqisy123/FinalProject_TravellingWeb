@@ -21,7 +21,10 @@
     $foto_4 = $_FILES['foto_4']['name'];
     $file_tmp_4 = $_FILES['foto_4']['tmp_name'];
     
-    move_uploaded_file($file_tmp_1,$file_tmp_2,$file_tmp_3,$file_tmp_4, '../assets/images/wisata/' . $foto_1,$foto_2,$foto_3,$foto_4);
+    move_uploaded_file($file_tmp_1, '../assets/images/wisata/' . $foto_1);
+    move_uploaded_file($file_tmp_2, '../assets/images/wisata/' . $foto_2);
+    move_uploaded_file($file_tmp_3, '../assets/images/wisata/' . $foto_3);
+    move_uploaded_file($file_tmp_4, '../assets/images/wisata/' . $foto_4);
     
     mysqli_query($connection, "UPDATE wisata SET nama_tempat = '$nama_tempat', id_kategori = '$id_kategori', lokasi = '$lokasi', fasilitas = '$fasilitas', 
     htm = '$htm', deskripsi = '$deskripsi', foto_1 = '$foto_1', foto_2 = '$foto_2', foto_3 = '$foto_3', foto_4 = '$foto_4' WHERE id_wisata = '$id' ");
