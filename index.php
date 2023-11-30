@@ -141,7 +141,7 @@
                 <h4>Banda Neira</h4>
               </a>
 
-              <h6>Rp3.500.000 - Rp4.900-000</h6>
+              <h6>Rp3.500.000 - Rp4.900.000</h6>
 
               <p>Banda Neira merupakan gugusan Kepulauan Banda yang termasuk dalam provinsi Maluku. Pulau ini tepatnya terletak di sebelah tenggara Ambon dan berjarak sekitar 36 km dari bandara Pattimura.</p>
 
