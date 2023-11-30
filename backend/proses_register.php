@@ -46,13 +46,13 @@ if ($row != null) {
     header("location:../register.php");
 } else {
     //hash password
-    $password = password_hash($password_user, PASSWORD_DEFAULT);
+    //$password = password_hash($password_user, PASSWORD_DEFAULT);
     //username unik. simpan di database.
 
     if ($jenis_kelamin == 0) {
-        $result = mysqli_query($connection, "INSERT INTO `user` (`nama_user`, `username`, `password`, `jenis_kelamin`, `email_user`, `no_telp`, `alamat`, `role`, `foto_user`) VALUES ('$nama_user', '$username_user', '$password', 'Pria', '$email', '$no_telp', '$alamat', '$role', '$foto_user')");
+        $result = mysqli_query($connection, "INSERT INTO `user` (`nama_user`, `username`, `password`, `jenis_kelamin`, `email_user`, `no_telp`, `alamat`, `role`, `foto_user`) VALUES ('$nama_user', '$username_user', '$password_user', 'Pria', '$email', '$no_telp', '$alamat', '$role', '$foto_user')");
     } else if ($jenis_kelamin == 1) {
-        $result = mysqli_query($connection, "INSERT INTO `user` (`nama_user`, `username`, `password`, `jenis_kelamin`, `email_user`, `no_telp`, `alamat`, `role`, `foto_user`) VALUES ('$nama_user', '$username_user', '$password', 'Wanita', '$email', '$no_telp', '$alamat', '$role', '$foto_user')");
+        $result = mysqli_query($connection, "INSERT INTO `user` (`nama_user`, `username`, `password`, `jenis_kelamin`, `email_user`, `no_telp`, `alamat`, `role`, `foto_user`) VALUES ('$nama_user', '$username_user', '$password_user', 'Wanita', '$email', '$no_telp', '$alamat', '$role', '$foto_user')");
     }
 
     var_dump($result);
