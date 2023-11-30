@@ -38,6 +38,7 @@ foreach ($users as $user) {
     $username_user = $user['username'];
     $password_user = $user['password'];
     $jenis_kelamin = $user['jenis_kelamin'];
+    $email_user = $user['email_user'];
     $no_telp = $user['no_telp'];
     $alamat = $user['alamat'];
     $role = $user['role'];
@@ -159,6 +160,10 @@ foreach ($users as $user) {
                                         </label>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" class="form-control" name="email_user" value="<?php echo $email_user; ?>">
                             </div>
                             <div class="form-group">
                                 <label>No Telp</label>

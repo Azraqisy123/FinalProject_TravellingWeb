@@ -127,6 +127,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" class="form-control" name="email_user">
+                            </div>
+                            <div class="form-group">
                                 <label>No Telp</label>
                                 <input type="number" class="form-control" name="no_telp">
                             </div>

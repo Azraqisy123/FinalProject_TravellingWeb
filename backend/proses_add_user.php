@@ -5,6 +5,7 @@
     $username_user = $_POST['username'];    
     $password_user = $_POST['password'];
     $jenis_kelamin = $_POST['jenis_kelamin'];
+    $email_user = $_POST['email_user'];
     $no_telp = $_POST['no_telp'];
     $alamat = $_POST['alamat'];
     $role = $_POST['role'];
@@ -15,8 +16,8 @@
     
     mysqli_query(
         $connection,
-        "INSERT INTO `user` (`nama_user`, `username`, `password`, `jenis_kelamin`, `no_telp`, `alamat`, `role`, `foto_user`)
-        VALUES ('$nama_user', '$username_user', '$password_user', '$jenis_kelamin', '$no_telp', '$alamat', '$role', '$foto_user' ) ");
+        "INSERT INTO `user` (`nama_user`, `username`, `password`, `jenis_kelamin`, `email_user`, `no_telp`, `alamat`, `role`, `foto_user`)
+        VALUES ('$nama_user', '$username_user', '$password_user', '$jenis_kelamin', '$email_user', '$no_telp', '$alamat', '$role', '$foto_user' ) ");
     
     header("location:../crud_user.php");
     ?>

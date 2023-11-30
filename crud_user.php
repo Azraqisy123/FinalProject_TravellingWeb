@@ -116,7 +116,7 @@ $users = mysqli_query($connection, "SELECT * FROM user");
                             <img src="assets/images/user/<?php echo $user['foto_user'] ?> " alt="">
                             <div class="down-content">
                                 <h4 class="text-center mb-4 text-black"> <?php echo $user['nama_user'] ?> - <?php echo $user['role'] ?> </h4>
-                                <table align="center" style="font-size: 0.9rem;" class="table">
+                                <table align="center" style="font-size: 0.82rem;" class="table">
                                     <tr>
                                         <td>Username</td>
                                         <td> <?php echo $user['username'] ?> </td>
@@ -128,6 +128,10 @@ $users = mysqli_query($connection, "SELECT * FROM user");
                                     <tr>
                                         <td>Jenis Kelamin</td>
                                         <td> <?php echo $user['jenis_kelamin'] ?> </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td> <?php echo $user['email_user'] ?> </td>
                                     </tr>
                                     <tr>
                                         <td>No telp</td>
