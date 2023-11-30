@@ -1,3 +1,14 @@
+<?php
+include("connection.php");
+
+$user = mysqli_query($connection, "SELECT * FROM user");
+$wisata = mysqli_query($connection, "SELECT * FROM wisata");
+$kategori = mysqli_query($connection, "SELECT * FROM kategori");
+$komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata.nama_tempat, kategori.id_kategori, kategori.nama_kategori FROM komentar JOIN user ON user.id_user = komentar.id_user JOIN wisata ON komentar.id_wisata = wisata.id_wisata JOIN kategorI ON wisata.id_kategori = kategori.id_kategori");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,30 +117,16 @@
             </div>
           </div>
         </a>
-        <a href="#alam" style="text-decoration: none; color:black;" class="col-xl-3 col-md-4 col-sm-6">
-          <div class="card shadow py-3">
-            <img src="assets/images/categories-alam.jpg" class="card-img-top mx-auto" alt="..." style="width:100%">
-            <div class="card-body">
-              <h5 class="card-title">Alam</h5>
+        <?php foreach ($kategori as $key => $value) { ?>
+          <a href="#<?php echo $value['id_kategori'] ?>" style="text-decoration: none; color:black;" class="col-xl-3 col-md-4 col-sm-6">
+            <div class="card shadow py-3">
+              <img src="assets/images/<?php echo $value['foto_kategori'] ?>" class="card-img-top mx-auto" alt="..." style="width:100%">
+              <div class="card-body">
+                <h5 class="card-title">Wisata <?php echo $value['nama_kategori'] ?></h5>
+              </div>
             </div>
-          </div>
-        </a>
-        <a href="#bawah-laut" style="text-decoration: none; color:black;" class="col-xl-3 col-md-4 col-sm-6">
-          <div class="card shadow py-3">
-            <img src="assets/images/categories-bawah-laut.jpg" class="card-img-top mx-auto" alt="..." style="width:100%">
-            <div class="card-body">
-              <h5 class="card-title">Bawah Laut</h5>
-            </div>
-          </div>
-        </a>
-        <a href="#budaya" style="text-decoration: none; color:black;" class="col-xl-3 col-md-4 col-sm-6">
-          <div class="card shadow py-3">
-            <img src="assets/images/categories-budaya.jpg" class="card-img-top mx-auto" alt="..." style="width:100%">
-            <div class="card-body">
-              <h5 class="card-title">Budaya</h5>
-            </div>
-          </div>
-        </a>
+          </a>
+        <?php } ?>
       </div>
     </div>
   </section>
@@ -140,22 +137,26 @@
     <div class="text-center mx-5 mb-5">
       <h1 class="">Testimoni Semua Wisata</h1>
     </div>
-    <div class="container overflow-auto" style="height: 600px;">
+    <div class="container overflow-auto" style="height: 750px;">
       <div class="row row-cols-md-4 justify-content-center">
-        <?php for ($i = 0; $i < 7; $i++) { ?>
+        <?php foreach ($komentar as $key => $value) { ?>
           <div class="col-md-4">
             <div class="service-item">
               <div class="icon">
                 <i class="fa fa-user"></i>
               </div>
               <div class="down-content">
-                <h4>Nama Member</h4>
-                <p class="n-m" style="font-weight: 200; font-size: small;">27 November 2023</p>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                <h4><?php echo $value['nama_user'] ?></h4>
+                <p class="n-m" style="font-weight: 200; font-size: small;"><?php echo date('d, M Y', strtotime($value['tgl_komentar'])) ?></p>
+                <p class="n-m"><em>"<?php if (strlen($value['komentar']) < 100) {
+                                      echo substr($value['komentar'], 0, 100);
+                                    } else {
+                                      echo substr($value['komentar'], 0, 100) . '...';
+                                    } ?>"</em></p>
                 <br>
                 <div class="row">
-                  <div class="col">Nama Tempat</div>
-                  <div class="col">Kategori</div>
+                  <div class="col"><?php echo $value['nama_tempat'] ?></div>
+                  <div class="col"><?php echo $value['nama_kategori'] ?></div>
                 </div>
               </div>
             </div>
@@ -166,99 +167,46 @@
   </section>
   <!-- end:: all wisata -->
 
-  <!-- begin:: alam -->
-  <section id="alam" class="services section-background">
-    <div class="text-center mx-5 mb-5">
-      <h1 class="">Testimoni Wisata Alam</h1>
-    </div>
-    <div class="container overflow-auto" style="height: 600px;">
-      <div class="row row-cols-md-4 justify-content-center">
-        <?php for ($i = 0; $i < 7; $i++) { ?>
-          <div class="col-md-4">
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>Nama Member</h4>
-                <p class="n-m" style="font-weight: 200; font-size: small;">27 November 2023</p>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
-                <br>
-                <div class="row">
-                  <div class="col">Nama Tempat</div>
-                  <div class="col">Kategori</div>
+  <!-- begin:: testimoni per kategori -->
+  <?php foreach ($kategori as $key => $value) {
+    $id_kategori = $value['id_kategori']; ?>
+    <section id="<?php echo $id_kategori ?>" class="services section-background">
+      <div class="text-center mx-5 mb-5">
+        <h1 class="">Testimoni Wisata <?php echo $value['nama_kategori'] ?></h1>
+      </div>
+      <div class="container overflow-auto" style="height: 750px;">
+        <div class="row row-cols-md-4 justify-content-center">
+          <?php foreach ($komentar as $key => $value) {
+            if ($value['id_kategori'] == $id_kategori) { ?>
+              <div class="col-md-4">
+                <div class="service-item">
+                  <div class="icon">
+                    <i class="fa fa-user"></i>
+                  </div>
+                  <div class="down-content">
+                    <h4><?php echo $value['nama_user'] ?></h4>
+                    <p class="n-m" style="font-weight: 200; font-size: small;"><?php echo date('d, M Y', strtotime($value['tgl_komentar'])) ?></p>
+                    <p class="n-m"><em>"<?php if (strlen($value['komentar']) < 100) {
+                                          echo substr($value['komentar'], 0, 100);
+                                        } else {
+                                          echo substr($value['komentar'], 0, 100) . '...';
+                                        } ?>"</em></p>
+                    <br>
+                    <div class="row">
+                      <div class="col"><?php echo $value['nama_tempat'] ?></div>
+                      <div class="col"><?php echo $value['nama_kategori'] ?></div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        <?php } ?>
+            <?php } ?>
+          <?php } ?>
+        </div>
       </div>
-    </div>
-  </section>
-  <!-- end:: alam -->
+    </section>
+  <?php } ?>
+  <!-- end:: testimoni per kategori -->
 
-  <!-- begin:: bawah-laut -->
-  <section id="bawah-laut" class="services section-background">
-    <div class="text-center mx-5 mb-5">
-      <h1 class="">Testimoni Wisata Bawah Laut</h1>
-    </div>
-    <div class="container overflow-auto" style="height: 600px;">
-      <div class="row row-cols-md-4 justify-content-center">
-        <?php for ($i = 0; $i < 7; $i++) { ?>
-          <div class="col-md-4">
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>Nama Member</h4>
-                <p class="n-m" style="font-weight: 200; font-size: medium;">27 November 2023</p>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
-                <br>
-                <div class="row">
-                  <div class="col">Nama Tempat</div>
-                  <div class="col">Kategori</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        <?php } ?>
-      </div>
-    </div>
-  </section>
-  <!-- end:: bawah-laut -->
-
-  <!-- begin:: budaya -->
-  <section id="budaya" class="services section-background">
-    <div class="text-center mx-5 mb-5">
-      <h1 class="">Testimoni Wisata Budaya</h1>
-    </div>
-    <div class="container overflow-auto" style="height: 600px;">
-      <div class="row row-cols-md-4 justify-content-center">
-        <?php for ($i = 0; $i < 7; $i++) { ?>
-          <div class="col-md-4">
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>Nama Member</h4>
-                <p class="n-m" style="font-weight: 200; font-size: medium;">27 November 2023</p>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
-                <br>
-                <div class="row">
-                  <div class="col">Nama Tempat</div>
-                  <div class="col">Kategori</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        <?php } ?>
-      </div>
-    </div>
-  </section>
-
-  <!-- end:: budaya -->
   <footer>
     <div class="container">
       <div class="row">
