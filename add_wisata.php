@@ -1,3 +1,7 @@
+<?php
+include "connection.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,8 +77,8 @@
 
                             <div class="dropdown-menu">
                                 <a class="dropdown-item active" href="crud_wisata.php">CRUD WISATA</a>
-                                <a class="dropdown-item" href="testimonials.php">CRUD USER</a>
-                                <a class="dropdown-item" href="terms.php">CRUD CATEGORIES</a>
+                                <a class="dropdown-item" href="crud_user.php">CRUD USER</a>
+                                <a class="dropdown-item" href="crud_categories.php">CRUD CATEGORIES</a>
                             </div>
                         </li>
                     </ul>
@@ -95,39 +99,46 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form action="backend/proses_add_product.php" method="post" enctype="multipart/form-data">
+                    <form action="backend/proses_add_wisata.php" method="post" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Nama Tempat</label>
-                                <input type="text" class="form-control" name="nama_produk">
+                                <input type="text" class="form-control" name="nama_tempat">
                             </div>
                             <div class="form-group">
                                 <label>Kategori</label>
-                                <select class="form-control" name="storage">
-                                    <option value="">Bawah Laut</option>
-                                    <option value="">Alam</option>
-                                    <option value="">Budaya</option>
+                                <select class="form-control" name="id_kategori">
+                                    <?php $categorys = mysqli_query($connection, "SELECT * FROM kategori");
+                                    foreach ($categorys as $category) { ?>
+                                    <option value="<?php echo $category['id_kategori'] ?>" ><?php echo $category['nama_kategori'] ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Lokasi</label>
-                                <input type="text" class="form-control" name="price">
+                                <input type="text" class="form-control" name="lokasi">
                             </div>
                             <div class="form-group">
                                 <label>Fasilitas</label>
-                                <textarea class="form-control" rows="5" name="description"></textarea>
+                                <textarea class="form-control" rows="3" name="fasilitas"></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Harga Tiket Masuk</label>
-                                <input type="text" class="form-control" name="price">
+                                <input type="text" class="form-control" name="htm">
                             </div>
                             <div class="form-group">
                                 <label>Deskripsi</label>
-                                <textarea class="form-control" rows="5" name="description"></textarea>
+                                <textarea class="form-control" rows="5" name="deskripsi"></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Foto Tempat</label>
-                                <input class="form-control" type="file" name="picture">
+                                <input class="form-control" type="file" name="foto_1">
+                                <label></label>
+                                <input class="form-control" type="file" name="foto_2">
+                                <label></label>
+                                <input class="form-control" type="file" name="foto_3">
+                                <label></label>
+                                <input class="form-control" type="file" name="foto_4">
                             </div>
                         </div>
                         <!-- /.card-body -->

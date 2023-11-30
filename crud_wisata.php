@@ -123,8 +123,8 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
                                 <strong title="Available"><i class="fa fa-calendar"></i> Everyday</strong>
                             </small>
                             <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="edit_wisata.php">EDIT</a>
-                                <a class="btn btn-danger" href="" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
+                                <a class="btn btn-warning" href="edit_wisata.php?id=<?php echo $travel["id_wisata"] ?>">EDIT</a>
+                                <a class="btn btn-danger" href="backend/proses_delete_wisata.php?id=<?php echo $travel["id_wisata"] ?>" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
                             </div>
                         </div>
                     </div>

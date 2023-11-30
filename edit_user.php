@@ -42,7 +42,6 @@ foreach ($users as $user) {
     $no_telp = $user['no_telp'];
     $alamat = $user['alamat'];
     $role = $user['role'];
-    $foto_user = $user['foto_user'];
 }
 ?>
 <!-- Load DAta From Database End -->
@@ -95,7 +94,7 @@ foreach ($users as $user) {
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="crud_wisata.php">CRUD WISATA</a>
                                 <a class="dropdown-item active" href="crud_user.php">CRUD USER</a>
-                                <a class="dropdown-item" href="terms.php">CRUD CATEGORIES</a>
+                                <a class="dropdown-item" href="crud_categories.php">CRUD CATEGORIES</a>
                             </div>
                         </li>
                     </ul>
@@ -182,7 +181,7 @@ foreach ($users as $user) {
                             </div>
                             <div class="form-group">
                                 <label>Foto User</label>
-                                <input class="form-control" type="file" name="foto_user" value="<?php echo $foto_user; ?>">
+                                <input class="form-control" type="file" name="foto_user">
                             </div>
                         </div>
                         <!-- /.card-body -->
