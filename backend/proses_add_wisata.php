@@ -21,7 +21,7 @@
     $file_tmp_4 = $_FILES['foto_4']['tmp_name'];
 
     
-    move_uploaded_file($file_tmp,$file_tmp_2,$file_tmp_3,$file_tmp_4, '../assets/images/wisata/' . $foto_1,$foto_2,$foto_3,$foto_4);
+    move_uploaded_file($file_tmp_1,$file_tmp_2,$file_tmp_3,$file_tmp_4, '../assets/images/wisata/' . $foto_1,$foto_2,$foto_3,$foto_4);
 
     
     mysqli_query(
