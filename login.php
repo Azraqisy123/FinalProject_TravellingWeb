@@ -1,4 +1,7 @@
 <html lang="en">
+<?php
+session_start();
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -21,8 +24,18 @@
     <div class="container p-3">
         <div class="container-fluid p-5">
             <div class="mx-auto col-10 col-md-8 col-lg-6">
+                <?php
+                if (isset($_SESSION['message'])) {
+                ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $_SESSION['message'] ?>
+                    </div>
+                <?php
+                }
+                ?>
                 <form class="my-5 py-5 ">
                     <h1 class="mb-3 text-center">Sign In</h1>
+
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <input type="email" id="form2Example1" class="form-control" />
@@ -79,5 +92,9 @@
         </div>
     </div>
 </body>
+
+<?php
+session_destroy();
+?>
 
 </html>
