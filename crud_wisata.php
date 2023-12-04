@@ -103,11 +103,9 @@ if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
                 ?>
                     <div class="col-md-4">
                         <div class="product-item">
-                            <a href="tempat_wisata_detail.php"><img src="assets/images/wisata/<?php echo $travel['foto_1']; ?>" alt=""></a>
+                            <img src="assets/images/wisata/<?php echo $travel['foto_1']; ?>" alt="">
                             <div class="down-content">
-                                <a href="tempat_wisata_detail.php">
-                                    <h4><?php echo $travel['nama_tempat']; ?></h4>
-                                </a>
+                                <h4><?php echo $travel['nama_tempat']; ?></h4>
 
                                 <h6>Rp <?php echo number_format($travel['htm']); ?></h6>
 
