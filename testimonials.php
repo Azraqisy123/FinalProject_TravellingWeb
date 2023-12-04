@@ -1,10 +1,23 @@
 <?php
 include("connection.php");
 
-$user = mysqli_query($connection, "SELECT * FROM user");
-$wisata = mysqli_query($connection, "SELECT * FROM wisata");
 $kategori = mysqli_query($connection, "SELECT * FROM kategori");
-$komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata.nama_tempat, kategori.id_kategori, kategori.nama_kategori FROM komentar JOIN user ON user.id_user = komentar.id_user JOIN wisata ON komentar.id_wisata = wisata.id_wisata JOIN kategorI ON wisata.id_kategori = kategori.id_kategori");
+$komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata.nama_tempat, kategori.id_kategori, kategori.nama_kategori FROM komentar JOIN user ON user.id_user = komentar.id_user JOIN wisata ON komentar.id_wisata = wisata.id_wisata RIGHT JOIN kategorI ON wisata.id_kategori = kategori.id_kategori");
+
+/* foreach ($kategori as $key => $value) {
+  $id_kategori = $value['$id_kategori'];
+  $nama_kategori = $value['$nama_kategori'];
+  $foto_kategori = $value['$foto_kategori'];
+}
+
+foreach ($komentar as $key => $value) {
+  $id_komentar = $value['id_komentar'];
+  $id_user = $value['id_user'];
+  $id_wisata = $value['id_wisata'];
+  $komentar = $value['komentar'];
+  $tgl_komentar = $value['tgl_komentar'];
+} */
+
 
 ?>
 
@@ -68,7 +81,7 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata
               </a>
             </li>
 
-            <li class="nav-item"><a class="nav-link" href="packages.php">Packages</a></li>
+            <li class="nav-item"><a class="nav-link" href="tempat_wisata.php">Tempat Wisata</a></li>
 
             <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
 
@@ -78,7 +91,6 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="about-us.php">About Us</a>
                 <a class="dropdown-item active" href="testimonials.php">Testimonials</a>
-                <a class="dropdown-item" href="terms.php">Terms</a>
               </div>
             </li>
 
@@ -139,29 +151,31 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata
     </div>
     <div class="container overflow-auto" style="height: 750px;">
       <div class="row row-cols-md-4 justify-content-center">
-        <?php foreach ($komentar as $key => $value) { ?>
-          <div class="col-md-4">
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4><?php echo $value['nama_user'] ?></h4>
-                <p class="n-m" style="font-weight: 200; font-size: small;"><?php echo date('d, M Y', strtotime($value['tgl_komentar'])) ?></p>
-                <p class="n-m"><em>"<?php if (strlen($value['komentar']) < 100) {
-                                      echo substr($value['komentar'], 0, 100);
-                                    } else {
-                                      echo substr($value['komentar'], 0, 100) . '...';
-                                    } ?>"</em></p>
-                <br>
-                <div class="row">
-                  <div class="col"><?php echo $value['nama_tempat'] ?></div>
-                  <div class="col"><?php echo $value['nama_kategori'] ?></div>
+        <?php foreach ($komentar as $key => $value) {
+          if ($value['id_komentar'] != NULL) { ?>
+            <div class="col-md-4">
+              <div class="service-item">
+                <div class="icon">
+                  <i class="fa fa-user"></i>
+                </div>
+                <div class="down-content">
+                  <h4><?php echo $value['nama_user'] ?></h4>
+                  <p class="n-m" style="font-weight: 200; font-size: small;"><?php echo date('d, M Y', strtotime($value['tgl_komentar'])) ?></p>
+                  <p class="n-m"><em>"<?php if (strlen($value['komentar']) < 100) {
+                                        echo substr($value['komentar'], 0, 100);
+                                      } else {
+                                        echo substr($value['komentar'], 0, 100) . '...';
+                                      } ?>"</em></p>
+                  <br>
+                  <div class="row">
+                    <div class="col"><?php echo $value['nama_tempat'] ?></div>
+                    <div class="col"><?php echo $value['nama_kategori'] ?></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        <?php } ?>
+        <?php }
+        } ?>
       </div>
     </div>
   </section>
@@ -169,38 +183,49 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata
 
   <!-- begin:: testimoni per kategori -->
   <?php foreach ($kategori as $key => $value) {
-    $id_kategori = $value['id_kategori']; ?>
+    $id_kategori = $value['id_kategori'];
+    $nama_kategori = $value['nama_kategori'] ?>
     <section id="<?php echo $id_kategori ?>" class="services section-background">
       <div class="text-center mx-5 mb-5">
-        <h1 class="">Testimoni Wisata <?php echo $value['nama_kategori'] ?></h1>
+        <h1 class="">Testimoni Wisata <?php echo $nama_kategori ?></h1>
       </div>
       <div class="container overflow-auto" style="height: 750px;">
         <div class="row row-cols-md-4 justify-content-center">
           <?php foreach ($komentar as $key => $value) {
-            if ($value['id_kategori'] == $id_kategori) { ?>
-              <div class="col-md-4">
-                <div class="service-item">
-                  <div class="icon">
-                    <i class="fa fa-user"></i>
-                  </div>
-                  <div class="down-content">
-                    <h4><?php echo $value['nama_user'] ?></h4>
-                    <p class="n-m" style="font-weight: 200; font-size: small;"><?php echo date('d, M Y', strtotime($value['tgl_komentar'])) ?></p>
-                    <p class="n-m"><em>"<?php if (strlen($value['komentar']) < 100) {
-                                          echo substr($value['komentar'], 0, 100);
-                                        } else {
-                                          echo substr($value['komentar'], 0, 100) . '...';
-                                        } ?>"</em></p>
-                    <br>
-                    <div class="row">
-                      <div class="col"><?php echo $value['nama_tempat'] ?></div>
-                      <div class="col"><?php echo $value['nama_kategori'] ?></div>
+            if ($value['id_kategori'] == $id_kategori) {
+              if ($value['id_komentar'] != NULL) { ?>
+                <div class="col-md-4">
+                  <div class="service-item">
+                    <div class="icon">
+                      <i class="fa fa-user"></i>
+                    </div>
+                    <div class="down-content">
+                      <h4><?php echo $value['nama_user'] ?></h4>
+                      <p class="n-m" style="font-weight: 200; font-size: small;"><?php echo date('d, M Y', strtotime($value['tgl_komentar'])) ?></p>
+                      <p class="n-m"><em>"<?php if (strlen($value['komentar']) < 100) {
+                                            echo substr($value['komentar'], 0, 100);
+                                          } else {
+                                            echo substr($value['komentar'], 0, 100) . '...';
+                                          } ?>"</em></p>
+                      <br>
+                      <div class="row">
+                        <div class="col"><?php echo $value['nama_tempat'] ?></div>
+                        <div class="col"><?php echo $value['nama_kategori'] ?></div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            <?php } ?>
-          <?php } ?>
+              <?php } else { ?>
+                <div class="col-md-4">
+                  <div class="service-item">
+                    <div class="down-content">
+                      <h4>There are no testimonials in this category</h4>
+                    </div>
+                  </div>
+                </div>
+          <?php }
+            }
+          } ?>
         </div>
       </div>
     </section>

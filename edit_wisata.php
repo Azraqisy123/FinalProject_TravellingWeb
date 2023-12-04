@@ -72,7 +72,7 @@ foreach ($travels as $travel) {
                             </a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="packages.php">Packages</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tempat_wisata.php">Tempat Wisata</a></li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
@@ -80,7 +80,6 @@ foreach ($travels as $travel) {
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="about-us.php">About Us</a>
                                 <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                                <a class="dropdown-item" href="terms.php">Terms</a>
                             </div>
                         </li>
 

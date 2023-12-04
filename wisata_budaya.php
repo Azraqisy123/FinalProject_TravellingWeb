@@ -1,6 +1,6 @@
 <?php
 include "connection.php";
-$travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori WHERE wisata.id_kategori = 5");
+$travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori WHERE wisata.id_kategori = 2");
 ?>
 
 <!DOCTYPE html>
@@ -90,9 +90,9 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
             <div class="btn-group py-3">
               <a href="tempat_wisata.php" class="btn btn-secondary">Semua</a>
               <a href="wisata_alam.php" class="btn btn-secondary">Wisata Alam</a>
-              <a href="wisata_budaya.php" class="btn btn-secondary">Wisata Budaya</a>
+              <a href="wisata_budaya.php" class="btn btn-info">Wisata Budaya</a>
               <a href="wisata_bawah_laut.php" class="btn btn-secondary">Wisata Bawah Laut</a>
-              <a href="wisata_zoo.php" class="btn btn-info">Wisata Kebun Binatang</a>
+              <a href="wisata_zoo.php" class="btn btn-secondary">Wisata Kebun Binatang</a>
             </div>
             <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Pesan Sekarang</button> -->
           </div>

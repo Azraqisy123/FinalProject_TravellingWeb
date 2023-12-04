@@ -1,3 +1,24 @@
+<?php
+session_start();
+include("connection.php");
+
+$id_wisata = $_GET['id'];
+$wisata = mysqli_query($connection, "SELECT * FROM wisata WHERE id_wisata = $id_wisata;");
+$komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.foto_user FROM komentar JOIN user ON user.id_user = komentar.id_user WHERE komentar.id_wisata = $id_wisata;");
+
+foreach ($wisata as $value) {
+  $nama_tempat = $value['nama_tempat'];
+  $id_kategori = $value['id_kategori'];
+  $lokasi = $value['lokasi'];
+  $fasilitas = $value['fasilitas'];
+  $htm = $value['htm'];
+  $deskripsi = $value['deskripsi'];
+  $foto_1 = $value['foto_1'];
+  $foto_2 = $value['foto_2'];
+  $foto_3 = $value['foto_3'];
+  $foto_4 = $value['foto_4'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +79,7 @@
               </a>
             </li>
 
-            <li class="nav-item active"><a class="nav-link" href="packages.php">Tempat Wisata</a></li>
+            <li class="nav-item active"><a class="nav-link" href="tempat_wisata.php">Tempat Wisata</a></li>
 
             <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
 
@@ -68,7 +89,6 @@
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="about-us.php">About Us</a>
                 <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                <a class="dropdown-item" href="terms.php">Terms</a>
               </div>
             </li>
 
@@ -86,9 +106,9 @@
       <div class="row">
         <div class="col-md-12">
           <div class="text-content">
-            <h4>HTM : Rp15,000</h4>
+            <h4>HTM : Rp <?php echo number_format($htm); ?></h4>
 
-            <h2>Surabaya Zoo</h2>
+            <h2><?php echo $nama_tempat; ?></h2>
           </div>
         </div>
       </div>
@@ -101,25 +121,25 @@
       <div class="row">
         <div class="col-md-6">
           <div>
-            <img src="assets/images/kbs/kbs-3.jpg" alt="" class="img-fluid wc-image">
+            <img src="assets/images/wisata/<?php echo $foto_1 ?>" alt="" class="img-fluid" width="100%">
           </div>
           <br>
           <div class="row">
             <div class="col-sm-4 col-6">
               <div>
-                <img src="assets/images/kbs/jerapah-kbs.jpg" alt="" class="img-fluid">
+                <img src="assets/images/wisata/<?php echo $foto_2 ?>" alt="" class="img-fluid">
               </div>
               <br>
             </div>
             <div class="col-sm-4 col-6">
               <div>
-                <img src="assets/images/kbs/kbs-1.jpg" alt="" class="img-fluid">
+                <img src="assets/images/wisata/<?php echo $foto_3 ?>" alt="" class="img-fluid">
               </div>
               <br>
             </div>
             <div class="col-sm-4 col-6">
               <div>
-                <img src="assets/images/kbs/perahu-kbs.jpg" alt="" class="img-fluid">
+                <img src="assets/images/wisata/<?php echo $foto_4 ?>" alt="" class="img-fluid">
               </div>
               <br>
             </div>
@@ -127,38 +147,14 @@
         </div>
 
         <div class="col-md-6">
-          <p><i class="fa fa-map-marker"></i> <strong>Jl. Setail No.1, Darmo, Kec. Wonokromo, Surabaya, Jawa Timur
-              60241</strong></p>
+          <p><i class="fa fa-map-marker"></i> <strong><?php echo $lokasi ?></strong></p>
           <br>
-          <h4>PD. Taman Satwa Kebun Binatang Surabaya</h4>
+          <h4><?php echo $nama_tempat ?></h4>
           <br>
-          <h6>Konservasi | Edukasi | Rekreasi</h6>
+          <h6>Deskripsi</h6>
           <br>
-          <p>
-            Kebun Binatang Surabaya (KBS) atau Surabaya Zoo adalah salah satu kebun binatang yang populer di Indonesia
-            dan terletak di Surabaya. KBS merupakan kebun binatang yang pernah terlengkap se-Asia Tenggara, di dalamnya
-            terdapat lebih dari 230 spesies satwa yang berbeda yang terdiri lebih dari 2179 ekor satwa. Termasuk di
-            dalamnya satwa langka Indonesia maupun dunia terdiri dari Mamalia, Aves, Reptilia, dan Pisces.
-          </p>
+          <p> <?php echo $deskripsi ?> </p>
           <br>
-          <h6>Konservasi</h6>
-          <p>
-            Sebagai lembaga konservasi ex-situ (untuk penangkaran satwa di luar habitatnya), KBS merupakan benteng
-            terakhir dalam penyelamatan satwa yang terancam punah karena kerusakan habitatnya.
-          </p>
-          <br>
-          <h6>Edukasi</h6>
-          <p>
-            Sebagai sarana pendidikan yang mengandung muatan pengembangan ilmu pengetahuan, KBS menanamkan rasa cinta
-            dan peduli terhadap satwa, flora, dan lingkungan sejak dini kepada masyarakat melalui berbagai program
-            edukasi non formal.
-          </p>
-          <br>
-          <h6>Rekreasi</h6>
-          <p>
-            Sebagai tujuan wisata alternatif yang layak dan terjangkau bagi masyarakat serta menawarkan pilihan rekreasi
-            yang sehat dan menghibur untuk berbagai kalangan.
-          </p>
         </div>
       </div>
     </div>
@@ -177,138 +173,22 @@
           <h6>Everyday at 08.00 am - 04.00 pm</h6>
         </div>
         <div class="col-md-6">
-          <h6>Rp15,000 / orang</h6>
+          <h6>Rp <?php echo number_format($htm); ?> / orang</h6>
         </div>
       </div>
     </div>
   </div>
   <!-- end :: available & price -->
 
-  <!-- begin :: Paket -->
-  <div class="section">
-    <div class="container">
-      <div class="section-heading" style="border: 0">
-        <h2>Paket</h2>
-      </div>
-
-      <div class="table-responsive">
-        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table">
-          <thead>
-            <tr>
-              <th>Jenis Paket</th>
-              <th>Harga</th>
-              <th>Fasilitas</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>Paket Jalak Bali</td>
-              <td>Rp50,000</td>
-              <td>
-                <ul style="list-style: circle">
-                  <li>Tiket masuk</li>
-                  <li>Pemandu</li>
-                  <li>Mushroom House & Playland</li>
-                  <li>Sertifikat Kunjungan</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>Paket Jerapah</td>
-              <td>Rp60,000</td>
-              <td>
-                <ul style="list-style: circle">
-                  <li>Tiket masuk</li>
-                  <li>Pemandu</li>
-                  <li>Feeding Time Satwa</li>
-                  <li>Mushroom House & Playland</li>
-                  <li>Sertifikat Kunjungan</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>Paket Bekantan</td>
-              <td>Rp75,000</td>
-              <td>
-                <ul style="list-style: circle">
-                  <li>Tiket masuk</li>
-                  <li>Pemandu</li>
-                  <li>Animal Edutainment</li>
-                  <li>Wisata Perahu / Animal Story</li>
-                  <li>Mushroom House & Playland</li>
-                  <li>Sertifikat Kunjungan</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>Paket Jeruk Bali</td>
-              <td>Rp100,000</td>
-              <td>
-                <ul style="list-style: circle">
-                  <li>Tiket masuk</li>
-                  <li>Pemandu</li>
-                  <li>Feeding Time Satwa</li>
-                  <li>Aquanoctudio Park</li>
-                  <li>Mushroom House & Playland</li>
-                  <li>Lunch Bowl</li>
-                  <li>Sertifikat Kunjungan</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>Paket Komodo</td>
-              <td>Rp100,000</td>
-              <td>
-                <ul style="list-style: circle">
-                  <li>Tiket masuk</li>
-                  <li>Pemandu</li>
-                  <li>Animal Edutainment</li>
-                  <li>Feeding Time Satwa</li>
-                  <li>Mushroom House & Playland</li>
-                  <li>LKS</li>
-                  <li>Lunch Bowl</li>
-                  <li>Sertifikat Kunjungan</li>
-                  <li>Souvenir</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <!-- end :: Paket -->
-
   <!-- begin :: ketentuan & fasilitas -->
   <div class="section">
     <div class="container">
-      <div class="row">
-        <div class="col-md-5">
-          <div class="section-heading" style="border: 0">
-            <h2>Ketentuan Paket</h2>
-          </div>
-          <ul class="ps-5" style="list-style: circle;">
-            <li>Rombongan minimal 30 siswa</li>
-            <li>Setiap 30 siswa free 1 tiket masuk reguler</li>
-            <li>Paket Edukasi berlaku hari Senin-Jum'at</li>
-            <li>Pendaftaran Paket Edukasi minimal 2 minggu sebelumnya.</li>
-          </ul>
-        </div>
-
-        <div class="col-md-5 offset-2">
-          <div class="section-heading" style="border: 0">
-            <h2>Fasilitas Lainnya</h2>
-          </div>
-          <ul class="ps-5" style="list-style: circle;">
-            <li>Spot Foto</li>
-            <li>Tempat Ibadah</li>
-            <li>Wahana</li>
-            <li>Souvenir</li>
-            <li>Media Center</li>
-          </ul>
-        </div>
+      <div class="section-heading" style="border: 0">
+        <h2>Fasilitas</h2>
       </div>
+      <ul class="ps-5" style="list-style: circle;">
+      <?php echo $fasilitas; ?>
+      </ul>
     </div>
   </div>
   <!-- end :: ketentuan & fasilitas -->
@@ -332,7 +212,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form id="form_add_ulasan" action="" method="POST">
+              <form id="form_add_ulasan" action="#" method="POST">
                 <div class="mb-3" hidden>
                   <label for="id_komentar" class="col-form-label">id_komentar</label>
                   <input type="text" class="form-control" name="id_komentar" id="id_komentar" placeholder="Auto Increment" readonly>
@@ -360,16 +240,20 @@
       </div>
       <!-- end :: modal add ulasan -->
 
-      <div class="down-content">
-        <h6>John Doe</h6>
-        <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
-        <p>--- 3 mins ago</p>
-      </div>
-      <div class="down-content">
-        <h6>Jane Smith</h6>
-        <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
-        <p>--- 7 mins ago</p>
-      </div>
+      <?php foreach ($komentar as $key => $value) { ?>
+        <div class="down-content">
+          <div class="row align-items-center">
+            <div class="col-1 align-self-start">
+              <img src="assets/images/user/<?php echo $value['foto_user'] ?>" alt="" width="100%">
+            </div>
+            <div class="col-11">
+              <h6><?php echo $value['nama_user'] ?></h6>
+              <p class="n-m"><em>"<?php echo $value['komentar'] ?>"</em></p>
+              <p>--- <?php echo date('d, M Y', strtotime($value['tgl_komentar'])) ?></p>
+            </div>
+          </div>
+        </div>
+      <?php } ?>
     </div>
   </div>
   <!-- end :: komentar -->
@@ -491,3 +375,6 @@
 </body>
 
 </html>
+<?php
+session_destroy();
+?>
