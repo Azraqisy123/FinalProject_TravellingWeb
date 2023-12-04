@@ -94,7 +94,7 @@ include "connection.php";
                 <!-- general form elements -->
                 <div class="card card-primary border-primary">
                     <div class="card-header bg-primary">
-                        <h3 class="card-title mb-0">ADD NEW WISATA</h3>
+                        <h3 class="card-title mb-0 text-light">ADD NEW WISATA</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -149,71 +149,6 @@ include "connection.php";
             </div>
         </div>
     </div>
-    <!-- /.card --> <!-- Form Start -->
-    <div class="container-fluid">
-        <div class="row px-xl-5">
-            <!-- left column -->
-            <div style="margin-top: 9rem;" class="col-md-6">
-                <!-- general form elements -->
-                <div class="card card-primary border-primary">
-                    <div class="card-header bg-primary">
-                        <h3 class="text-light card-title mb-0">ADD NEW WISATA</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <!-- form start -->
-                    <form action="backend/proses_add_wisata.php" method="post" enctype="multipart/form-data">
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label>Nama Tempat</label>
-                                <input type="text" class="form-control" name="nama_tempat">
-                            </div>
-                            <div class="form-group">
-                                <label>Kategori</label>
-                                <select class="form-control" name="id_kategori">
-                                    <?php $categorys = mysqli_query($connection, "SELECT * FROM kategori");
-                                    foreach ($categorys as $category) { ?>
-                                        <option value="<?php echo $category['id_kategori'] ?>"><?php echo $category['nama_kategori'] ?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Lokasi</label>
-                                <input type="text" class="form-control" name="lokasi">
-                            </div>
-                            <div class="form-group">
-                                <label>Fasilitas</label>
-                                <textarea class="form-control" rows="3" name="fasilitas"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Harga Tiket Masuk</label>
-                                <input type="text" class="form-control" name="htm">
-                            </div>
-                            <div class="form-group">
-                                <label>Deskripsi</label>
-                                <textarea class="form-control" rows="5" name="deskripsi"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Foto Tempat</label>
-                                <input class="form-control" type="file" name="foto_1">
-                                <label></label>
-                                <input class="form-control" type="file" name="foto_2">
-                                <label></label>
-                                <input class="form-control" type="file" name="foto_3">
-                                <label></label>
-                                <input class="form-control" type="file" name="foto_4">
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary rounded">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.card -->
-
     <footer>
         <div class="container">
             <div class="row">
