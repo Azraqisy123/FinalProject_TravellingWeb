@@ -1,8 +1,3 @@
-<?php
-include "connection.php";
-$travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +11,10 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Travelling Dulu </title>
+    <title>Travelling Dulu</title>
+
+    <!-- CDN Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,6 +25,17 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
     <link rel="stylesheet" href="assets/css/owl.css">
 
 </head>
+
+<?php
+include "connection.php";
+$id = $_GET["id"];
+
+$categorie = mysqli_query($connection, "SELECT * FROM kategori WHERE id_kategori = '$id' ");
+
+foreach ($categorie as $kategori) {
+    $nama_kategori = $kategori['nama_kategori'];
+}
+?>
 
 <body>
 
@@ -74,9 +83,9 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CRUD</a>
 
                             <div class="dropdown-menu">
-                                <a class="dropdown-item active" href="crud_wisata.php">CRUD WISATA</a>
+                                <a class="dropdown-item" href="crud_wisata.php">CRUD WISATA</a>
                                 <a class="dropdown-item" href="crud_user.php">CRUD USER</a>
-                                <a class="dropdown-item" href="crud_categories.php">CRUD CATEGORIES</a>
+                                <a class="dropdown-item active" href="terms.php">CRUD CATEGORIES</a>
                             </div>
                         </li>
                     </ul>
@@ -85,66 +94,39 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
         </nav>
     </header>
 
-    <!-- Page Content -->
-    <div class="page-heading about-heading header-text" style="background-image: url(assets/images/slider-image-1-1920x600.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="text-content">
-                        <h2>CRUD WISATA</h2>
+    <!-- Form Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <!-- left column -->
+            <div style="margin-top: 9rem;" class="col-md-6">
+                <!-- general form elements -->
+                <div class="card card-primary border-primary">
+                    <div class="card-header bg-primary">
+                        <h3 class="text-light card-title mb-0">EDIT DATA CATEGORIES</h3>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="products">
-        <div class="container">
-            <a class="btn btn-primary mb-4" href="add_wisata.php">New Data</a>
-            <div class="row">
-                <!-- Looping Data from Database Start -->
-                <?php
-                foreach ($travels as $travel) {
-                ?>
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <a href="tempat_wisata_detail.php"><img src="assets/images/wisata/<?php echo $travel['foto_1']; ?>" alt=""></a>
-                        <div class="down-content">
-                            <a href="tempat_wisata_detail.php">
-                                <h4><?php echo $travel['nama_tempat']; ?></h4>
-                            </a>
-
-                            <h6>Rp <?php echo number_format($travel['htm']); ?></h6>
-
-                            <p class="text-justify"><?php echo substr_replace($travel['deskripsi'], " ...", 130); ?></p>
-
-                            <small class="d-flex justify-content-between mb-4">
-                                <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
-                                <strong title="Available"><i class="fa fa-calendar"></i> Everyday</strong>
-                            </small>
-                            <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="edit_wisata.php?id=<?php echo $travel["id_wisata"] ?>">EDIT</a>
-                                <a class="btn btn-danger" href="backend/proses_delete_wisata.php?id=<?php echo $travel["id_wisata"] ?>" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form action="backend/proses_edit_categories.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Nama Kategori</label>
+                                <input type="text" class="form-control" name="nama_kategori" value="<?php echo $kategori['nama_kategori'] ?>">
+                            </div>
+                            <div class="form-group">
+                                <label>Foto</label>
+                                <input class="form-control" type="file" name="foto_kategori">
                             </div>
                         </div>
-                    </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary rounded">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                <?php } ?>
-                <!-- Looping Data from Database End -->
-
-
-                <!-- <div class="col-md-12">
-                    <ul class="pages">
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-                    </ul>
-                </div> -->
             </div>
         </div>
     </div>
+    <!-- /.card -->
 
     <footer>
         <div class="container">

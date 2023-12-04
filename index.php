@@ -1,3 +1,20 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['email_user'])) {
+  // Jika belum login
+  $loginButton = '<li class="nav-item"><a class="nav-link" href="login.php">Sign In</a></li>';
+  $signupButton = '<li class="nav-item"><a class="nav-link" href="register.php">Sign Up</a></li>';
+  $userGreeting = '';
+  $logoutButton = '';
+} else {
+  // Jika sudah login
+  $loginButton = '';
+  $signupButton = '';
+  $userGreeting = '<li class="nav-item"><a class="nav-link" href="#">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
+  $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,8 +84,10 @@
             </li>
 
             <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="login.php">Sign In</a></li>
-            <li class="nav-item"><a class="nav-link" href="register.php">Sign Up</a></li>
+            <?php echo $loginButton; ?>
+            <?php echo $signupButton; ?>
+            <?php echo $userGreeting; ?>
+            <?php echo $logoutButton; ?>
           </ul>
         </div>
       </div>
@@ -141,7 +160,7 @@
                 <h4>Banda Neira</h4>
               </a>
 
-              <h6>Rp3.500.000 - Rp4.900-000</h6>
+              <h6>Rp3.500.000 - Rp4.900.000</h6>
 
               <p>Banda Neira merupakan gugusan Kepulauan Banda yang termasuk dalam provinsi Maluku. Pulau ini tepatnya terletak di sebelah tenggara Ambon dan berjarak sekitar 36 km dari bandara Pattimura.</p>
 

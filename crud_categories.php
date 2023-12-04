@@ -1,7 +1,8 @@
 <?php
 include "connection.php";
-$travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori");
+$categorie = mysqli_query($connection, "SELECT * FROM kategori");
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +17,12 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Travelling Dulu </title>
+    <title>Travelling Dulu</title>
+
+    <!-- CDN Bootstrap 5.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -74,9 +80,9 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CRUD</a>
 
                             <div class="dropdown-menu">
-                                <a class="dropdown-item active" href="crud_wisata.php">CRUD WISATA</a>
+                                <a class="dropdown-item" href="crud_wisata.php">CRUD WISATA</a>
                                 <a class="dropdown-item" href="crud_user.php">CRUD USER</a>
-                                <a class="dropdown-item" href="crud_categories.php">CRUD CATEGORIES</a>
+                                <a class="dropdown-item active" href="crud_categories.php">CRUD CATEGORIES</a>
                             </div>
                         </li>
                     </ul>
@@ -86,12 +92,12 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
     </header>
 
     <!-- Page Content -->
-    <div class="page-heading about-heading header-text" style="background-image: url(assets/images/slider-image-1-1920x600.jpg);">
+    <div class="page-heading about-heading header-text" style="background-image: url(assets/images/slider-image-2-1920x600.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-content">
-                        <h2>CRUD WISATA</h2>
+                        <h2>CRUD CATEGORIES</h2>
                     </div>
                 </div>
             </div>
@@ -100,31 +106,20 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
 
     <div class="products">
         <div class="container">
-            <a class="btn btn-primary mb-4" href="add_wisata.php">New Data</a>
+            <a class="btn btn-primary mb-4" href="add_categories.php">New Data</a>
             <div class="row">
                 <!-- Looping Data from Database Start -->
                 <?php
-                foreach ($travels as $travel) {
+                foreach ($categorie as $kategori) {
                 ?>
                 <div class="col-md-4">
                     <div class="product-item">
-                        <a href="tempat_wisata_detail.php"><img src="assets/images/wisata/<?php echo $travel['foto_1']; ?>" alt=""></a>
+                        <img src="assets/images/kategori/<?php echo $kategori['foto_kategori'] ?>" alt="">
                         <div class="down-content">
-                            <a href="tempat_wisata_detail.php">
-                                <h4><?php echo $travel['nama_tempat']; ?></h4>
-                            </a>
-
-                            <h6>Rp <?php echo number_format($travel['htm']); ?></h6>
-
-                            <p class="text-justify"><?php echo substr_replace($travel['deskripsi'], " ...", 130); ?></p>
-
-                            <small class="d-flex justify-content-between mb-4">
-                                <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
-                                <strong title="Available"><i class="fa fa-calendar"></i> Everyday</strong>
-                            </small>
+                            <h4 class="text-center text-black"><?php echo $kategori['nama_kategori'] ?></h4>
                             <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="edit_wisata.php?id=<?php echo $travel["id_wisata"] ?>">EDIT</a>
-                                <a class="btn btn-danger" href="backend/proses_delete_wisata.php?id=<?php echo $travel["id_wisata"] ?>" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
+                                <a class="btn btn-warning" href="edit_categories.php?id=<?php echo $kategori["id_kategori"] ?>">EDIT</a>
+                                <a class="btn btn-danger" href="backend/proses_delete_categories.php?id=<?php echo $kategori["id_kategori"] ?>" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
                             </div>
                         </div>
                     </div>
