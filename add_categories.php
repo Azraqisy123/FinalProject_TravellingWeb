@@ -73,7 +73,7 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="crud_wisata.php">CRUD WISATA</a>
                                 <a class="dropdown-item" href="crud_user.php">CRUD USER</a>
-                                <a class="dropdown-item active" href="terms.php">CRUD CATEGORIES</a>
+                                <a class="dropdown-item active" href="crud_categories.php">CRUD CATEGORIES</a>
                             </div>
                         </li>
                     </ul>
