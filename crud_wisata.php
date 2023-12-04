@@ -115,7 +115,6 @@ if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
 
                                 <small class="d-flex justify-content-between mb-4">
                                     <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
-                                    <strong title="Available"><i class="fa fa-calendar"></i> Everyday</strong>
                                 </small>
                                 <div class="product-action d-flex justify-content-around">
                                     <a class="btn btn-warning" href="edit_wisata.php?id=<?php echo $travel["id_wisata"] ?>">EDIT</a>
