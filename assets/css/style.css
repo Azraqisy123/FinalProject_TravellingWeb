@@ -1243,3 +1243,30 @@ footer .inner-content p a {
 #scroll-btn:hover {
 	background-color: #555;
 }
+
+#scroll-btn {
+	display: none;
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	z-index: 99;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: #f33f3f;
+	color: white;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 20px;
+}
+
+#scroll-btn:hover {
+	background-color: #555;
+}
+
+.error {
+	background-color: #f33f3f;
+	padding: 10px;
+	width: 95%;
+	border-radius: 5px;
+}
