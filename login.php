@@ -33,9 +33,9 @@ session_start();
                 <?php
                 }
                 ?>
+
                 <form class="my-5 py-5" action="backend/login_validate.php" method="post">
                     <h1 class="mb-3 text-center">Sign In</h1>
-
 
                     <!-- Error Notification -->
                     <?php if (isset($_GET['error'])) { ?>
@@ -45,7 +45,6 @@ session_start();
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Email address</label>
-                        <input type="email" id="form2Example1" class="form-control" />
                         <input type="email" id="form2Example1" class="form-control" name="email_user" />
                     </div>
 
