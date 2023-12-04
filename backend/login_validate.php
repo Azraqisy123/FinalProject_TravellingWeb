@@ -21,7 +21,7 @@ if (isset($_POST['email_user']) && isset($_POST['password'])) {
             if ($row['email_user'] === $email_user && $row['password'] === $password) {
                 $_SESSION['email_user'] = $row['email_user'];
                 $_SESSION['nama_user'] = $row['nama_user'];
-                $_SESSION['id'] = $row['id'];
+                $_SESSION['id_user'] = $row['id_user'];
                 // Periksa peran (role) dan arahkan sesuai ke halaman yang sesuai
                 if ($row['role'] === 'ADMIN') {
                     header("Location:../crud_user.php");

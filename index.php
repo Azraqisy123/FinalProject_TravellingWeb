@@ -14,6 +14,10 @@ if (!isset($_SESSION['email_user'])) {
   $userGreeting = '<li class="nav-item"><a class="nav-link" href="#">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
   $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
 }
+
+include "connection.php";
+$travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -121,80 +125,43 @@ if (!isset($_SESSION['email_user'])) {
 
   <div class="latest-products">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <h2>Featured Vacations</h2>
-            <a href="tempat_wisata.php">view more <i class="fa fa-angle-right"></i></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="product-item">
-            <a href="tempat_wisata_detail.php"><img src="assets/images/kbs/jerapah-kbs.jpg" alt=""></a>
-            <div class="down-content">
-              <a href="tempat_wisata_detail.php">
-                <h4>Kebun Binatang Surabaya</h4>
-              </a>
+      <div class="row justify-content-center">
+        <!-- Looping Data from Database Start -->
+        <?php
+        if (mysqli_num_rows($travels) > 0) {
+          foreach ($travels as $travel) {
+        ?>
+            <div class="col-md-4">
+              <div class="product-item">
+                <a href="tempat_wisata_detail.php?id=<?php echo $travel['id_wisata'] ?>"><img src="assets/images/wisata/<?php echo $travel['foto_1']; ?>" alt=""></a>
+                <div class="down-content">
+                  <a href="tempat_wisata_detail.php?id=<?php echo $travel['id_wisata'] ?>">
+                    <h4><?php echo $travel['nama_tempat']; ?></h4>
+                  </a>
 
-              <h6>Rp50.000 - Rp100.000</h6>
+                  <h6>Rp <?php echo number_format($travel['htm']); ?></h6>
 
-              <p>Kebun Binatang Surabaya (KBS) atau Surabaya Zoo merupakan kebun binatang yang pernah terlengkap se-Asia
-                Tenggara, di dalamnya terdapat lebih dari 230 spesies satwa yang berbeda yang terdiri lebih dari 2179
-                ekor satwa.</p>
+                  <p class="text-justify"><?php echo substr_replace($travel['deskripsi'], " ... ", 130); ?></p>
 
-              <small>
-                <strong title="Available"><i class="fa fa-calendar"></i> Spring</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                <strong title="Nights"><i class="fa fa-cube"></i> 20 nights</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                <strong title="Flight included"><i class="fa fa-plane"></i> Flight included</strong>
-              </small>
+                  <small class="d-flex justify-content-between mb-4">
+                    <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
+                  </small>
+                </div>
+              </div>
+            </div>
+          <?php } ?>
+        <?php
+        } else { ?>
+          <div class="col-md-4">
+            <div class="product-item text-center">
+              <div class="down-content">
+                <h6>There are no destination in this category</h6>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="product-item">
-            <a href="tempat_wisata_detail.php"><img src="assets/images/bn/view 1.jpg" alt=""></a>
-            <div class="down-content">
-              <a href="tempat_wisata_detail.php">
-                <h4>Banda Neira</h4>
-              </a>
-
-              <h6>Rp3.500.000 - Rp4.900.000</h6>
-
-              <p>Banda Neira merupakan gugusan Kepulauan Banda yang termasuk dalam provinsi Maluku. Pulau ini tepatnya terletak di sebelah tenggara Ambon dan berjarak sekitar 36 km dari bandara Pattimura.</p>
-
-              <small>
-                <strong title="Available"><i class="fa fa-calendar"></i> Spring</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                <strong title="Nights"><i class="fa fa-cube"></i> 5 Days</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                <strong title="Flight included"><i class="fa fa-plane"></i> Flight included</strong>
-              </small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="product-item">
-            <a href="tempat_wisata_detail.php"><img src="assets/images/kbs/jerapah-kbs.jpg" alt=""></a>
-            <div class="down-content">
-              <a href="tempat_wisata_detail.php">
-                <h4>Kebun Binatang Surabaya</h4>
-              </a>
-
-              <h6>Rp50.000 - Rp100.000</h6>
-
-              <p>Kebun Binatang Surabaya (KBS) atau Surabaya Zoo merupakan kebun binatang yang pernah terlengkap se-Asia
-                Tenggara, di dalamnya terdapat lebih dari 230 spesies satwa yang berbeda yang terdiri lebih dari 2179
-                ekor satwa.</p>
-
-
-              <small>
-                <strong title="Available"><i class="fa fa-calendar"></i> Spring</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                <strong title="Nights"><i class="fa fa-cube"></i> 20 nights</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                <strong title="Flight included"><i class="fa fa-plane"></i> Flight included</strong>
-              </small>
-            </div>
-          </div>
-        </div>
+        <?php } ?>
+        <!-- Looping Data from Database End -->
+ 
       </div>
     </div>
   </div>

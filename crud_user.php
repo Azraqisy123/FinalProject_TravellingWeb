@@ -101,7 +101,7 @@ if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
     <div class="products">
         <div class="container">
             <a class="btn btn-primary mb-4" href="add_user.php">New Data</a>
-            <div class="row">
+            <div class="row justify-content-center">
                 <!-- Looping Data from Database Start -->
                 <?php
                 foreach ($users as $user) {

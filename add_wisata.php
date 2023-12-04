@@ -83,7 +83,7 @@ if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
 
     <!-- Form Start -->
     <div class="container-fluid">
-        <div class="row px-xl-5">
+        <div class="row px-xl-5 justify-content-center">
             <!-- left column -->
             <div style="margin-top: 9rem;" class="col-md-6">
                 <!-- general form elements -->

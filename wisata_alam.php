@@ -1,6 +1,21 @@
 <?php
+session_start();
+if (!isset($_SESSION['email_user'])) {
+  // Jika belum login
+  $loginButton = '<li class="nav-item"><a class="nav-link" href="login.php">Sign In</a></li>';
+  $signupButton = '<li class="nav-item"><a class="nav-link" href="register.php">Sign Up</a></li>';
+  $userGreeting = '';
+  $logoutButton = '';
+} else {
+  // Jika sudah login
+  $loginButton = '';
+  $signupButton = '';
+  $userGreeting = '<li class="nav-item"><a class="nav-link" href="#">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
+  $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
+}
 include "connection.php";
 $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori WHERE wisata.id_kategori = 1");
+
 ?>
 
 <!DOCTYPE html>
@@ -74,6 +89,10 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
 
 
             <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
+            <?php echo $loginButton; ?>
+            <?php echo $signupButton; ?>
+            <?php echo $userGreeting; ?>
+            <?php echo $logoutButton; ?>
           </ul>
         </div>
       </div>

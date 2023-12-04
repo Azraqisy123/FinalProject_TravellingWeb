@@ -67,8 +67,4 @@ session_start();
     </div>
 </body>
 
-<?php
-session_destroy();
-?>
-
 </html>

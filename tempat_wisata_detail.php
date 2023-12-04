@@ -1,8 +1,26 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['email_user'])) {
+  // Jika belum login
+  $loginButton = '<li class="nav-item"><a class="nav-link" href="login.php">Sign In</a></li>';
+  $signupButton = '<li class="nav-item"><a class="nav-link" href="register.php">Sign Up</a></li>';
+  $userGreeting = '';
+  $logoutButton = '';
+  $reviewButton = '';
+} else {
+  // Jika sudah login
+  $loginButton = '';
+  $signupButton = '';
+  $userGreeting = '<li class="nav-item"><a class="nav-link" href="#">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
+  $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
+  $reviewButton = '<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_ulasan">Tambah Ulasan</button>';
+}
+
 include("connection.php");
 
 $id_wisata = $_GET['id'];
+$id_user = $_SESSION['id_user'];
 $wisata = mysqli_query($connection, "SELECT * FROM wisata WHERE id_wisata = $id_wisata;");
 $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.foto_user FROM komentar JOIN user ON user.id_user = komentar.id_user WHERE komentar.id_wisata = $id_wisata;");
 
@@ -19,6 +37,7 @@ foreach ($wisata as $value) {
   $foto_4 = $value['foto_4'];
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -94,6 +113,10 @@ foreach ($wisata as $value) {
 
 
             <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
+            <?php echo $loginButton; ?>
+            <?php echo $signupButton; ?>
+            <?php echo $userGreeting; ?>
+            <?php echo $logoutButton; ?>
           </ul>
         </div>
       </div>
@@ -101,7 +124,7 @@ foreach ($wisata as $value) {
   </header>
 
   <!-- Page Content -->
-  <div class="page-heading about-heading header-text" style="background-image: url(assets/images/kbs/kbs-banner.png);">
+  <div class="page-heading about-heading header-text" style="background-image: url(assets/images/wisata/<?php echo $foto_1 ?>);">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -165,13 +188,10 @@ foreach ($wisata as $value) {
   <div class="section">
     <div class="container">
       <div class="section-heading" style="border: 0">
-        <h2>Availability & Price</h2>
+        <h2>Price</h2>
       </div>
 
       <div class="row">
-        <div class="col-md-6">
-          <h6>Everyday at 08.00 am - 04.00 pm</h6>
-        </div>
         <div class="col-md-6">
           <h6>Rp <?php echo number_format($htm); ?> / orang</h6>
         </div>
@@ -187,7 +207,7 @@ foreach ($wisata as $value) {
         <h2>Fasilitas</h2>
       </div>
       <ul class="ps-5" style="list-style: circle;">
-      <?php echo $fasilitas; ?>
+        <?php echo $fasilitas; ?>
       </ul>
     </div>
   </div>
@@ -200,9 +220,8 @@ foreach ($wisata as $value) {
         <h2>Ulasan</h2>
       </div>
 
-      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_ulasan">Tambah Ulasan</button>
-      <br>
-      <br>
+      <?php echo $reviewButton ?>
+
       <!-- begin :: modal add ulasan -->
       <div class="modal fade" id="modal_add_ulasan" tabindex="-1" aria-labelledby="modal_add_ulasan" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
@@ -212,22 +231,22 @@ foreach ($wisata as $value) {
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form id="form_add_ulasan" action="#" method="POST">
-                <div class="mb-3" hidden>
-                  <label for="id_komentar" class="col-form-label">id_komentar</label>
-                  <input type="text" class="form-control" name="id_komentar" id="id_komentar" placeholder="Auto Increment" readonly>
-                </div>
-                <div class="mb-3" hidden>
+              <form id="form_add_ulasan" action="backend/proses_add_komentar.php" method="POST">
+                <div class="mb-3">
                   <label for="id_user" class="col-form-label">id_user</label>
-                  <input type="text" class="form-control" name="id_user" id="id_user" placeholder="Auto Increment" readonly>
+                  <input type="text" class="form-control" name="id_user" id="id_user" value="<?php echo $id_user ?>" readonly>
                 </div>
-                <div class="mb-3" hidden>
+                <div class="mb-3">
                   <label for="id_wisata" class="col-form-label">id_wisata</label>
-                  <input type="text" class="form-control" name="id_wisata" id="id_wisata" placeholder="Auto Increment" readonly>
+                  <input type="text" class="form-control" name="id_wisata" id="id_wisata" value="<?php echo $id_wisata ?>" readonly>
                 </div>
                 <div class="mb-3">
                   <label for="komentar" class="col-form-label">Silahkan masukkan ulasan</label>
                   <textarea class="form-control" id="komentar" name="komentar" style="height: 150px"></textarea>
+                </div>
+                <div class="mb-3" hidden>
+                  <label for="tgl_komentar" class="col-form-label">tgl_komentar</label>
+                  <input type="date" class="form-control" name="tgl_komentar" id="tgl_komentar" value="<?php echo date('Y-m-d') ?>">
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -242,15 +261,59 @@ foreach ($wisata as $value) {
 
       <?php foreach ($komentar as $key => $value) { ?>
         <div class="down-content">
-          <div class="row align-items-center">
+          <div class="row align-items-center mt-4">
             <div class="col-1 align-self-start">
               <img src="assets/images/user/<?php echo $value['foto_user'] ?>" alt="" width="100%">
             </div>
-            <div class="col-11">
-              <h6><?php echo $value['nama_user'] ?></h6>
-              <p class="n-m"><em>"<?php echo $value['komentar'] ?>"</em></p>
-              <p>--- <?php echo date('d, M Y', strtotime($value['tgl_komentar'])) ?></p>
-            </div>
+            <?php if ($value['id_user'] == $id_user) { ?>
+              <div class="col-11 border py-3">
+                <div class="row">
+                  <h6 class="col-10 align-items-center"><?php echo $value['nama_user'] ?></h6>
+                </div>
+                <p class="n-m"><em>"<?php echo $value['komentar'] ?>"</em></p>
+                <p>--- <?php echo date('d, M Y', strtotime($value['tgl_komentar'])) ?></p>
+                <a class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modal_edit_ulasan" onclick="edit_data('<?php echo $value['id_komentar'] ?>')">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                  </svg>
+                </a>
+                <a href="backend/proses_delete_data_komentar.php?id_wisata=<?php echo $value['id_wisata'] ?>&id_komentar=<?php echo $value['id_komentar'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?');">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- begin :: modal edit ulasan -->
+              <div class="modal fade" id="modal_edit_ulasan" tabindex="-1" aria-labelledby="modal_edit_ulasan" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="modal_edit_ulasan">Tambah Ulasan</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="form_edit_ulasan" action="backend/proses_edit_komentar.php" method="POST">
+                      <div class="modal-body" id="modal-body-edit">
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- end :: modal edit ulasan -->
+
+            <?php } else { ?>
+              <div class="col-11 border py-3">
+                <h6><?php echo $value['nama_user'] ?></h6>
+                <p class="n-m"><em>"<?php echo $value['komentar'] ?>"</em></p>
+                <p>--- <?php echo date('d, M Y', strtotime($value['tgl_komentar'])) ?></p>
+              </div>
+            <?php } ?>
           </div>
         </div>
       <?php } ?>
@@ -372,9 +435,28 @@ foreach ($wisata as $value) {
   <!-- Additional Scripts -->
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/owl.js"></script>
+
+  <!-- begin :: CDN jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!-- end :: CDN jquery -->
+
+  <!-- begin :: jquery edit data komentar -->
+  <script>
+    function edit_data(id_komentar) {
+      console.log(id_komentar)
+      $.ajax({
+        method: 'POST',
+        url: 'edit_komentar.php',
+        data: {
+          id_komentar: id_komentar
+        },
+        success: function(result) {
+          $('#modal-body-edit').html(result);
+        }
+      })
+    }
+  </script>
+  <!-- end :: jquery edit data komentar -->
 </body>
 
 </html>
-<?php
-session_destroy();
-?>
