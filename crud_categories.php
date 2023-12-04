@@ -1,6 +1,17 @@
 <?php
 include "connection.php";
 $categorie = mysqli_query($connection, "SELECT * FROM kategori");
+
+session_start();
+
+if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
+    header("Location: login.php");
+    exit();
+} else {
+    // Jika sudah login
+    $userGreeting = '<li class="nav-item"><a class="nav-link" href="#">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
+    $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
+}
 ?>
 
 
@@ -58,23 +69,6 @@ $categorie = mysqli_query($connection, "SELECT * FROM kategori");
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item"><a class="nav-link" href="tempat_wisata.php">Tempat Wisata</a></li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
-
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="about-us.php">About Us</a>
-                                <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                            </div>
-                        </li>
-
                         <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CRUD</a>
 
@@ -84,6 +78,8 @@ $categorie = mysqli_query($connection, "SELECT * FROM kategori");
                                 <a class="dropdown-item active" href="crud_categories.php">CRUD CATEGORIES</a>
                             </div>
                         </li>
+                        <?php echo $userGreeting; ?>
+                        <?php echo $logoutButton; ?>
                     </ul>
                 </div>
             </div>
@@ -111,18 +107,18 @@ $categorie = mysqli_query($connection, "SELECT * FROM kategori");
                 <?php
                 foreach ($categorie as $kategori) {
                 ?>
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <img src="assets/images/kategori/<?php echo $kategori['foto_kategori'] ?>" alt="">
-                        <div class="down-content">
-                            <h4 class="text-center text-black"><?php echo $kategori['nama_kategori'] ?></h4>
-                            <div class="product-action d-flex justify-content-around">
-                                <a class="btn btn-warning" href="edit_categories.php?id=<?php echo $kategori["id_kategori"] ?>">EDIT</a>
-                                <a class="btn btn-danger" href="backend/proses_delete_categories.php?id=<?php echo $kategori["id_kategori"] ?>" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="assets/images/kategori/<?php echo $kategori['foto_kategori'] ?>" alt="">
+                            <div class="down-content">
+                                <h4 class="text-center text-black"><?php echo $kategori['nama_kategori'] ?></h4>
+                                <div class="product-action d-flex justify-content-around">
+                                    <a class="btn btn-warning" href="edit_categories.php?id=<?php echo $kategori["id_kategori"] ?>">EDIT</a>
+                                    <a class="btn btn-danger" href="backend/proses_delete_categories.php?id=<?php echo $kategori["id_kategori"] ?>" onclick="return confirm('Are you sure you want to delete this item?');">DELETE</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <?php } ?>
                 <!-- Looping Data from Database End -->
 
