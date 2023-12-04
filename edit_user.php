@@ -43,6 +43,16 @@ foreach ($users as $user) {
     $alamat = $user['alamat'];
     $role = $user['role'];
 }
+session_start();
+
+if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
+    header("Location: login.php");
+    exit();
+} else {
+    // Jika sudah login
+    $userGreeting = '<li class="nav-item"><a class="nav-link" href="#">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
+    $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
+}
 ?>
 <!-- Load DAta From Database End -->
 
@@ -70,23 +80,6 @@ foreach ($users as $user) {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item"><a class="nav-link" href="tempat_wisata.php">Tempat Wisata</a></li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
-
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="about-us.php">About Us</a>
-                                <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                            </div>
-                        </li>
-
                         <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CRUD</a>
 
@@ -96,6 +89,8 @@ foreach ($users as $user) {
                                 <a class="dropdown-item" href="crud_categories.php">CRUD CATEGORIES</a>
                             </div>
                         </li>
+                        <?php echo $userGreeting; ?>
+                        <?php echo $logoutButton; ?>
                     </ul>
                 </div>
             </div>
@@ -110,7 +105,7 @@ foreach ($users as $user) {
                 <!-- general form elements -->
                 <div class="card card-primary border-primary">
                     <div class="card-header bg-primary">
-                        <h3 class="card-title mb-0">EDIT DATA USER</h3>
+                        <h3 class="card-title mb-0 text-light">EDIT DATA USER</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -287,4 +282,4 @@ foreach ($users as $user) {
     <script src="assets/js/owl.js"></script>
 </body>
 
-</html> 
+</html>

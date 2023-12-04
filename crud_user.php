@@ -1,6 +1,17 @@
 <?php
 include "connection.php";
 $users = mysqli_query($connection, "SELECT * FROM user");
+
+session_start();
+
+if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
+    header("Location: login.php");
+    exit();
+} else {
+    // Jika sudah login
+    $userGreeting = '<li class="nav-item"><a class="nav-link" href="#">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
+    $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
+}
 ?>
 
 <!DOCTYPE html>
@@ -57,23 +68,6 @@ $users = mysqli_query($connection, "SELECT * FROM user");
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item"><a class="nav-link" href="packages.php">Packages</a></li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
-
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="about-us.php">About Us</a>
-                                <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                            </div>
-                        </li>
-
                         <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CRUD</a>
 
@@ -83,6 +77,8 @@ $users = mysqli_query($connection, "SELECT * FROM user");
                                 <a class="dropdown-item" href="crud_categories.php">CRUD CATEGORIES</a>
                             </div>
                         </li>
+                        <?php echo $userGreeting; ?>
+                        <?php echo $logoutButton; ?>
                     </ul>
                 </div>
             </div>
@@ -150,16 +146,6 @@ $users = mysqli_query($connection, "SELECT * FROM user");
                     </div>
                 <?php } ?>
                 <!-- Looping Data from Database End -->
-
-                <!-- <div class="col-md-12">
-                    <ul class="pages">
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-                    </ul>
-                </div> -->
             </div>
         </div>
     </div>
