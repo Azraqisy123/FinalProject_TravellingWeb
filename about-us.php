@@ -55,7 +55,7 @@
               </a>
             </li>
 
-            <li class="nav-item"><a class="nav-link" href="packages.php">Packages</a></li>
+            <li class="nav-item"><a class="nav-link" href="tempat_wisata.php">Tempat Wisata</a></li>
 
             <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
 
@@ -65,7 +65,6 @@
               <div class="dropdown-menu">
                 <a class="dropdown-item active" href="about-us.php">About Us</a>
                 <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                <a class="dropdown-item" href="terms.php">Terms</a>
               </div>
             </li>
 

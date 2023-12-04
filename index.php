@@ -52,7 +52,7 @@
               </a>
             </li>
 
-            <li class="nav-item"><a class="nav-link" href="packages.php">Packages</a></li>
+            <li class="nav-item"><a class="nav-link" href="tempat_wisata.php">Tempat Wisata</a></li>
 
             <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
 
@@ -62,7 +62,6 @@
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="about-us.php">About Us</a>
                 <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                <a class="dropdown-item" href="terms.php">Terms</a>
               </div>
             </li>
 
@@ -107,7 +106,7 @@
         <div class="col-md-12">
           <div class="section-heading">
             <h2>Featured Vacations</h2>
-            <a href="packages.php">view more <i class="fa fa-angle-right"></i></a>
+            <a href="tempat_wisata.php">view more <i class="fa fa-angle-right"></i></a>
           </div>
         </div>
         <div class="col-md-4">

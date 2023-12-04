@@ -58,7 +58,7 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
               </a>
             </li>
 
-            <li class="nav-item active"><a class="nav-link" href="packages.php">Packages</a></li>
+            <li class="nav-item active"><a class="nav-link" href="tempat_wisata.php">Tempat Wisata</a></li>
 
             <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
 
@@ -69,7 +69,6 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="about-us.php">About Us</a>
                 <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                <a class="dropdown-item" href="terms.php">Terms</a>
               </div>
             </li>
 
@@ -87,12 +86,13 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
       <div class="row">
         <div class="col-md-12">
           <div class="text-content">
-            <h2>Packages</h2>
-            <div class="btn-group my-3">
-              <a href="packages.php" class="btn btn-secondary">Semua</a>
+            <h2>Daftar Tempat Wisata</h2>
+            <div class="btn-group py-3">
+              <a href="tempat_wisata.php" class="btn btn-info">Semua</a>
               <a href="wisata_alam.php" class="btn btn-secondary">Wisata Alam</a>
-              <a href="wisata_pantai.php" class="btn btn-secondary">Wisata Pantai</a>
-              <a href="wisata_pantai.php" class="btn btn-secondary">Wisata Kebun Binatang</a>
+              <a href="wisata_budaya.php" class="btn btn-secondary">Wisata Budaya</a>
+              <a href="wisata_bawah_laut.php" class="btn btn-secondary">Wisata Bawah Laut</a>
+              <a href="wisata_zoo.php" class="btn btn-secondary">Wisata Kebun Binatang</a>
             </div>
             <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Pesan Sekarang</button> -->
           </div>
@@ -102,33 +102,44 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
   </div>
 
   <div class="products">
-        <div class="container">
-            <div class="row">
-                <!-- Looping Data from Database Start -->
-                <?php
-                foreach ($travels as $travel) {
-                ?>
-                <div class="col-md-4">
-                    <div class="product-item">
-                        <a href="tempat_wisata_detail.php"><img src="assets/images/wisata/<?php echo $travel['foto_1']; ?>" alt=""></a>
-                        <div class="down-content">
-                            <a href="tempat_wisata_detail.php">
-                                <h4><?php echo $travel['nama_tempat']; ?></h4>
-                            </a>
+    <div class="container">
+      <div class="row justify-content-center">
+        <!-- Looping Data from Database Start -->
+        <?php
+        if (mysqli_num_rows($travels) > 0) {
+          foreach ($travels as $travel) {
+        ?>
+            <div class="col-md-4">
+              <div class="product-item">
+                <a href="tempat_wisata_detail.php?id=<?php echo $travel['id_wisata'] ?>"><img src="assets/images/wisata/<?php echo $travel['foto_1']; ?>" alt=""></a>
+                <div class="down-content">
+                  <a href="tempat_wisata_detail.php?id=<?php echo $travel['id_wisata'] ?>">
+                    <h4><?php echo $travel['nama_tempat']; ?></h4>
+                  </a>
 
-                            <h6>Rp <?php echo number_format($travel['htm']); ?></h6>
+                  <h6>Rp <?php echo number_format($travel['htm']); ?></h6>
 
-                            <p class="text-justify"><?php echo substr_replace($travel['deskripsi'], " ... ", 130); ?></p>
+                  <p class="text-justify"><?php echo substr_replace($travel['deskripsi'], " ... ", 130); ?></p>
 
-                            <small class="d-flex justify-content-between mb-4">
-                                <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
-                                <strong title="Available"><i class="fa fa-calendar"></i> Everyday</strong>
-                            </small>
-                        </div>
-                    </div>
+                  <small class="d-flex justify-content-between mb-4">
+                    <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
+                    <strong title="Available"><i class="fa fa-calendar"></i> Everyday</strong>
+                  </small>
                 </div>
-                <?php } ?>
-                <!-- Looping Data from Database End -->
+              </div>
+            </div>
+          <?php } ?>
+        <?php
+        } else { ?>
+          <div class="col-md-4">
+            <div class="product-item text-center">
+              <div class="down-content">
+                <h6>There are no destination in this category</h6>
+              </div>
+            </div>
+          </div>
+        <?php } ?>
+        <!-- Looping Data from Database End -->
 
         <div class="col-md-12">
           <ul class="pages">
