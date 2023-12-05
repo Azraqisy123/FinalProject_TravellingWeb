@@ -17,7 +17,7 @@ if (!isset($_SESSION['email_user'])) {
 
 include "connection.php";
 $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori");
-$komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata.nama_tempat, kategori.id_kategori, kategori.nama_kategori FROM komentar JOIN user ON user.id_user = komentar.id_user JOIN wisata ON komentar.id_wisata = wisata.id_wisata RIGHT JOIN kategorI ON wisata.id_kategori = kategori.id_kategori");
+$komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.foto_user , wisata.nama_tempat, kategori.id_kategori, kategori.nama_kategori FROM komentar JOIN user ON user.id_user = komentar.id_user JOIN wisata ON komentar.id_wisata = wisata.id_wisata RIGHT JOIN kategorI ON wisata.id_kategori = kategori.id_kategori");
 
 ?>
 <!DOCTYPE html>
@@ -75,7 +75,7 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata
             </li>
 
             <li class="nav-item"><a class="nav-link" href="tempat_wisata.php">Tempat Wisata</a></li>
-            
+
             <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
 
             <li class="nav-item dropdown">
@@ -180,7 +180,7 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata
               if ($value['id_komentar'] != NULL) { ?>
                 <div class="service-item">
                   <div class="icon">
-                    <i class="fa fa-user"></i>
+                    <img src="assets/images/user/<?php echo $value['foto_user'] ?>" width="100%">
                   </div>
                   <div class="down-content">
                     <h4><?php echo $value['nama_user'] ?></h4>
