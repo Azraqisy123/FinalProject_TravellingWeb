@@ -75,8 +75,8 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata
             </li>
 
             <li class="nav-item"><a class="nav-link" href="tempat_wisata.php">Tempat Wisata</a></li>
-
-            <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
+            
+            <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
@@ -87,7 +87,6 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata
               </div>
             </li>
 
-            <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
             <?php echo $loginButton; ?>
             <?php echo $signupButton; ?>
             <?php echo $userGreeting; ?>
