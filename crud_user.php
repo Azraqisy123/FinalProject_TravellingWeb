@@ -118,7 +118,7 @@ if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
                                     </tr>
                                     <tr>
                                         <td>Password</td>
-                                        <td> <?php echo $user['password'] ?> </td>
+                                        <td>⦁⦁⦁⦁⦁⦁⦁⦁⦁</td>
                                     </tr>
                                     <tr>
                                         <td>Jenis Kelamin</td>
