@@ -10,6 +10,7 @@ if (!isset($_SESSION['email_user'])) {
   $reviewButton = '';
 } else {
   // Jika sudah login
+  $id_user = $_SESSION['id_user'];
   $loginButton = '';
   $signupButton = '';
   $userGreeting = '<li class="nav-item"><a class="nav-link" href="#">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
@@ -20,7 +21,6 @@ if (!isset($_SESSION['email_user'])) {
 include("connection.php");
 
 $id_wisata = $_GET['id'];
-$id_user = $_SESSION['id_user'];
 $wisata = mysqli_query($connection, "SELECT * FROM wisata WHERE id_wisata = $id_wisata;");
 $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.foto_user FROM komentar JOIN user ON user.id_user = komentar.id_user WHERE komentar.id_wisata = $id_wisata;");
 
@@ -232,11 +232,11 @@ foreach ($wisata as $value) {
             </div>
             <div class="modal-body">
               <form id="form_add_ulasan" action="backend/proses_add_komentar.php" method="POST">
-                <div class="mb-3">
+                <div class="mb-3" hidden>
                   <label for="id_user" class="col-form-label">id_user</label>
                   <input type="text" class="form-control" name="id_user" id="id_user" value="<?php echo $id_user ?>" readonly>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" hidden>
                   <label for="id_wisata" class="col-form-label">id_wisata</label>
                   <input type="text" class="form-control" name="id_wisata" id="id_wisata" value="<?php echo $id_wisata ?>" readonly>
                 </div>
