@@ -8,7 +8,14 @@
     $fasilitas = $_POST['fasilitas'];
     $htm = $_POST['htm'];
     $deskripsi = $_POST['deskripsi'];
-    
+
+    // Foto Yang dipakai
+    $foto_lama_1 = $_POST['foto_lama_1'];
+    $foto_lama_2 = $_POST['foto_lama_2'];
+    $foto_lama_3 = $_POST['foto_lama_3'];
+    $foto_lama_4 = $_POST['foto_lama_4'];
+
+    // Tangkap Foto
     $foto_1 = $_FILES['foto_1']['name'];
     $file_tmp_1 = $_FILES['foto_1']['tmp_name'];
 
@@ -23,10 +30,29 @@
 
     // Jika Upload Foto Baru
     if (strlen($foto_1 || $foto_2 || $foto_3 || $foto_4) > 0){
-        move_uploaded_file($file_tmp_1, '../assets/images/wisata/' . $foto_1);
-        move_uploaded_file($file_tmp_2, '../assets/images/wisata/' . $foto_2);
-        move_uploaded_file($file_tmp_3, '../assets/images/wisata/' . $foto_3);
-        move_uploaded_file($file_tmp_4, '../assets/images/wisata/' . $foto_4);
+        if(strlen($foto_1) > 0){
+            move_uploaded_file($file_tmp_1, '../assets/images/wisata/' . $foto_1);
+        }elseif(strlen($foto_1) == 0){
+            $foto_1 = $foto_lama_1;
+        }
+
+        if(strlen($foto_2) > 0){
+            move_uploaded_file($file_tmp_2, '../assets/images/wisata/' . $foto_2);
+        }elseif(strlen($foto_2) == 0){
+            $foto_2 = $foto_lama_2;
+        }
+
+        if(strlen($foto_3) > 0){
+            move_uploaded_file($file_tmp_3, '../assets/images/wisata/' . $foto_3);
+        }elseif(strlen($foto_3) == 0){
+            $foto_3 = $foto_lama_3;
+        }
+
+        if(strlen($foto_4) > 0){
+            move_uploaded_file($file_tmp_4, '../assets/images/wisata/' . $foto_4);
+        }elseif(strlen($foto_4) == 0){
+            $foto_4 = $foto_lama_4;
+        }
         
         mysqli_query($connection, "UPDATE wisata SET nama_tempat = '$nama_tempat', id_kategori = '$id_kategori', lokasi = '$lokasi', fasilitas = '$fasilitas', 
         htm = '$htm', deskripsi = '$deskripsi', foto_1 = '$foto_1', foto_2 = '$foto_2', foto_3 = '$foto_3', foto_4 = '$foto_4' WHERE id_wisata = '$id' ");
