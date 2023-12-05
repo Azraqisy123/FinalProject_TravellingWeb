@@ -100,7 +100,7 @@ foreach ($wisata as $value) {
             </li>
 
             <li class="nav-item active"><a class="nav-link" href="tempat_wisata.php">Tempat Wisata</a></li>
-            
+
             <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
 
             <li class="nav-item dropdown">
@@ -206,8 +206,18 @@ foreach ($wisata as $value) {
       <div class="section-heading" style="border: 0">
         <h2>Fasilitas</h2>
       </div>
-      <ul class="ps-5" style="list-style: circle;">
-        <?php echo $fasilitas; ?>
+      <ul class="" style="list-style: circle;">
+        <?php
+        $sql = "SELECT * FROM wisata WHERE id_wisata = $id_wisata";
+        $result = mysqli_query($connection, $sql);
+        while ($row = mysqli_fetch_assoc($result)) {
+          echo "<ul>";
+          $fasilitas_list = explode("\n", $row['fasilitas']);
+          foreach ($fasilitas_list as $fasilitas_item) {
+            echo "<li>" . trim($fasilitas_item) . "</li>";
+          }
+          echo "</ul>";
+        } ?>
       </ul>
     </div>
   </div>
