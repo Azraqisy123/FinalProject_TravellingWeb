@@ -22,7 +22,7 @@
     $file_tmp_4 = $_FILES['foto_4']['tmp_name'];
 
     // Jika Upload Foto Baru
-    if (strlen($foto_1 && $foto_2 && $foto_3 && $foto_4) > 0){
+    if (strlen($foto_1 || $foto_2 || $foto_3 || $foto_4) > 0){
         move_uploaded_file($file_tmp_1, '../assets/images/wisata/' . $foto_1);
         move_uploaded_file($file_tmp_2, '../assets/images/wisata/' . $foto_2);
         move_uploaded_file($file_tmp_3, '../assets/images/wisata/' . $foto_3);
