@@ -17,6 +17,7 @@ if (!isset($_SESSION['email_user'])) {
 
 include "connection.php";
 $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori");
+$komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, wisata.nama_tempat, kategori.id_kategori, kategori.nama_kategori FROM komentar JOIN user ON user.id_user = komentar.id_user JOIN wisata ON komentar.id_wisata = wisata.id_wisata RIGHT JOIN kategorI ON wisata.id_kategori = kategori.id_kategori");
 
 ?>
 <!DOCTYPE html>
@@ -161,7 +162,46 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
           </div>
         <?php } ?>
         <!-- Looping Data from Database End -->
- 
+
+      </div>
+    </div>
+  </div>
+
+  <div class="services" style="background-image: url(assets/images/other-image-fullscren-1-1920x900.jpg);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Happy Clients</h2>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="owl-clients owl-carousel text-center">
+            <?php foreach ($komentar as $key => $value) {
+              if ($value['id_komentar'] != NULL) { ?>
+                <div class="service-item">
+                  <div class="icon">
+                    <i class="fa fa-user"></i>
+                  </div>
+                  <div class="down-content">
+                    <h4><?php echo $value['nama_user'] ?></h4>
+                    <p class="n-m" style="font-weight: 200; font-size: small;"><?php echo date('d, M Y', strtotime($value['tgl_komentar'])) ?></p>
+                    <p class="n-m"><em>"<?php if (strlen($value['komentar']) < 100) {
+                                          echo substr($value['komentar'], 0, 100);
+                                        } else {
+                                          echo substr($value['komentar'], 0, 100) . '...';
+                                        } ?>"</em></p>
+                    <br>
+                    <div class="row">
+                      <div class="col"><?php echo $value['nama_tempat'] ?></div>
+                      <div class="col"><?php echo $value['nama_kategori'] ?></div>
+                    </div>
+                  </div>
+                </div>
+            <?php }
+            } ?>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -174,14 +214,12 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
             <h2>About Us</h2>
           </div>
         </div>
-
-        <div class="container my-5">
+        <div class="container">
           <div class="row">
-
             <!-- Start Column 1 -->
             <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
               <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t1.jpg" class="img-fluid mb-5">
-              <h3 clas><a href="#"><span class="">Lawson</span> Arnold</a></h3>
+              <h3><a href="#"><span>Lawson</span> Arnold</a></h3>
               <span class="d-block position mb-4">CEO, Founder, Atty.</span>
               <p>Separated they live in.
                 Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
@@ -189,25 +227,21 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
               <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
             </div>
             <!-- End Column 1 -->
-
             <!-- Start Column 2 -->
             <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
               <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg" class="img-fluid mb-5">
-
-              <h3 clas><a href="#"><span class="">Jeremy</span> Walker</a></h3>
+              <h3><a href="#"><span>Jeremy</span> Walker</a></h3>
               <span class="d-block position mb-4">CEO, Founder, Atty.</span>
               <p>Separated they live in.
                 Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
                 ocean.</p>
               <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
-
             </div>
             <!-- End Column 2 -->
-
             <!-- Start Column 3 -->
             <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
               <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg" class="img-fluid mb-5">
-              <h3 clas><a href="#"><span class="">Patrik</span> White</a></h3>
+              <h3><a href="#"><span>Patrik</span> White</a></h3>
               <span class="d-block position mb-4">CEO, Founder, Atty.</span>
               <p>Separated they live in.
                 Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
@@ -215,187 +249,22 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
               <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
             </div>
             <!-- End Column 3 -->
-
             <!-- Start Column 4 -->
             <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
               <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t4.jpg" class="img-fluid mb-5">
-
-              <h3 clas><a href="#"><span class="">Kathryn</span> Ryan</a></h3>
+              <h3><a href="#"><span>Kathryn</span> Ryan</a></h3>
               <span class="d-block position mb-4">CEO, Founder, Atty.</span>
               <p>Separated they live in.
                 Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
                 ocean.</p>
               <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
-
-
             </div>
             <!-- End Column 4 -->
-
-
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="services" style="background-image: url(assets/images/other-image-fullscren-1-1920x900.jpg);">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <h2>Latest blog posts</h2>
-
-            <a href="blog.php">read more <i class="fa fa-angle-right"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-          <div class="service-item">
-            <a href="#" class="services-item-image"><img src="assets/images/blog-1-370x270.jpg" class="img-fluid" alt=""></a>
-
-            <div class="down-content">
-              <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</a></h4>
-
-              <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="service-item">
-            <a href="#" class="services-item-image"><img src="assets/images/blog-2-370x270.jpg" class="img-fluid" alt=""></a>
-
-            <div class="down-content">
-              <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h4>
-
-              <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="service-item">
-            <a href="#" class="services-item-image"><img src="assets/images/blog-3-370x270.jpg" class="img-fluid" alt=""></a>
-
-            <div class="down-content">
-              <h4><a href="#">Aperiam modi voluptatum fuga officiis cumque</a></h4>
-
-              <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114
-              </p>
-            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="happy-clients">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <h2>Happy Clients</h2>
-
-            <a href="testimonials.php">read more <i class="fa fa-angle-right"></i></a>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="owl-clients owl-carousel text-center">
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>John Doe</h4>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla
-                    at quia quaerat."</em></p>
-              </div>
-            </div>
-
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>Jane Smith</h4>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla
-                    at quia quaerat."</em></p>
-              </div>
-            </div>
-
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>Antony Davis</h4>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla
-                    at quia quaerat."</em></p>
-              </div>
-            </div>
-
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>John Doe</h4>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla
-                    at quia quaerat."</em></p>
-              </div>
-            </div>
-
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>Jane Smith</h4>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla
-                    at quia quaerat."</em></p>
-              </div>
-            </div>
-
-            <div class="service-item">
-              <div class="icon">
-                <i class="fa fa-user"></i>
-              </div>
-              <div class="down-content">
-                <h4>Antony Davis</h4>
-                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla
-                    at quia quaerat."</em></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="call-to-action">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="inner-content">
-            <div class="row">
-              <div class="col-md-8">
-                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque corporis amet elite author nulla.
-                </p>
-              </div>
-              <div class="col-lg-4 col-md-6 text-right">
-                <a href="contact.php" class="filled-button">Contact Us</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
   <footer>
     <div class="container">

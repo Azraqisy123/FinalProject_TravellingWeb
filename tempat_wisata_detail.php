@@ -3,6 +3,7 @@ session_start();
 
 if (!isset($_SESSION['email_user'])) {
   // Jika belum login
+  $id_user = '';
   $loginButton = '<li class="nav-item"><a class="nav-link" href="login.php">Sign In</a></li>';
   $signupButton = '<li class="nav-item"><a class="nav-link" href="register.php">Sign Up</a></li>';
   $userGreeting = '';

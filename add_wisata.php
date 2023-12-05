@@ -101,7 +101,7 @@ if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
                             </div>
                             <div class="form-group">
                                 <label>Kategori</label>
-                                <select class="form-control" name="id_kategori">
+                                <select class="form-select" name="id_kategori">
                                     <?php $categorys = mysqli_query($connection, "SELECT * FROM kategori");
                                     foreach ($categorys as $category) { ?>
                                         <option value="<?php echo $category['id_kategori'] ?>"><?php echo $category['nama_kategori'] ?></option>
