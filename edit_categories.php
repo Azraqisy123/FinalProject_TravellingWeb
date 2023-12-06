@@ -72,12 +72,12 @@ if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CRUD</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Management Data</a>
 
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="crud_wisata.php">CRUD WISATA</a>
-                                <a class="dropdown-item" href="crud_user.php">CRUD USER</a>
-                                <a class="dropdown-item active" href="terms.php">CRUD CATEGORIES</a>
+                                <a class="dropdown-item" href="crud_wisata.php">WISATA</a>
+                                <a class="dropdown-item" href="crud_user.php">USER</a>
+                                <a class="dropdown-item active" href="terms.php">CATEGORIES</a>
                             </div>
                         </li>
                         <?php echo $userGreeting; ?>

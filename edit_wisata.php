@@ -39,6 +39,10 @@ foreach ($travels as $travel) {
     $fasilitas = $travel['fasilitas'];
     $htm = $travel['htm'];
     $deskripsi = $travel['deskripsi'];
+    $foto_1 = $travel['foto_1'];
+    $foto_2 = $travel['foto_2'];
+    $foto_3 = $travel['foto_3'];
+    $foto_4 = $travel['foto_4'];
 }
 session_start();
 
@@ -77,12 +81,12 @@ if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CRUD</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Management Data</a>
 
                             <div class="dropdown-menu">
-                                <a class="dropdown-item active" href="crud_wisata.php">CRUD WISATA</a>
-                                <a class="dropdown-item" href="crud_user.php">CRUD USER</a>
-                                <a class="dropdown-item" href="crud_categories.php">CRUD CATEGORIES</a>
+                                <a class="dropdown-item active" href="crud_wisata.php">WISATA</a>
+                                <a class="dropdown-item" href="crud_user.php">USER</a>
+                                <a class="dropdown-item" href="crud_categories.php">CATEGORIES</a>
                             </div>
                         </li>
                         <?php echo $userGreeting; ?>
@@ -143,12 +147,16 @@ if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
                             <div class="form-group">
                                 <label>Foto Tempat</label>
                                 <input class="form-control" type="file" name="foto_1">
+                                <input type="hidden" name="foto_lama_1" value="<?php echo $foto_1; ?>">
                                 <label></label>
                                 <input class="form-control" type="file" name="foto_2">
+                                <input type="hidden" name="foto_lama_2" value="<?php echo $foto_2; ?>">
                                 <label></label>
                                 <input class="form-control" type="file" name="foto_3">
+                                <input type="hidden" name="foto_lama_3" value="<?php echo $foto_3; ?>">
                                 <label></label>
                                 <input class="form-control" type="file" name="foto_4">
+                                <input type="hidden" name="foto_lama_4" value="<?php echo $foto_4; ?>">
                             </div>
                         </div>
                         <!-- /.card-body -->
