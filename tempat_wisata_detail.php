@@ -331,97 +331,39 @@ foreach ($wisata as $value) {
   </div>
   <!-- end :: komentar -->
 
-  <!-- begin :: map & contact -->
   <div class="section">
     <div class="container">
-      <div class="row">
-        <div class="col-md-9">
-          <div class="section-heading">
-            <h2>Map</h2>
+      <div class="section-heading" style="border: 0">
+        <h2>You May Also like</h2>
+      </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="owl-clients owl-carousel text-center">
+        <?php
+        $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori WHERE kategori.id_kategori = $id_kategori AND NOT id_wisata = $id_wisata");
+        foreach ($travels as $travel){
+        ?>
+        <div class="col-md-12">
+          <div class="product-item">
+            <a href="tempat_wisata_detail.php?id=<?php echo $travel['id_wisata'] ?>"><img src="assets/images/wisata/<?php echo $travel['foto_1']; ?>" alt=""></a>
+              <div class="down-content">
+                <a href="tempat_wisata_detail.php?id=<?php echo $travel['id_wisata'] ?>">
+                  <h4 class="text-left"><?php echo $travel['nama_tempat']; ?></h4>
+                </a>
+                <h6 class="text-left">Rp <?php echo number_format($travel['htm']); ?></h6>
+                <p class="text-justify"><?php echo substr_replace($travel['deskripsi'], " ... ", 125); ?></p>
+                <small class="d-flex justify-content-between mb-4">
+                  <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
+                </small>
+              </div>
           </div>
-
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.514450669144!2d112.7340344741299!3d-7.295949271716189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb97917c2fad%3A0x21b1122d5fe174cc!2sSurabaya%20Zoo!5e0!3m2!1sen!2sid!4v1700706040546!5m2!1sen!2sid" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-
-        <div class="col-md-3">
-          <div class="section-heading">
-            <h2>Contact Details</h2>
-          </div>
-
-          <div class="left-content">
-            <p>
-              <span>Phone</span>
-              <br>
-              <strong>
-                <a href="tel:+62315678703">+62 31-5678-703</a>
-              </strong>
-            </p>
-            <p>
-              <span>Whatsapp</span>
-              <br>
-              <strong>
-                <a href="https://api.whatsapp.com/send?phone=62895379933535&text=Mohon%20Infomasi%20lebih%20lengkap%20mengenai%20paket-paket%20tersebut">
-                  +62 8953-7993-3535</a>
-              </strong>
-            </p>
-            <p>
-              <span>Instagram</span>
-              <br>
-              <strong>
-                <a href="https://www.instagram.com/kebunbinatangsurabaya/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==">kebunbinatangsurabaya</a>
-              </strong>
-            </p>
-          </div>
+        <?php } ?>
         </div>
       </div>
     </div>
-  </div>
-  <!-- end :: map & contact -->
-
-  <!-- begin :: form contact -->
-  <div class="section">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Any Question? Contact us with form below</h2>
-      </div>
-
-      <div class="contact-form">
-        <form id="contact" action="" method="post">
-          <div class="row">
-            <div class="col-sm-12">
-              <fieldset>
-                <input name="name" type="text" class="form-control" id="name" placeholder="Name" required="">
-              </fieldset>
-            </div>
-
-            <div class="col-sm-6">
-              <fieldset>
-                <input name="email" type="email" class="form-control" id="email" placeholder="Email" required="">
-              </fieldset>
-            </div>
-
-            <div class="col-sm-6">
-              <fieldset>
-                <input name="phone" type="text" class="form-control" id="phone" placeholder="Phone" required="">
-              </fieldset>
-            </div>
-
-            <div class="col-lg-12">
-              <fieldset>
-                <textarea name="message" rows="6" class="form-control" id="message" placeholder="Notes" required=""></textarea>
-              </fieldset>
-            </div>
-            <div class="col-lg-12">
-              <fieldset>
-                <button type="submit" id="form-submit" class="filled-button">Send Request</button>
-              </fieldset>
-            </div>
-          </div>
-        </form>
-      </div>
     </div>
   </div>
-  <!-- end :: form contact -->
 
   <!-- begin :: footer -->
   <footer>
