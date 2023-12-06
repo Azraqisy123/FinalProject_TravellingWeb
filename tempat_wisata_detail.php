@@ -351,7 +351,7 @@ foreach ($wisata as $value) {
                   <h4 class="text-left"><?php echo $travel['nama_tempat']; ?></h4>
                 </a>
                 <h6 class="text-left">Rp <?php echo number_format($travel['htm']); ?></h6>
-                <p class="text-justify"><?php echo substr_replace($travel['deskripsi'], " ... ", 125); ?></p>
+                <p class="text-left"><?php echo substr_replace($travel['deskripsi'], " ... ", 110); ?></p>
                 <small class="d-flex justify-content-between mb-4">
                   <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
                 </small>

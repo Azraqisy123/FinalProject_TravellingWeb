@@ -141,7 +141,7 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.f
 
                   <h6>Rp <?php echo number_format($travel['htm']); ?></h6>
 
-                  <p class="text-justify"><?php echo substr_replace($travel['deskripsi'], " ... ", 130); ?></p>
+                  <p><?php echo substr_replace($travel['deskripsi'], " ... ", 140); ?></p>
 
                   <small class="d-flex justify-content-between mb-4">
                     <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
