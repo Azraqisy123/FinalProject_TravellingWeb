@@ -16,7 +16,7 @@ if (!isset($_SESSION['email_user'])) {
 }
 
 include "connection.php";
-$travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori");
+$travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori LIMIT 3");
 $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.foto_user , wisata.nama_tempat, kategori.id_kategori, kategori.nama_kategori FROM komentar JOIN user ON user.id_user = komentar.id_user JOIN wisata ON komentar.id_wisata = wisata.id_wisata RIGHT JOIN kategorI ON wisata.id_kategori = kategori.id_kategori");
 
 ?>
