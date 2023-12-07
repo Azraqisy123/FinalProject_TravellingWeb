@@ -130,7 +130,7 @@ foreach ($user as $value) {
 
     <div class="products">
         <div class="container">
-            <form class="row justify-content-center" action="backend/proses_edit_user.php?id=<?php echo $id_user; ?>" method="post" enctype="multipart/form-data">
+            <form class="row justify-content-center" action="backend/proses_edit_profil.php?id=<?php echo $id_user; ?>" method="post" enctype="multipart/form-data">
                 <div class="col-md-3 text-center">
                     <img id="img_user" src="assets/images/user/<?php echo $foto_user ?>" alt="" width="100%">
                     <div class="row">
@@ -141,6 +141,7 @@ foreach ($user as $value) {
                                 </svg>
                             </label>
                             <input id="foto_user" name="foto_user" type="file" style="display: none;" />
+                            <input type="text" class="form-control" name="temp_user" id="temp_user" value="" hidden>
                         </div>
                         <div class="col py-2 g-0 text-start">
                             <label class="btn btn-danger" id="btn_delete_foto_user">
@@ -278,9 +279,11 @@ foreach ($user as $value) {
 
         // delete profile picture (use the default image)
         var dlt_foto = document.getElementById('btn_delete_foto_user');
+        var deflt_foto = 'default.jpg';
         dlt_foto.addEventListener('click', function() {
             if (confirm('Are you sure to delete your picture')) {
-                document.getElementById('img_user').src = 'assets/images/user/default.jpg';
+                document.getElementById('img_user').src = 'assets/images/user/' + deflt_foto;
+                document.getElementById('temp_user').setAttribute('value', 'default.jpg');
             }
         })
     </script>
