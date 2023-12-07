@@ -14,7 +14,7 @@ if (!isset($_SESSION['email_user'])) {
   $id_user = $_SESSION['id_user'];
   $loginButton = '';
   $signupButton = '';
-  $userGreeting = '<li class="nav-item"><a class="nav-link" href="#">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
+  $userGreeting = '<li class="nav-item"><a class="nav-link" href="profil_user.php?id=' . $_SESSION['id_user'] . '">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
   $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
   $reviewButton = '<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_ulasan">Tambah Ulasan</button>';
 }
@@ -98,21 +98,15 @@ foreach ($wisata as $value) {
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-
             <li class="nav-item active"><a class="nav-link" href="tempat_wisata.php">Tempat Wisata</a></li>
-
-            <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
-
+            <li class="nav-item"><a class="nav-link" href="testimonials.php">Testimonials</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
-
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="about-us.php">About Us</a>
-                <a class="dropdown-item" href="testimonials.php">Testimonials</a>
+                <a class="dropdown-item" href="contact.php">Contact Us</a>
               </div>
             </li>
-
-
             <?php echo $loginButton; ?>
             <?php echo $signupButton; ?>
             <?php echo $userGreeting; ?>
@@ -206,17 +200,15 @@ foreach ($wisata as $value) {
       <div class="section-heading" style="border: 0">
         <h2>Fasilitas</h2>
       </div>
-      <ul class="" style="list-style: circle;">
+      <ul class="ps-5" style="list-style: circle;">
         <?php
         $sql = "SELECT * FROM wisata WHERE id_wisata = $id_wisata";
         $result = mysqli_query($connection, $sql);
         while ($row = mysqli_fetch_assoc($result)) {
-          echo "<ul>";
           $fasilitas_list = explode("\n", $row['fasilitas']);
           foreach ($fasilitas_list as $fasilitas_item) {
             echo "<li>" . trim($fasilitas_item) . "</li>";
           }
-          echo "</ul>";
         } ?>
       </ul>
     </div>

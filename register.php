@@ -65,8 +65,8 @@ session_start();
                     <label for="jenis_kelamin" class="form-label">Gender</label> <br>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="jenis_kelamin" id="male" value="0" checked <?php if (@$_SESSION['jenis_kelamin'] == '0') {
-                                                                                                                    echo 'checked';
-                                                                                                                } ?>>
+                                                                                                                            echo 'checked';
+                                                                                                                        } ?>>
                         <label class="form-check-label" for="male">Male</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -126,23 +126,7 @@ session_start();
 
                 <!-- begin :: Register buttons -->
                 <div class="text-center mb-5">
-                    <p>Have any account <a href="login.php">Login</a></p>
-                    <p class="mb-3">or sign up with:</p>
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-facebook-f"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-google"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-twitter"></i>
-                    </button>
-
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-github"></i>
-                    </button>
+                    <p>Have any account? <a href="login.php">Login</a></p>
                 </div>
                 <!-- end :: Register buttons -->
             </form>

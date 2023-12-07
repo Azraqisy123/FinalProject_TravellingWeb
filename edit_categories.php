@@ -77,7 +77,7 @@ if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="crud_wisata.php">WISATA</a>
                                 <a class="dropdown-item" href="crud_user.php">USER</a>
-                                <a class="dropdown-item active" href="terms.php">CATEGORIES</a>
+                                <a class="dropdown-item active" href="crud_categories.php">CATEGORIES</a>
                             </div>
                         </li>
                         <?php echo $userGreeting; ?>
