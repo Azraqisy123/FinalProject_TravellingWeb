@@ -114,7 +114,7 @@ if (!isset($_SESSION['email_user'])) {
 
   <div class="products">
     <div class="container">
-      <div class="row justify-content-center">
+      <div class="row justify-content">
         <!-- Looping Data from Database Start -->
         <?php
         if (mysqli_num_rows($travels) > 0) {

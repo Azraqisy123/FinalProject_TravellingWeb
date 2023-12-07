@@ -114,7 +114,7 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
 
   <div class="products">
     <div class="container">
-      <div class="row justify-content-center">
+      <div class="row justify-content">
         <!-- Looping Data from Database Start -->
         <?php
         if (mysqli_num_rows($travels) > 0) {

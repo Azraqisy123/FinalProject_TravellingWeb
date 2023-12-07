@@ -24,7 +24,7 @@ if (isset($_POST['email_user']) && isset($_POST['password'])) {
                 $_SESSION['id_user'] = $row['id_user'];
                 // Periksa peran (role) dan arahkan sesuai ke halaman yang sesuai
                 if ($row['role'] === 'ADMIN') {
-                    header("Location:../crud_user.php");
+                    header("Location:../admin_dashboard.php");
                 } else {
                     header("Location:../index.php");
                 }

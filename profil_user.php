@@ -116,7 +116,7 @@ foreach ($user as $value) {
     </header>
 
     <!-- Page Content -->
-    <div class="page-heading about-heading header-text" style="background-color: black;">
+    <div class="page-heading about-heading header-text" style="background-color: #121212;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
