@@ -121,7 +121,7 @@ if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
                             </div>
                             <div class=" form-group">
                                 <label>Password</label>
-                                <input type="text" class="form-control" name="password" value="<?php echo $password_user; ?>">
+                                <input type="password" class="form-control" name="password" value="<?php echo $password_user; ?>">
                             </div>
                             <div class="form-group">
                                 <label>Jenis Kelamin</label>
@@ -156,19 +156,19 @@ if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="text" class="form-control" name="email_user" value="<?php echo $email_user; ?>">
+                                <input type="email" class="form-control" name="email_user" value="<?php echo $email_user; ?>">
                             </div>
                             <div class="form-group">
                                 <label>No Telp</label>
-                                <input type="number" class="form-control" name="no_telp" value="<?php echo $no_telp; ?>">
+                                <input type="text" class="form-control" name="no_telp" value="<?php echo $no_telp; ?>">
                             </div>
                             <div class="form-group">
                                 <label>Alamat</label>
-                                <input type="text" class="form-control" name="alamat" value="<?php echo $alamat; ?>">
+                                <textarea type="text" class="form-control" name="alamat"><?php echo $alamat; ?></textarea>
                             </div>
                             <div class=" form-group">
                                 <label>Role</label>
-                                <select class="form-control" name="role">
+                                <select class="form-select" name="role">
                                     <option value="ADMIN" <?php if ($role == "ADMIN") {
                                                                 echo "selected";
                                                             } ?>>ADMIN</option>

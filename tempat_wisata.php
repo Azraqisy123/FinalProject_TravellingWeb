@@ -10,7 +10,7 @@ if (!isset($_SESSION['email_user'])) {
   // Jika sudah login
   $loginButton = '';
   $signupButton = '';
-  $userGreeting = '<li class="nav-item"><a class="nav-link" href="#">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
+  $userGreeting = '<li class="nav-item"><a class="nav-link" href="profil_user.php?id=' . $_SESSION['id_user'] . '">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
   $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
 }
 
@@ -73,21 +73,15 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-
             <li class="nav-item active"><a class="nav-link" href="tempat_wisata.php">Tempat Wisata</a></li>
-
-            <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
-
+            <li class="nav-item"><a class="nav-link" href="testimonials.php">Testimonials</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
-
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="about-us.php">About Us</a>
-                <a class="dropdown-item" href="testimonials.php">Testimonials</a>
+                <a class="dropdown-item" href="contact.php">Contact Us</a>
               </div>
             </li>
-
-
             <?php echo $loginButton; ?>
             <?php echo $signupButton; ?>
             <?php echo $userGreeting; ?>
@@ -137,7 +131,7 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
 
                   <h6>Rp <?php echo number_format($travel['htm']); ?></h6>
 
-                  <p class="text-justify"><?php echo substr_replace($travel['deskripsi'], " ... ", 130); ?></p>
+                  <p><?php echo substr_replace($travel['deskripsi'], " ... ", 140); ?></p>
 
                   <small class="d-flex justify-content-between mb-4">
                     <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
