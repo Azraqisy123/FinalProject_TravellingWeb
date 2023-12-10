@@ -157,7 +157,6 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
             </nav>
             <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
                 <h1 class="h2">Wisata</h1>
-                <p>This is the homepage of a simple admin interface which is part of a tutorial written on Themesberg</p>
                 <a class="btn btn-primary mt-3" href="add_wisata.php" role="button">Tambah Data</a>
                 <div class="row my-4">
                     <div class="">

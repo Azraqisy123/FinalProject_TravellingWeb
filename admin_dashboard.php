@@ -225,7 +225,7 @@ $recentComments = mysqli_fetch_all($queryRecentComments, MYSQLI_ASSOC);
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Recent Comments</h5>
@@ -235,7 +235,7 @@ $recentComments = mysqli_fetch_all($queryRecentComments, MYSQLI_ASSOC);
                                             <div class="col-2">
                                                 <img src="assets/images/user/<?php echo $comment['foto_user']; ?>" alt="" width="100%">
                                             </div>
-                                            <div class="col-10 border py-2"> <!-- Mengubah tinggi kotak komentar -->
+                                            <div class="col-10 border py-2">
                                                 <div class="row">
                                                     <h6 class="col-12"><?php echo $comment['nama_user']; ?></h6>
                                                 </div>
@@ -247,7 +247,7 @@ $recentComments = mysqli_fetch_all($queryRecentComments, MYSQLI_ASSOC);
                                 <?php endforeach; ?>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!--Aktivitas Terkini End -->
 
