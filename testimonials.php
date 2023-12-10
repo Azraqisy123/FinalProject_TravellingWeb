@@ -102,7 +102,6 @@ foreach ($komentar as $key => $value) {
               </div>
             </li>
             <?php echo $loginButton; ?>
-            <?php echo $signupButton; ?>
             <?php echo $userGreeting; ?>
             <?php echo $logoutButton; ?>
           </ul>

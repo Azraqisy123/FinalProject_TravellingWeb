@@ -82,7 +82,6 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
               </div>
             </li>
             <?php echo $loginButton; ?>
-            <?php echo $signupButton; ?>
             <?php echo $userGreeting; ?>
             <?php echo $logoutButton; ?>
           </ul>

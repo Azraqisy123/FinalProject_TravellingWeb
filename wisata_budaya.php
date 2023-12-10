@@ -82,7 +82,6 @@ if (!isset($_SESSION['email_user'])) {
               </div>
             </li>
             <?php echo $loginButton; ?>
-            <?php echo $signupButton; ?>
             <?php echo $userGreeting; ?>
             <?php echo $logoutButton; ?>
           </ul>

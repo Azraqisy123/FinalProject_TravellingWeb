@@ -83,7 +83,6 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.f
               </div>
             </li>
             <?php echo $loginButton; ?>
-            <?php echo $signupButton; ?>
             <?php echo $userGreeting; ?>
             <?php echo $logoutButton; ?>
           </ul>
