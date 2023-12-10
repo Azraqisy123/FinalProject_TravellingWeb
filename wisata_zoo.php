@@ -1,8 +1,7 @@
 <?php
-session_start();
 include "connection.php";
-$travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori WHERE wisata.id_kategori = 5");
 
+session_start();
 if (!isset($_SESSION['email_user'])) {
   // Jika belum login
   $loginButton = '<li class="nav-item"><a class="nav-link" href="login.php">Sign In</a></li>';
@@ -16,6 +15,15 @@ if (!isset($_SESSION['email_user'])) {
   $userGreeting = '<li class="nav-item"><a class="nav-link" href="profil_user.php?id=' . $_SESSION['id_user'] . '">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
   $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
 }
+
+// pagination
+$JumlahDataPerPage = 4;
+$JumlahData = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori WHERE kategori.nama_kategori = 'Kebun Binatang'"));
+$JumlahHalaman = ceil($JumlahData / $JumlahDataPerPage);
+$HalamanActive = (isset($_GET["page"])) ? $_GET["page"] : 1;
+$AwalData = ($JumlahDataPerPage * $HalamanActive) - $JumlahDataPerPage;
+
+$travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori WHERE kategori.nama_kategori = 'Kebun Binatang' LIMIT $AwalData, $JumlahDataPerPage");
 ?>
 
 <!DOCTYPE html>
@@ -150,15 +158,27 @@ if (!isset($_SESSION['email_user'])) {
         <?php } ?>
         <!-- Looping Data from Database End -->
 
+        <!-- Pagination Start -->
         <div class="col-md-12">
           <ul class="pages">
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+            <?php if($HalamanActive > 1) { ?>
+              <li><a href="?page=<?= $HalamanActive - 1; ?>"><i class="fa fa-angle-double-left"></i></a></li>
+            <?php } ?>
+
+            <?php for($i = 1; $i <= $JumlahHalaman; $i++) { ?>
+              <?php if( $i == $HalamanActive) { ?>
+                <li class="active"><a href="?page=<?= $i; ?>"> <?= $i; ?></a></li>
+              <?php } else { ?>
+                <li><a href="?page=<?= $i; ?>"> <?= $i; ?></a></li>
+              <?php } ?>
+            <?php } ?>
+
+            <?php if($HalamanActive < $JumlahHalaman) { ?>
+              <li><a href="?page=<?= $HalamanActive + 1; ?>"><i class="fa fa-angle-double-right"></i></a></li>
+            <?php } ?>
           </ul>
         </div>
+        <!-- Pagination End -->
       </div>
     </div>
   </div>
