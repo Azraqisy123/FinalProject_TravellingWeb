@@ -90,8 +90,8 @@ if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
     exit();
 } else {
     // Jika sudah login
-    $userGreeting = '<li class="nav-item"><a class="nav-link" href="#">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
-    $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
+    $userGreeting = 'Hello, ' . $_SESSION['nama_user'];
+    $logoutButton = '<li class="nav-item"><a class="dropdown-item" href="backend/logout.php">Sign Out</a></li>';
 }
 ?>
 <!-- Load Data From Database End -->
