@@ -212,44 +212,44 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.f
             <!-- Start Column 1 -->
             <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
               <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t1.jpg" class="img-fluid mb-5">
-              <h3><a href="#"><span>Lawson</span> Arnold</a></h3>
-              <span class="d-block position mb-4">CEO, Founder, Atty.</span>
-              <p>Separated they live in.
+              <h3><a href="#"><span>Solihudin</span></a></h3>
+              <!-- <span class="d-block position mb-4">CEO, Founder, Atty.</span> -->
+              <!-- <p>Separated they live in.
                 Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-                ocean.</p>
+                ocean.</p> -->
               <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
             </div>
             <!-- End Column 1 -->
             <!-- Start Column 2 -->
             <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
               <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg" class="img-fluid mb-5">
-              <h3><a href="#"><span>Jeremy</span> Walker</a></h3>
-              <span class="d-block position mb-4">CEO, Founder, Atty.</span>
-              <p>Separated they live in.
+              <h3><a href="#"><span>Muhammad</span> Azraqi Syahriza</a></h3>
+              <!-- <span class="d-block position mb-4">CEO, Founder, Atty.</span> -->
+              <!-- <p>Separated they live in.
                 Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-                ocean.</p>
+                ocean.</p> -->
               <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
             </div>
             <!-- End Column 2 -->
             <!-- Start Column 3 -->
             <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
               <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg" class="img-fluid mb-5">
-              <h3><a href="#"><span>Patrik</span> White</a></h3>
-              <span class="d-block position mb-4">CEO, Founder, Atty.</span>
-              <p>Separated they live in.
+              <h3><a href="#"><span>Eko Agung</span> Prasetyo</a></h3>
+              <!-- <span class="d-block position mb-4">CEO, Founder, Atty.</span> -->
+              <!-- <p>Separated they live in.
                 Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-                ocean.</p>
+                ocean.</p> -->
               <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
             </div>
             <!-- End Column 3 -->
             <!-- Start Column 4 -->
             <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
               <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t4.jpg" class="img-fluid mb-5">
-              <h3><a href="#"><span>Kathryn</span> Ryan</a></h3>
-              <span class="d-block position mb-4">CEO, Founder, Atty.</span>
-              <p>Separated they live in.
+              <h3><a href="#"><span>Laila</span> Novia Sari</a></h3>
+              <!-- <span class="d-block position mb-4">CEO, Founder, Atty.</span> -->
+              <!-- <p>Separated they live in.
                 Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-                ocean.</p>
+                ocean.</p> -->
               <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
             </div>
             <!-- End Column 4 -->

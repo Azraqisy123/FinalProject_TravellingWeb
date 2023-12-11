@@ -109,11 +109,11 @@ if (!isset($_SESSION['email_user'])) {
       <!-- Start Column 1 -->
       <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
         <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t1.jpg" class="img-fluid mb-5">
-        <h3 clas><a href="#"><span class="">Lawson</span> Arnold</a></h3>
-        <span class="d-block position mb-4">CEO, Founder, Atty.</span>
+        <h3 clas><a href="#"><span class="">Solihudin</span></a></h3>
+        <!-- <span class="d-block position mb-4">CEO, Founder, Atty.</span>
         <p>Separated they live in.
           Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-          ocean.</p>
+          ocean.</p> -->
         <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
       </div>
       <!-- End Column 1 -->
@@ -122,11 +122,11 @@ if (!isset($_SESSION['email_user'])) {
       <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
         <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg" class="img-fluid mb-5">
 
-        <h3 clas><a href="#"><span class="">Jeremy</span> Walker</a></h3>
-        <span class="d-block position mb-4">CEO, Founder, Atty.</span>
+        <h3 clas><a href="#"><span class="">Muhammad</span> Azraqi Syahriza</a></h3>
+        <!-- <span class="d-block position mb-4">CEO, Founder, Atty.</span>
         <p>Separated they live in.
           Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-          ocean.</p>
+          ocean.</p> -->
         <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
 
       </div>
@@ -135,11 +135,11 @@ if (!isset($_SESSION['email_user'])) {
       <!-- Start Column 3 -->
       <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
         <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg" class="img-fluid mb-5">
-        <h3 clas><a href="#"><span class="">Patrik</span> White</a></h3>
-        <span class="d-block position mb-4">CEO, Founder, Atty.</span>
+        <h3 clas><a href="#"><span class="">Eko Agung</span> Prasetyo</a></h3>
+        <!-- <span class="d-block position mb-4">CEO, Founder, Atty.</span>
         <p>Separated they live in.
           Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-          ocean.</p>
+          ocean.</p> -->
         <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
       </div>
       <!-- End Column 3 -->
@@ -148,11 +148,11 @@ if (!isset($_SESSION['email_user'])) {
       <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
         <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t4.jpg" class="img-fluid mb-5">
 
-        <h3 clas><a href="#"><span class="">Kathryn</span> Ryan</a></h3>
-        <span class="d-block position mb-4">CEO, Founder, Atty.</span>
+        <h3 clas><a href="#"><span class="">Laila</span> Novia Sari</a></h3>
+        <!-- <span class="d-block position mb-4">CEO, Founder, Atty.</span>
         <p>Separated they live in.
           Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-          ocean.</p>
+          ocean.</p> -->
         <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
 
 
