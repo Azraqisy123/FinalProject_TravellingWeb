@@ -15,6 +15,17 @@ if (!isset($_SESSION['email_user'])) {
   $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
 }
 
+$errorMessage = '';
+if (isset($_GET['error'])) {
+  $errorMessage = $_GET['error'];
+}
+
+// Tambahkan variabel untuk menampilkan pesan kesalahan di halaman HTML
+$errorDisplay = '';
+if (!empty($errorMessage)) {
+  $errorDisplay = '<div id="errorMessage" class="alert alert-danger">' . $errorMessage . '</div>';
+}
+
 include "connection.php";
 $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori LIMIT 3");
 $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.foto_user , wisata.nama_tempat, kategori.id_kategori, kategori.nama_kategori FROM komentar JOIN user ON user.id_user = komentar.id_user JOIN wisata ON komentar.id_wisata = wisata.id_wisata RIGHT JOIN kategorI ON wisata.id_kategori = kategori.id_kategori");
@@ -45,7 +56,6 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.f
 </head>
 
 <body>
-
   <!-- ***** Preloader Start ***** -->
   <div id="preloader">
     <div class="jumper">
@@ -58,6 +68,7 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.f
 
   <!-- Header -->
   <header class="">
+    <?php echo $errorDisplay; ?>
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="index.php">
@@ -280,6 +291,15 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.f
   <!-- Additional Scripts -->
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/owl.js"></script>
+  <script>
+    // Hapus pesan kesalahan setelah 5 detik (5000 milidetik)
+    setTimeout(function() {
+      var errorMessage = document.getElementById('errorMessage');
+      if (errorMessage) {
+        errorMessage.style.display = 'none';
+      }
+    }, 1000);
+  </script>
 </body>
 
 </html>

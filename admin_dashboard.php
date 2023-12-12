@@ -1,11 +1,16 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
+if (!isset($_SESSION['email_user'])) {
     header("Location: login.php");
     exit();
 } else {
-    // Jika sudah login
+    // Pastikan peran pengguna adalah 'ADMIN' sebelum melanjutkan
+    if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'ADMIN') {
+        header("Location: index.php?error=Unauthorized Access"); // Redirect ke halaman index.php dengan pesan kesalahan
+        exit();
+    }
+
     $userGreeting = 'Hello, ' . $_SESSION['nama_user'];
     $logoutButton = '<li class="nav-item"><a class="dropdown-item" href="backend/logout.php">Sign Out</a></li>';
 }
@@ -24,8 +29,6 @@ $rowCategories = mysqli_fetch_assoc($queryCategories);
 $rowUsers = mysqli_fetch_assoc($queryUsers);
 $recentPlaces = mysqli_fetch_all($queryRecentPlaces, MYSQLI_ASSOC);
 $recentComments = mysqli_fetch_all($queryRecentComments, MYSQLI_ASSOC);
-
-
 ?>
 
 <!DOCTYPE html>
