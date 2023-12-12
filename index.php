@@ -7,12 +7,31 @@ if (!isset($_SESSION['email_user'])) {
   $signupButton = '<li class="nav-item"><a class="nav-link" href="register.php">Sign Up</a></li>';
   $userGreeting = '';
   $logoutButton = '';
+  $dashboardButton = '';
 } else {
   // Jika sudah login
   $loginButton = '';
   $signupButton = '';
   $userGreeting = '<li class="nav-item"><a class="nav-link" href="profil_user.php?id=' . $_SESSION['id_user'] . '">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
   $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
+
+  // cek jika pengguna merupakan admin
+  if (isset($_SESSION['role']) && $_SESSION['role'] === 'ADMIN') {
+    $dashboardButton = '<a class="dropdown-item" href="admin_dashboard.php">Dashboard</a>';
+  } else {
+    $dashboardButton = '';
+  }
+}
+
+$errorMessage = '';
+if (isset($_GET['error'])) {
+  $errorMessage = $_GET['error'];
+}
+
+// Tambahkan variabel untuk menampilkan pesan kesalahan di halaman HTML
+$errorDisplay = '';
+if (!empty($errorMessage)) {
+  $errorDisplay = '<div id="errorMessage" class="alert alert-danger">' . $errorMessage . '</div>';
 }
 
 include "connection.php";
@@ -45,7 +64,6 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.f
 </head>
 
 <body>
-
   <!-- ***** Preloader Start ***** -->
   <div id="preloader">
     <div class="jumper">
@@ -58,6 +76,7 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.f
 
   <!-- Header -->
   <header class="">
+    <?php echo $errorDisplay; ?>
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="index.php">
@@ -80,6 +99,7 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.f
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="about-us.php">About Us</a>
                 <a class="dropdown-item" href="contact.php">Contact Us</a>
+                <?php echo $dashboardButton; ?>
               </div>
             </li>
             <?php echo $loginButton; ?>
@@ -280,6 +300,15 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.f
   <!-- Additional Scripts -->
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/owl.js"></script>
+  <script>
+    // Hapus pesan kesalahan setelah 5 detik (5000 milidetik)
+    setTimeout(function() {
+      var errorMessage = document.getElementById('errorMessage');
+      if (errorMessage) {
+        errorMessage.style.display = 'none';
+      }
+    }, 1000);
+  </script>
 </body>
 
 </html>

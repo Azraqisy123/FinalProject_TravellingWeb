@@ -1,11 +1,16 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['email_user'])) { // Periksa apakah pengguna sudah login
+if (!isset($_SESSION['email_user'])) {
     header("Location: login.php");
     exit();
 } else {
-    // Jika sudah login
+    // memastikan peran pengguna adalah 'ADMIN' sebelum melanjutkan
+    if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'ADMIN') {
+        header("Location: index.php?error=Unauthorized Access"); // Redirect ke halaman index dengan pesan kesalahan
+        exit();
+    }
+
     $userGreeting = 'Hello, ' . $_SESSION['nama_user'];
     $logoutButton = '<li class="nav-item"><a class="dropdown-item" href="backend/logout.php">Sign Out</a></li>';
 }
@@ -24,8 +29,6 @@ $rowCategories = mysqli_fetch_assoc($queryCategories);
 $rowUsers = mysqli_fetch_assoc($queryUsers);
 $recentPlaces = mysqli_fetch_all($queryRecentPlaces, MYSQLI_ASSOC);
 $recentComments = mysqli_fetch_all($queryRecentComments, MYSQLI_ASSOC);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -106,7 +109,7 @@ $recentComments = mysqli_fetch_all($queryRecentComments, MYSQLI_ASSOC);
 
     <nav class="navbar navbar-light bg-light p-3">
         <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 Admin Dashboard
             </a>
             <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
