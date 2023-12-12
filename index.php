@@ -7,12 +7,20 @@ if (!isset($_SESSION['email_user'])) {
   $signupButton = '<li class="nav-item"><a class="nav-link" href="register.php">Sign Up</a></li>';
   $userGreeting = '';
   $logoutButton = '';
+  $dashboardButton = '';
 } else {
   // Jika sudah login
   $loginButton = '';
   $signupButton = '';
   $userGreeting = '<li class="nav-item"><a class="nav-link" href="profil_user.php?id=' . $_SESSION['id_user'] . '">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
   $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
+
+  // cek jika pengguna merupakan admin
+  if (isset($_SESSION['role']) && $_SESSION['role'] === 'ADMIN') {
+    $dashboardButton = '<a class="dropdown-item" href="admin_dashboard.php">Dashboard</a>';
+  } else {
+    $dashboardButton = '';
+  }
 }
 
 $errorMessage = '';
@@ -91,6 +99,7 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.f
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="about-us.php">About Us</a>
                 <a class="dropdown-item" href="contact.php">Contact Us</a>
+                <?php echo $dashboardButton; ?>
               </div>
             </li>
             <?php echo $loginButton; ?>
