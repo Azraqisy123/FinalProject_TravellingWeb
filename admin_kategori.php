@@ -7,7 +7,7 @@ if (!isset($_SESSION['email_user'])) {
 } else {
     // Pastikan peran pengguna adalah 'ADMIN' sebelum melanjutkan
     if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'ADMIN') {
-        header("Location: index.php?error=Unauthorized Access"); // Redirect ke halaman index.php dengan pesan kesalahan
+        header("Location: index.php?error=Unauthorized Access"); // Redirect ke halaman index dengan pesan kesalahan
         exit();
     }
 
