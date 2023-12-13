@@ -36,6 +36,9 @@ foreach ($wisata as $value) {
   $foto_2 = $value['foto_2'];
   $foto_3 = $value['foto_3'];
   $foto_4 = $value['foto_4'];
+  $count_view = $value['view'];
+  $new_view = $count_view + 1;
+  $update_view = mysqli_query($connection, "UPDATE wisata SET view = '$new_view' WHERE id_wisata = '$id_wisata' " );
 }
 ?>
 
@@ -163,7 +166,8 @@ foreach ($wisata as $value) {
         </div>
 
         <div class="col-md-6">
-          <p><i class="fa fa-map-marker"></i> <strong><?php echo $lokasi ?></strong></p>
+          <p class="mb-2"><i class="fa fa-map-marker"></i> <strong><?php echo $lokasi ?></strong></p>
+          <p><i class="fa fa-eye"></i><strong><?php echo " Dilihat: " . $new_view ?></strong></p>
           <br>
           <h4><?php echo $nama_tempat ?></h4>
           <br>
@@ -345,6 +349,7 @@ foreach ($wisata as $value) {
                 <p class="text-left"><?php echo substr_replace($travel['deskripsi'], " ... ", 110); ?></p>
                 <small class="d-flex justify-content-between mb-4">
                   <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
+                  <strong title="Nights"><i class="fa fa-eye"></i> Dilihat: <?php echo $travel['view'] ?></strong>
                 </small>
               </div>
           </div>

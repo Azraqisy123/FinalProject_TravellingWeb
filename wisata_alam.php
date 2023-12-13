@@ -141,6 +141,7 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
 
                   <small class="d-flex justify-content-between mb-4">
                     <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
+                    <strong title="Nights"><i class="fa fa-eye"></i> Dilihat: <?php echo $travel['view'] ?></strong>
                   </small>
                 </div>
               </div>

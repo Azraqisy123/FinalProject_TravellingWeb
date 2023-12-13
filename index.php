@@ -35,7 +35,7 @@ if (!empty($errorMessage)) {
 }
 
 include "connection.php";
-$travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori LIMIT 3");
+$travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori ORDER BY view DESC LIMIT 3");
 $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.foto_user , wisata.nama_tempat, kategori.id_kategori, kategori.nama_kategori FROM komentar JOIN user ON user.id_user = komentar.id_user JOIN wisata ON komentar.id_wisata = wisata.id_wisata RIGHT JOIN kategorI ON wisata.id_kategori = kategori.id_kategori");
 
 ?>
@@ -139,6 +139,9 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.f
 
   <div class="latest-products">
     <div class="container">
+      <div class="section-heading">
+        <h2>Travels Recommendations</h2>
+      </div>
       <div class="row justify-content-center">
         <!-- Looping Data from Database Start -->
         <?php
@@ -159,6 +162,7 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.f
 
                   <small class="d-flex justify-content-between mb-4">
                     <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
+                    <strong title="Nights"><i class="fa fa-eye"></i> Dilihat: <?php echo $travel['view'] ?></strong>
                   </small>
                 </div>
               </div>
