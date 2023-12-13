@@ -33,7 +33,7 @@ session_start();
                 <?php
                 }
                 ?>
-                <form class="my-5 py-5" action="backend/login_validate.php" method="post">
+                <form action="backend/login_validate.php" method="post">
                     <h1 class="mb-3 text-center">Sign In</h1>
 
 
@@ -52,6 +52,19 @@ session_start();
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example2">Password</label>
                         <input type="password" id="form2Example2" class="form-control" name="password" required />
+                    </div>
+
+                    <!-- (B) CAPTCHA HERE -->
+                    <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example2">Are you human?</label>
+                        <div>
+                            <?php
+                            require "backend/captcha.php";
+                            $PHPCAP->prime();
+                            $PHPCAP->draw();
+                            ?>
+                        </div>
+                    <input type="text" class="form-control mt-3" name="captcha" placeholder="Masukan Kode Diatas" required>
                     </div>
 
                     <!-- Submit button -->

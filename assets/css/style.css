@@ -1266,7 +1266,9 @@ footer .inner-content p a {
 
 .error {
 	background-color: #f33f3f;
+	text-align: center;
+	font-weight: 500;
 	padding: 10px;
-	width: 95%;
+	width: 100%;
 	border-radius: 5px;
 }
