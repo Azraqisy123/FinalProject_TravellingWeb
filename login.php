@@ -14,6 +14,11 @@ session_start();
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e3256899f8.js" crossorigin="anonymous"></script>
 
+    <!-- CDN Bootstrap 5.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -71,20 +76,42 @@ session_start();
                     <input class="btn btn-primary btn-block mb-2" type="submit" name="login" value="Sign In">
 
                     <!-- Register buttons -->
-                    <div class="container text-center pt-2">
-                        <div class="row">
-                            <div class="col">
-                                <a href="register.php">Register</a>
-                            </div>
-                            <div class="col">
-                                <a href="#">Forgot Password</a>
-                            </div>
+                    <div class="row justify-content-between">
+                        <a href="#" class="col-6 text-start" data-bs-toggle="modal" data-bs-target="#modal_forgot_password">Forgot Password</a>
+                        <a class="col-6 text-end" href="register.php">Register</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- begin :: modal forgot password -->
+    <div class="modal fade" id="modal_forgot_password" tabindex="-1" aria-labelledby="modal_forgot_password" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modal_forgot_password">Forgot Password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="form_send_email" action="backend/send_link.php" method="POST">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="email" class="col-form-label">Masukkan email untuk reset password</label>
+                            <input type="email" class="form-control" name="email" id="email">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" name="submit_email" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <!-- end :: modal forgot password -->
+
 </body>
 
 </html>
