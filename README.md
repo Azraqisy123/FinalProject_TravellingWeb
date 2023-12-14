@@ -15,4 +15,5 @@
 ## Credits:
 1. Powered by : https://getbootstrap.com/
 2. Template by : https://www.phpjabbers.com/free-travel-website-template-145.php
-3. Edited by : Kelompok 4
+3. Plugin PHPMailer by : https://github.com/PHPMailer/PHPMailer?tab=readme-ov-file
+4. Edited by : Kelompok 4
