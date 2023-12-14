@@ -38,7 +38,7 @@ foreach ($wisata as $value) {
   $foto_4 = $value['foto_4'];
   $count_view = $value['view'];
   $new_view = $count_view + 1;
-  $update_view = mysqli_query($connection, "UPDATE wisata SET view = '$new_view' WHERE id_wisata = '$id_wisata' " );
+  $update_view = mysqli_query($connection, "UPDATE wisata SET view = '$new_view' WHERE id_wisata = '$id_wisata' ");
 }
 ?>
 
@@ -331,33 +331,33 @@ foreach ($wisata as $value) {
       <div class="section-heading" style="border: 0">
         <h2>You May Also like</h2>
       </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="owl-clients owl-carousel text-center">
-        <?php
-        $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori WHERE kategori.id_kategori = $id_kategori AND NOT id_wisata = $id_wisata");
-        foreach ($travels as $travel){
-        ?>
+      <div class="row">
         <div class="col-md-12">
-          <div class="product-item">
-            <a href="tempat_wisata_detail.php?id=<?php echo $travel['id_wisata'] ?>"><img src="assets/images/wisata/<?php echo $travel['foto_1']; ?>" alt=""></a>
-              <div class="down-content">
-                <a href="tempat_wisata_detail.php?id=<?php echo $travel['id_wisata'] ?>">
-                  <h4 class="text-left"><?php echo $travel['nama_tempat']; ?></h4>
-                </a>
-                <h6 class="text-left">Rp <?php echo number_format($travel['htm']); ?></h6>
-                <p class="text-left"><?php echo substr_replace($travel['deskripsi'], " ... ", 110); ?></p>
-                <small class="d-flex justify-content-between mb-4">
-                  <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
-                  <strong title="Nights"><i class="fa fa-eye"></i> Dilihat: <?php echo $travel['view'] ?></strong>
-                </small>
+          <div class="owl-clients owl-carousel text-center">
+            <?php
+            $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisata.id_kategori = kategori.id_kategori WHERE kategori.id_kategori = $id_kategori AND NOT id_wisata = $id_wisata");
+            foreach ($travels as $travel) {
+            ?>
+              <div class="col-md-12">
+                <div class="product-item">
+                  <a href="tempat_wisata_detail.php?id=<?php echo $travel['id_wisata'] ?>"><img src="assets/images/wisata/<?php echo $travel['foto_1']; ?>" alt=""></a>
+                  <div class="down-content">
+                    <a href="tempat_wisata_detail.php?id=<?php echo $travel['id_wisata'] ?>">
+                      <h4 class="text-left"><?php echo $travel['nama_tempat']; ?></h4>
+                    </a>
+                    <h6 class="text-left">Rp <?php echo number_format($travel['htm']); ?></h6>
+                    <p class="text-left"><?php echo substr_replace($travel['deskripsi'], " ... ", 110); ?></p>
+                    <small class="d-flex justify-content-between mb-4">
+                      <strong title="Nights"><i class="fa fa-cube"></i> Category: <?php echo $travel['nama_kategori']; ?></strong>
+                      <strong title="Nights"><i class="fa fa-eye"></i> Dilihat: <?php echo $travel['view'] ?></strong>
+                    </small>
+                  </div>
+                </div>
               </div>
+            <?php } ?>
           </div>
         </div>
-        <?php } ?>
-        </div>
       </div>
-    </div>
     </div>
   </div>
 

@@ -8,7 +8,6 @@ if (!isset($_SESSION['email_user'])) {
     $signupButton = '<li class="nav-item"><a class="nav-link" href="register.php">Sign Up</a></li>';
     $userGreeting = '';
     $logoutButton = '';
-    $reviewButton = '';
 } else {
     // Jika sudah login
     $id_user = $_SESSION['id_user'];
@@ -16,7 +15,6 @@ if (!isset($_SESSION['email_user'])) {
     $signupButton = '';
     $userGreeting = '<li class="nav-item active"><a class="nav-link" href="profil_user.php?id=' . $_SESSION['id_user'] . '">Hello, ' . $_SESSION['nama_user'] . '</a></li>';
     $logoutButton = '<li class="nav-item"><a class="nav-link" href="backend/logout.php">Logout</a></li>';
-    $reviewButton = '<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_ulasan">Tambah Ulasan</button>';
 }
 
 include("connection.php");

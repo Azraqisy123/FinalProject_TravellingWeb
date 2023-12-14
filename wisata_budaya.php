@@ -28,7 +28,7 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
 
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
 
   <meta charset="utf-8">
@@ -112,7 +112,6 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
               <a href="wisata_bawah_laut.php" class="btn btn-secondary">Wisata Bawah Laut</a>
               <a href="wisata_zoo.php" class="btn btn-secondary">Wisata Kebun Binatang</a>
             </div>
-            <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Pesan Sekarang</button> -->
           </div>
         </div>
       </div>
@@ -162,19 +161,19 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
         <!-- Pagination Start -->
         <div class="col-md-12">
           <ul class="pages">
-            <?php if($HalamanActive > 1) { ?>
+            <?php if ($HalamanActive > 1) { ?>
               <li><a href="?page=<?= $HalamanActive - 1; ?>"><i class="fa fa-angle-double-left"></i></a></li>
             <?php } ?>
 
-            <?php for($i = 1; $i <= $JumlahHalaman; $i++) { ?>
-              <?php if( $i == $HalamanActive) { ?>
+            <?php for ($i = 1; $i <= $JumlahHalaman; $i++) { ?>
+              <?php if ($i == $HalamanActive) { ?>
                 <li class="active"><a href="?page=<?= $i; ?>"> <?= $i; ?></a></li>
               <?php } else { ?>
                 <li><a href="?page=<?= $i; ?>"> <?= $i; ?></a></li>
               <?php } ?>
             <?php } ?>
 
-            <?php if($HalamanActive < $JumlahHalaman) { ?>
+            <?php if ($HalamanActive < $JumlahHalaman) { ?>
               <li><a href="?page=<?= $HalamanActive + 1; ?>"><i class="fa fa-angle-double-right"></i></a></li>
             <?php } ?>
           </ul>
@@ -195,73 +194,6 @@ $travels = mysqli_query($connection, "SELECT * FROM wisata JOIN kategori ON wisa
       </div>
     </div>
   </footer>
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Book Now</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="contact-form">
-            <form action="#" id="contact">
-              <div class="row">
-                <div class="col-md-6">
-                  <fieldset>
-                    <input type="text" class="form-control" placeholder="Pick-up location" required="">
-                  </fieldset>
-                </div>
-
-                <div class="col-md-6">
-                  <fieldset>
-                    <input type="text" class="form-control" placeholder="Return location" required="">
-                  </fieldset>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6">
-                  <fieldset>
-                    <input type="text" class="form-control" placeholder="Pick-up date/time" required="">
-                  </fieldset>
-                </div>
-
-                <div class="col-md-6">
-                  <fieldset>
-                    <input type="text" class="form-control" placeholder="Return date/time" required="">
-                  </fieldset>
-                </div>
-              </div>
-              <input type="text" class="form-control" placeholder="Enter full name" required="">
-
-              <div class="row">
-                <div class="col-md-6">
-                  <fieldset>
-                    <input type="text" class="form-control" placeholder="Enter email address" required="">
-                  </fieldset>
-                </div>
-
-                <div class="col-md-6">
-                  <fieldset>
-                    <input type="text" class="form-control" placeholder="Enter phone" required="">
-                  </fieldset>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary">Book Now</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
