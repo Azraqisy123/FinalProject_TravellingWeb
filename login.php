@@ -54,9 +54,9 @@ session_start();
                         <input type="password" id="form2Example2" class="form-control" name="password" required />
                     </div>
 
-                    <!-- (B) CAPTCHA HERE -->
+                    <!-- CAPTCHA HERE -->
                     <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example2">Are you human?</label>
+                        <label class="form-label" for="form2Example2">Are you human?</label>
                         <div>
                             <?php
                             require "backend/captcha.php";
@@ -64,15 +64,22 @@ session_start();
                             $PHPCAP->draw();
                             ?>
                         </div>
-                    <input type="text" class="form-control mt-3" name="captcha" placeholder="Masukan Kode Diatas" required>
+                        <input type="text" class="form-control mt-3" name="captcha" placeholder="Masukan Kode Diatas" required>
                     </div>
 
                     <!-- Submit button -->
                     <input class="btn btn-primary btn-block mb-2" type="submit" name="login" value="Sign In">
 
                     <!-- Register buttons -->
-                    <div class="text-end">
-                        <a href="register.php">Register</a>
+                    <div class="container text-center pt-2">
+                        <div class="row">
+                            <div class="col">
+                                <a href="register.php">Register</a>
+                            </div>
+                            <div class="col">
+                                <a href="#">Forgot Password</a>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>

@@ -246,7 +246,7 @@ $komentar = mysqli_query($connection, "SELECT komentar.*, user.nama_user, user.f
             <!-- End Column 1 -->
             <!-- Start Column 2 -->
             <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-              <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg" class="img-fluid mb-5">
+              <img src="assets/images/user/person_2.jpg" class="img-fluid mb-5">
               <h3><a href="#"><span>Muhammad</span> Azraqi Syahriza</a></h3>
               <!-- <span class="d-block position mb-4">CEO, Founder, Atty.</span> -->
               <!-- <p>Separated they live in.
